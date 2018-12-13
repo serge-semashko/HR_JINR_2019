@@ -1,0 +1,280 @@
+JINR/nica/info_NICA_pplan.ajm
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial2
+debug=off
+LOG=ON
+tableCfg=this
+wrapperTable=none 
+table_beg=none
+table_end=none
+wrapperTableEnd=none 
+numDigits=0
+thsnDelimiter=none
+thsnDelimiter=&nbsp; ??
+
+rowLink=|<span class="pt" onClick="goToRowA(#srn_i#);">#srn_i#-#ern_i#</span> ??!currentPage
+rowLink=|<span class=actPage>#srn_i#-#ern_i#</span> ??currentPage
+prevSetLink=<span class="pt" onClick="goToRowA(#srn_i#);"> << предыд. </a> 
+nextSetLink=| <span class="pt" onClick="goToRowA(#srn_i#);"> следующие >> </a>
+[end]
+
+
+=================  ГРАФИК ПЛАТЕЖЕЙ - ВЫВОД ТАБЛИЦЫ ЗАПЛАНИРОВАННЫХ ПЛАТЕЖЕЙ ===============
+
+[report header]
+    curr_id=132;  ??
+    $SET_PARAMETERS srn=1; f_year=2018; ??!srn
+    $SET_PARAMETERS rpp=10;
+    $SET_PARAMETERS f_src=0; ??info_id
+
+    $USE_DB ADB
+    $SET_PARAMETERS VER=13; ??
+    $GET_DATA [getFilters]
+    $CALL_SERVICE c=JINR/nica/getSources;   ??!F_NICA_SRCS
+
+    $INCLUDE svs/info_show_plain_script.dat[css]  ??!INFO_CSS_LOADED
+    $INCLUDE svs/info_show_plain_script.dat[script] 
+    <style>
+        table.tlist td, table.tlist th{font-size:8pt;}
+        fieldset.border {border:solid 1px ##a0a0a0; padding:0;}
+        ##d_sprav_window {background-color:##606060;}
+        ##d_spravCont {background-color:white; margin: 0px 3px 3px 3px;}
+        table.tlist td, table.tlist th {font-size: 10pt;}
+    </style>
+
+    <form name="filters_form" onSubmit="goToRowA(1); return false;">
+        <div id="popup_info_filters_div">
+        <input type=hidden id="srn" name="srn" value="#srn#"> 
+        <input type=hidden id="requesterId" name="requesterId" value="#requesterId#"> 
+
+        <fieldset class="border"><legend><b>Поиск:</b></legend>
+            <table border=0 cellpadding=5 cellspacing=0 style="background-color:##efefef; width:100%;">
+                <tr>
+                    <td class="nowrap right" nowrap>ID платежа или закупки</td>
+                    <td><input size=9 name="f_id" value="#f_id#">
+                        Год: <select name="f_year" onChange="doSubmitA();">
+                            <option value="">все</option> ??
+                            <option value="2018"
+                                selected  ??f_year=2018
+                            >2018</option>
+                            <option value="2017" ??
+                                selected  ??f_year=2017
+                            >2017</option> ??
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td class="nowrap right" nowrap>№ пункта (работы)</td>
+                    <td><input size=9 name="f_item" value="#f_item#"></td>
+                </tr>
+
+                <tr><td class="nowrap right" nowrap>Источник финансирования: </td>
+                    <td><select name="f_src" onChange='goToRowA(1);'><option value="">все</option>#F_NICA_SRCS#</select>
+                        конфигурация: 
+                        <select name="f_mega" onChange="goToRowA(1);"><option value="">все</option>
+                            <option value=0
+                                selected ??f_mega=0
+                            >базовая</option>
+                            <option value="1"
+                                selected ??f_mega=1
+                            >расширенная</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td class="right">
+                        Искать текст:</td><td><input size=35 name="f_search" value="#f_search#"> &nbsp; 
+                        <input type="submit"  onClick_='doSubmitA();' class="butt1 pt" style="width:100; margin-left:20px;" value="Искать">
+                    </td>
+                </tr>
+            </table>
+        <filedset>
+        </div> 
+    </form>
+
+    <script type="text/javascript">
+        function goToRowA(nr) { 
+        log(3, "JINR/info_NICA_pplan.ajm.goToRowA( " + nr + " );");
+            try {
+                $("##srn").val(nr);  
+                doSubmitA();
+            }
+            catch (e) {
+            alert(e);
+            }
+        }
+
+        function doSubmitA() { 
+        log(3, "JINR/info_NICA_pplan.ajm.doSubmitA();");
+            try {
+                AjaxCall('d_spravCont', 'c=JINR/nica/info_NICA_pplan', true, 'popup_info_filters_div',true);
+            }
+            catch (e) {
+            alert(e);
+            }
+        }
+
+        var showOverlay = function() {
+            $('##sprav_overlay').height($(document).height()).show();
+        }
+        window.setTimeout(showOverlay, 100);
+        selectOptionByVal(document.filters_form.f_src, '#f_src#'); ??f_src
+    </script>
+
+    <table class="tlist dd_info" border=0 cellspacing=0 cellpadding=0 style="margin:0 5px 0 5px;">
+        <tr>
+<td>id</td> ??USER_ID=2309
+
+            <th>ID</th> 
+            <th style="width:200px;">Работа</th> 
+            <th class="sup" style="background-color:white;">Квартал</th> 
+            <th style="width:400px;">Назначение&nbsp;платежа</th>
+            <th>Статья</th>
+            <th><center>Сумма<br>(вал.)</center></th>
+            <th><center>Сумма<br>($)</center></th>
+            <th><center>Резерв<br>(ADB2,&nbsp;$)</center></th>
+            <th><center>Остаток<br>($)</center></th>
+        </tr>
+    $SET_PARAMETERS_SESSION srt_plan=#srt#; desc_plan=#desc#; 
+<tr><td></td><td colspan=8> <b>пункт #f_item# не найден!</b></td></tr>  ??f_item&!ITEM_ID
+[end]
+
+
+[item]
+    $INCLUDE JINR/nica/getSources.cfg[SET_SOURCE] 
+    $INCLUDE [set mega]
+    $INCLUDE [set nature]
+
+    <tr class="pt" returnId="#REC_ID#" 
+        returnId="#PLAT_ID#" ??
+        onClick="
+            if(confirm('Превышена сумма!\n\rПродолжить?'))   ??!REST_SUMMA_USD>0
+            { selectInfoItem(this,'#CODE#, платеж #PLAT_ID#: #NAZNACH# <small><i>(#SOURCE_DES#, #MEGA_DES#, #NATURE_DES#)</i></small>'); 
+              hideSprav();
+            }
+        "  
+        ??REST_SUMMA_USD>0
+    >
+<td>#REC_ID#</td> ??USER_ID=2309
+        <td nowrap style="text-align:right; white-space:nowrap;">#PLAT_ID#&nbsp;</td>
+        <td nid='w#WUID#'><div style="width:200px;"><span class="pri_#PRI#">#CODE#:</span> #TITLE# <small>(#RESP#)</small></div></td> 
+        <td class="align_center">#YEAR#г.,&nbsp;#QUAR#&nbsp;к-л</td>
+
+        <td><div style="width:400px;">#NAZNACH#
+                <div style="text-align:right;"><i>#SOURCE_DES#, #MEGA_DES#, #NATURE_DES#</i></div>
+            </div>  
+        </td>
+
+        <td class="center">#STATIA#</td>
+            <td  class="nowrap right" nowrap>#SUMMA_CURR#
+                р.  ??CURR_CODE=810
+                $   ??CURR_CODE=840
+                €   ??CURR_CODE=978
+            </td>
+
+        <td class="nowrap right" nowrap>&nbsp;#SUMMA_USD#</td>
+        <td class="nowrap right" nowrap>&nbsp;#REZERV_SUMMA_USD#</td>
+        <td class="nowrap right" nowrap
+                style="color:red;" ??!REST_SUMMA_USD>0
+            >&nbsp;#REST_SUMMA_USD#</td>
+    </tr>
+[end]
+
+[set nature]
+    $SET_PARAMETERS NATURE_DES=A1;  ??NATURE=11
+    $SET_PARAMETERS NATURE_DES=A2;  ??NATURE=12
+    $SET_PARAMETERS NATURE_DES=A3;  ??NATURE=13
+    $SET_PARAMETERS NATURE_DES=A4;  ??NATURE=14
+    $SET_PARAMETERS NATURE_DES=A5;  ??NATURE=15
+    $SET_PARAMETERS NATURE_DES=B;   ??NATURE=2
+    $SET_PARAMETERS NATURE_DES=С1;  ??NATURE=31
+    $SET_PARAMETERS NATURE_DES=С2;  ??NATURE=32
+    $SET_PARAMETERS NATURE_DES=D;   ??NATURE=4
+[end]
+
+[set mega]
+    $SET_PARAMETERS MEGA_DES=Базовая конфигурация;  ??MEGA=0
+    $SET_PARAMETERS MEGA_DES=Расширенная конфигурация  ??MEGA=1
+    $SET_PARAMETERS MEGA_DES=конфигурация не указана  ??!MEGA
+[end]
+
+[report footer]
+    </table>
+    <div class="right" style="margin:5px;"> Строки: #rowLinks# |</div>
+    <center><input type="button" class="butt1 pt" style="width:80; margin:0 0 10px 0;" value="Закрыть" onclick="hideSprav();"></center>
+</div>
+[end]
+
+
+========================================================
+
+[getFilters]
+    select max(id) as "VER", 1 as "VER_RW" from nica_versions where ACT=1
+    ;
+    select id as "ITEM_ID" from (select * from nica_wbs_wu order by lev) where code like '#f_item#%'  and rownum<2 ??f_item
+[end]
+
+
+[SQL]
+select  
+    ''''||p.ID as "REC_ID"
+    , ''''||w.CODE as CODE  ??!TYP=WU
+    , ''''||to_char(p.DAT, 'mm.yyyy') as "DATE_PLAT"
+    , w.PRI
+
+    , replace( case when length(p.NAZNACH)>70 then substr(p.NAZNACH,1,65)||'...' else p.NAZNACH end, '"', '``') as "NAZNACH"
+    , ''''||to_char(p.STATIA,'00') as "STATIA"
+    , replace(trim(to_char(p.SUMMA_CURR,'999G999G990')),' ','&nbsp;') as SUMMA_CURR
+    , nvl(p.SUMMA_USD,0) as SUMMA_USD
+    , p.SUMMA_RUB 
+    , ''''||p.CURR_CODE as CURR_CODE
+    , ''''||trim(to_char(p.SUMMA_CURR,'9999999990')) as SUMMA_CURR_
+
+    , p.SOURCE, p.NATURE, p.MEGA
+
+    , trim(to_char(p.QUA, 'RN')) as QUAR, p.QUA
+    ,  ''''||trim(to_char(p.DAT, 'yy')) as "YR" ??
+    ,  ''''||trim(to_char(p.DAT, 'yyyy')) as "YEAR" 
+
+    , TO_CHAR(w.date_start, 'Q') Q1 , TO_CHAR(w.date_finish, 'Q') Q2
+
+    , nvl(w.TITLE, w.TITLE_E) as "TITLE"
+    , ''''||w.ID as "WUID", ''''||p.ID as ID, p.TASK_ID
+    , to_number(replace(replace(w.code ,'.','') ,'X','')) as "SORT"
+
+    , w.RESP
+    , l.C_ID||'-'||l.P_NR as PLAT_ID
+    , replace(to_char(d.REZERV_SUMMA_USD,'99,999,999,990'),',','&nbsp;') as "REZERV_SUMMA_USD"
+     , trim(to_char((nvl(p.SUMMA_USD,0) - nvl(d.REZERV_SUMMA_USD,0)),'999999990')) as "REST_SUMMA_USD"
+from nica_pplan_#VER# p 
+    left join nica_wbs_wu w on w.id=p.TASK_ID 
+    left join nica_costbook_pplan_#VER# l on l.p_id=p.id
+    left join nica_wu lw on lw.id=l.WU_ID 
+    left join (select PLAN_ID
+            , sum(nvl(SUMMA_USD,0)) as REZERV_SUMMA_USD
+            , replace(to_char(sum(decode(is_total,'Y', 0,nvl(SUMMA_USD,0))),'99,999,999,990'),',','&nbsp;') as REZERV_SUMMA_USD  ??
+            from docs
+            where not PLAN_ID is null
+                and not doc_status in (5)
+            group by PLAN_ID
+        ) d on d.PLAN_ID=l.C_ID||'-'||l.P_NR
+where 
+    1=1
+    and 1=0   ??f_item&!ITEM_ID
+    and extract(year from p.DAT)=#f_year#  ??f_year
+    and (case when '#f_id#' like '%-%' and l.C_ID||'-'||l.P_NR ='#f_id#' then 1 when not '#f_id#' like '%-%' and '#f_id#' like l.C_ID||'%' then 1 else 0 end) =1 ??f_id
+    and p.TASK_ID in (select ID from nica_wbs_wu connect by prior id=pid start with id in(#ITEM_ID#)) ??ITEM_ID
+    and p.SOURCE=#f_src# ??f_src
+    and p.mega=#f_mega#  ??f_mega&!f_mega=null
+    and p.mega is null ??f_mega=null
+
+    and (upper(w.TITLE) like upper('%#f_WU_NAME#%') or upper(w.TITLE_e) like upper('%#f_WU_NAME#%')) ??f_WU_NAME
+
+    and upper(NAZNACH) like upper('%#f_NAZNACH#%') ??f_NAZNACH
+    and p.STATIA=#f_aggr# ??f_aggr>0
+
+    and p.ID=#P_ID#  ??P_ID
+order by p.DAT, SORT
+[end]
+

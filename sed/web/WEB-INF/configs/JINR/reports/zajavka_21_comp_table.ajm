@@ -1,0 +1,242 @@
+JINR/reports/zajavka_21_comp_table.ajm
+
+[comments]
+descr=U: Модуль вывода списка заявок на орг.технику ОИЯИ.
+
+input=
+output=HTML таблица документов
+parents=all_docs
+childs=docs/view_doc
+testURL=?c=JINR/reports/zajavka_table
+author=Куняев
+[end]
+
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=U:вывод списка заявок на орг.технику
+LOG=ON 
+tableCfg=table_no
+$INCLUDE dat/common.dat[rowLinks]
+[end]
+
+
+[report header]
+$INCLUDE dat/common.dat[check login]
+$INCLUDE [OK report header]  ??USER_ID>0|USER_ID<0
+[end]
+
+
+[OK report header]
+    $SET_PARAMETERS file_name=SED-Computer_Requests.xls;
+    $INCLUDE reports/all_docs[filters table start] ??!of=xl
+    $INCLUDE [custom filters]  ??!of=xl
+    $INCLUDE reports/all_docs[filters table end]  ??!of=xl
+$GET_DATA [get SED docs] ??f_1C_NR
+    <table 
+        class="tlist tblue" cellspacing=0 style="" ??!of=xl
+        border=1  ??of=xl
+    >
+    <tr>
+        <th class="srh" sr="dh.ID"></th> 
+     ??!of=xl
+        <th class="srh" sr="ifnull(dh.doc_date, dh.created)">№ заявки СЭД</th>
+        <th class="srh" sr="dh.TITLE">Инициатор</th>
+        <th class="srh" sr="dh.status">Статус</th> 
+        <th class="srh" sr="dh.DIVS">Подр.</th>
+        <th class="srh" sr="dat.summa_usd">Сумма&nbsp;руб.</th> 
+        <th class="srh" sr="c1.number_date">Документ 1С</th>
+        <th class="srh" sr="c1.status">Статус 1С</th> 
+        <th class="srh" sr="dat.nr_ADB">№ ADB2</th>  ??
+        <th class="srh" sr="dh.doc_date">Документ создан</th> ??
+    </tr>
+[end]
+
+[custom filters]
+++++++++++++++++++ Дополнительные фильтры для договоров +++++++++++++++++++++ ??
+    <tr><td class= "right nowrap" >
+Тип документа 1С: </td><td>
+<input size="10" name="f_1C_NR" value="#f_1C_NR#">  ??
+<select name="f_1C_doc_type" onChange="document.theForm.f_stat_1С[0].checked = true; submitForm(true);">
+<option value=""> любой
+<option value="none"
+selected ??f_1C_doc_type=none
+> нет
+<option value="Конс.заявка"
+selected ??f_1C_doc_type=Конс.заявка
+> Консолидированная заявка
+<option value="Предлож. поставщиков"
+selected ??f_1C_doc_type=Предлож. поставщиков
+> Предлож. поставщиков
+<option value="ПТУ"
+selected ??f_1C_doc_type=ПТУ
+> ПТУ
+
+</select>
+
+№ документа 1С: 
+</td><td> ??
+<input size="10" name="f_1C_NR" value="#f_1C_NR#"></td>
+</tr>
+
+    <tr><td class= "right nowrap">Статус документа 1С:</td><td>
+        <input type=radio name=f_stat_1С value="" onClick="submitForm(true);"
+            checked ??!f_stat_1С
+        >любой
+        <input type=radio name=f_stat_1С value="10" onClick="submitForm(true);"
+            checked  ??f_stat_1С=10
+        >определен
+        <input type=radio name=f_stat_1С value="0" onClick="submitForm(true);"
+            checked  ??f_stat_1С=0
+        >не определен
+<br>
+        <input type=radio name=f_stat_1С value="1" onClick="submitForm(true);"
+            checked ??f_stat_1С=1
+        >консолидировано
+        <input type=radio name=f_stat_1С value="3" onClick="submitForm(true);"
+            checked  ??f_stat_1С=3
+        >заказано
+        <input type=radio name=f_stat_1С value="2" onClick="submitForm(true);"
+            checked  ??f_stat_1С=2
+        >закуплено
+        <input type=radio name=f_stat_1С value="4" onClick="submitForm(true);"
+            checked  ??f_stat_1С=4
+        >отгружено
+        <input type=radio name=f_stat_1С value="5" onClick="submitForm(true);"
+            checked  ??f_stat_1С=5
+        >исполнено
+
+    </td></tr>
+    <tr><td class= "right nowrap">Содержание: </td><td><input size="30" name="f_content" value="#f_content#"></td></tr> ??
+    <tr><td class= "right nowrap" >Инициатор документа: </td><td><input size="30" name="f_initiator" value="#f_initiator#"></td></tr>
+    </td></tr>
+[end]
+
+
+[item]
+    <tr class="pt 
+        oddRow ??oddRow=1
+        " onClick="AjaxCall('doc_content', 'c=docs/view_doc&doc_id=#ID#&mode=popup', true, '',true);">
+        <td>
+            #ID#  ??!of=xl
+            &nbsp;<i class="fa fa-flag mark clr-red"> ??U_PID
+        </td>
+        <td>
+            $INCLUDE reports/all_docs_table.cfg[mark]  ??MARKED=1
+            №#NUMBER#  ??NUMBER
+            от #DOC_DATE#  ??DOC_DATE
+        </td> 
+        <td class="tt" tt_text='#TITLE#' style="padding-right:0;"><div class="ellipsis">#TITLE#</div></td>
+        $INCLUDE admin/monitor/all_docs_table.ajm[status]  
+
+        <td>#DIVS#</td>
+        <td class= "right nowrap">#PRICE_RUB#</td> 
+        <td
+            onClick="showDocDetails(event,#C1_ID#);" ??C1_ID
+        >       
+            #C1_DOC#  ??
+            #C1_DOC_TYPE# №#C1_DOC_NR# от #C1_DOC_DATE# ??C1_DOC_NR
+             &nbsp; <small>(п.#C1_NR# от #C1_DATE#)</small>  ??C1_DATE
+        </td>
+        $SET_PARAMETERS C1_STATUS=?;  ??!C1_STATUS
+        <td class="tt" tt_text='#TITLE#' style="padding-right:0;"><div class="ellipsis">#C1_STATUS#</div></td>
+
+        <td class= "nowrap">#CREATED#, #CREATOR#</td> ??
+    </tr>
+
+    $INCLUDE tab_myDocs.cfg[linkedData] ??!img=none&!of=xl
+    $SET_PARAMETERS MARKED=;
+[end]
+
+
+    <td style="color:##000080;"
+        onClick="showADB(event, #nr_ADB#);" ??nr_ADB&!of=xl
+    >#nr_ADB#</td> 
+
+
+[report footer]
+    $SET_PARAMETERS NumTableCols=11;
+
+    <script type="text/javascript">
+        var showADB=function(event, nr_ADB){
+            window.open("https://adb2.jinr.ru/adb/adb?c=doc/docView&type=ext&key=#tm#&DOC_ID=" + nr_ADB, "viewdoc" + nr_ADB); 
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        showSrt("#srt#","sup"); ??!desc
+        showSrt("#srt#","sdown"); ??desc
+    </script>
+[end]
+
+
+***************************** Шаблон SQL запроса ***************************
+
+
+[SQL]
+    select
+    dh.ID, dh.TYPE_ID, dh.status, dtp.NAME AS DOC_TYPE, dh.pid, dh.num_children
+    , dh.NUMBER, dh.TITLE, dh.STATUS, dh.DIVS
+    , DATE_FORMAT(dh.doc_date,'#dateFormat#') as DOC_DATE 
+    , DATE_FORMAT(dh.created,'#dateFormat#') as CREATED 
+    , dh.creator_id
+
+    , concat(ucr.F, ' ', left(IFNULL(ucr.I,''),1), '.', left(IFNULL(ucr.O,''),1),'.') as CREATOR
+    , DATE_FORMAT(dh.modified,'#dateFormat#') as MODIFIED
+    , dh.modifier_id, concat(umr.F, ' ', left(IFNULL(umr.I,''),1), '.', left(IFNULL(umr.O,''),1),'.') as MODIFIER ??
+
+    , replace(format(dat.summa_rub,2),',',' ') as "PRICE_RUB"  ??!of=xl
+    , replace(format(dat.summa_rub,2),',','') as "PRICE_RUB"  ??of=xl
+    , dat.ptu as "C1_NR"
+    , DATE_FORMAT(dat.ptu_date,'#dateFormat#') as "C1_DATE" 
+    , dat.ptu_id as "C1_ID"
+
+    , c1.doc_type as "C1_DOC_TYPE"
+    , c1.status as "C1_STATUS"
+    , c1.NUMBER as "C1_DOC_NR"
+    , DATE_FORMAT(c1.number_date,'#dateFormat#') as C1_DOC_DATE 
+
+    , dm.mark as "MARKED", a.user_id as "VIEWED", fyi.cnt, wfh.cnt as hist_cnt
+    , u.U_PID
+
+    from d_list dh
+        left join d_data_#f_doc_type_id# dat on dat.doc_id=dh.id
+        left join d_data_32 c1 on c1.doc_id=dat.ptu_id 
+        left join d_list dch on dch.id = dat.ptu_id ??
+
+        left join(select distinct dhu.pid as "U_PID"
+            from d_list dhu   
+            join d_data_22 d on d.doc_id=dhu.id and d.urgency = 1
+        ) u on u.U_PID=dh.ID
+
+    $INCLUDE reports/all_docs[criteria] 
+    $INCLUDE [custom criteria] 
+
+    order by #srt# #desc#, dh.modified desc
+[end]
+
+[custom criteria] 
+    and dh.TITLE like '%#f_content#%'  ??f_content
+    and ucr.F like '#f_initiator#%' ??f_initiator
+    and (c1.NUMBER=#f_1C_NR# or dh.id in(0#SED_IDs#)) ??f_1C_NR
+    and c1.status is null  ??f_stat_1С=0
+    and not c1.status is null  ??f_stat_1С=10
+    and c1.status='Консолидировано'  ??f_stat_1С=1
+    and c1.status='Заказано'  ??f_stat_1С=3
+    and c1.status='Закуплено'  ??f_stat_1С=2
+    and c1.status='Отгружено'  ??f_stat_1С=4
+    and c1.status='Исполнено'  ??f_stat_1С=5
+
+    and c1.doc_type='#f_1C_doc_type#'  ??f_1C_doc_type&!f_1C_doc_type=none
+    and c1.doc_type is null  ??f_1C_doc_type=none
+[end]
+
+[get SED docs]
+select concat(',',c3.id_SED) as SED_IDs
+from d_data_33 c3
+    join d_list c2 on c2.id=c3.doc_id
+    join d_list c1 on c1.id=c2.pid
+where c1.number=#f_1C_NR#
+[end]
+
+

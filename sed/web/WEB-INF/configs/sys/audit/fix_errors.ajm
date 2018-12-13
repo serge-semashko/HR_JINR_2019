@@ -1,0 +1,122 @@
+sys/audit/fix_errors.ajm
+
+
+[comments]
+descr=S: исправление ошибок маршрутизации
+input=doc_id - ID документа, cop=fin - завершение документа и шагов маршрута, cop=wf_act - активировать маршрут, cop=draft - поставить статус "черновик"
+output=
+parents=
+childs=
+author=Куняев
+[end]
+
+[parameters]
+request_name=S: Автоматическая пометка документа завершенным
+LOG=ON
+[end]
+
+
+
+[report]
+    $CALL_SERVICE c=sys/getARUD;   
+    $CALL_SERVICE c=wf/check_next_step; ??
+    $INCLUDE [OK report]  ??AR_A=Y|AR_T=Y|AR_X=Y
+    $CALL_SERVICE c=sys/log_doc_access; access_type=4; rejected=1;    ??!AR_A=Y&!AR_T=Y&!AR_X=Y
+[end]
+
+
+[OK report]
+$INCLUDE [#cop#] ??cop
+$INCLUDE [alert] ??!cop
+[end]
+
+[draft]
+    $GET_DATA [draft SQL]
+    <center><b>Установлен статус "Черновик"</b></center>    
+[end]
+
+[draft SQL]
+    update d_list set status=0 where id=#doc_id#
+[end]
+
+[wf_fin]
+    $SET_PARAMETERS WF_ID=#WF_ID_INACT#;  ??!WF_ID
+    $GET_DATA [wf_fin SQL] ??WF_ID
+    <center><b>ШАГИ МАРШРУТА ДЕАКТИВИРОВАНЫ.</b></center> ??!ERROR
+    <center><b>ОШИБКА: #ERROR#!</b></center> ??ERROR
+    <script>
+        AjaxCall('doc_wf', 'c=wf/show_wf_for_doc&doc_id=#doc_id#');
+    </script>
+[end]
+
+[wf_fin SQL]
+    update wf set is_active=0, finished=now()
+    where wf_id=#WF_ID# 
+        and step>#CURR_STEP# ??
+        and is_active=1
+        and step_type<3
+        and finished is null 
+    ;
+    update wf_list set is_active=0 where id=#WF_ID#
+[end]
+
+[wf_act]
+    $GET_DATA [wf_act SQL]
+    <center><b>МАРШРУТ #WF_ID_INACT# АКТИВИРОВАН.</b></center> ??!ERROR
+    <center><b>ОШИБКА: #ERROR#!</b></center> ??ERROR
+[end]
+
+[wf_act SQL]
+    update wf_list set is_active=1 where id=#WF_ID_INACT#
+[end]
+
+[fin]
+    $SET_PARAMETERS WF_ID=#WF_ID_INACT#;  ??!WF_ID
+    $GET_DATA [get last step] ??!CURR_STEP_ID&WF_ID
+    $SET_PARAMETERS result_code=#~doc_action_processed#; step_id=#CURR_STEP_ID#; autofinish=Y; comment_opened=Y;
+
+    $SET_PARAMETERS INPUT_ERROR=;
+    $SET_PARAMETERS user_comment=auto; COMMENT_OK=Y; ??!user_comment
+
+    $GET_DATA [count other steps]  ??!ERROR&WF_ID
+    $SET_PARAMETERS ERROR=Есть незавершенные шаги; ??NUM_OTHER_STEPS>0
+    $INCLUDE [really process] ??!ERROR
+    $LOG_ERROR #ERROR# #INPUT_ERROR# ??ERROR
+    <center><b>ДОКУМЕНТ ЗАВЕРШЕН!</b></center> ??!ERROR
+    <center><b>ОШИБКА: #ERROR#!</b></center> ??ERROR
+
+    <script>
+        AjaxCall('doc_wf', 'c=wf/show_wf_for_doc&doc_id=#doc_id#');
+    </script>
+[end]
+
+
+[really process] ----- Выполнение команды, если все ОК ------
+    $SET_PARAMETERS step_id=0;  ??!step_id
+    $SET_PARAMETERS step=0;  ??!step
+    $CALL_SERVICE c=wf/user_action; result_code=#~doc_action_processed#; ??WF_ID
+    $GET_DATA [just mark doc]  ??!WF_ID
+[end]
+
+[get last step]
+    select max(id) as "CURR_STEP_ID" 
+    from wf 
+    where wf_id=#WF_ID# 
+        and is_active=1
+        and step_type<3
+[end]
+
+[count other steps]
+    select count(*) as NUM_OTHER_STEPS 
+    from wf 
+    where wf_id=#WF_ID# 
+        and step>#CURR_STEP# 
+        and is_active=1
+        and step_type<3
+        and finished is null 
+[end]
+
+
+[just mark doc]
+    update d_list set status=3,  where id=#doc_id#
+[end]

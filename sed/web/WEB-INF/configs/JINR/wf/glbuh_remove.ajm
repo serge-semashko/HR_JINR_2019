@@ -1,0 +1,88 @@
+JINR/wf/glbuh_remove.ajm
+
+wf/allocateDoc.ajm
+
+[comments]
+descr=U: Удалить шаг глав.буха
+
+input=[step_id - ID шага WF] ИЛИ [doc_id - ID документа
+output=в таблице wf отмечается result=взят на рассмотрение
+parents=docs/doc_user_action.cfg
+childs=
+author=Куняев
+[end]
+
+[description]
+<ol>
+    <li></li>
+</ol>
+[end]
+
+[parameters]
+request_name=U:Взять  док.#doc_id# на рассмотрение
+LOG=ON
+[end]
+
+
+[report]
+    $CALL_SERVICE c=sys/getARUD; ??!AR_R=Y&USER_ID
+    $GET_DATA docs/view_doc.mod[getDocInfo]
+    $INCLUDE [report_] ??AR_S=Y
+[end]
+
+[report_]
+    $SET_PARAMETERS cop=true; ??USER_ID=764
+    $INCLUDE [process]      ??WF_ID&CURR_STEP&CURR_STEP_ROLE_ID
+    $GET_DATA [check] 
+    $INCLUDE [cb] ??AR_S=Y&GLAV_BUH_EXISTS=Y
+    #ERROR#
+    $LOG  take=#take#; USER_ID=#USER_ID#;<br>
+[end]
+
+[cb]
+    <input type="checkbox" name="DOCENKO" onClick="doRemove(this.checked);"
+        checked ??ACTIVE=1
+        disabled ??USER_ID=764
+        > Согласование главным бухгалтером <b><span class=
+    "src_red">ТРЕБУЕТСЯ ??ACTIVE=1
+    "src_green">НЕ ТРЕБУЕТСЯ ??!ACTIVE=1
+</span></b>
+<br><b>#STEP_MODIFIER#,</b> #STEP_MODIFIED#  ??STEP_MODIFIER
+
+[end]
+
+[process]
+    $GET_DATA [remove]  ??cop=false
+    $GET_DATA [return]  ??cop=true
+[end]
+
+==============================================================
+
+[check]
+    select 'Y' as "GLAV_BUH_EXISTS", is_active as "ACTIVE"
+    from wf
+    where wf_id=#WF_ID# and step>#CURR_STEP# and role_id=5
+    ;
+    select DATE_FORMAT(w.modified,'#dateTimeFormat#') as STEP_MODIFIED
+        , w.modifier_id as STEP_MODIFIER_ID , u.FIO as STEP_MODIFIER
+    from wf w
+        left join a_users_jinr u on u.Id = w.modifier_id
+    where wf_id=#WF_ID# and step>#CURR_STEP# and role_id=5
+[end]
+
+[remove]
+    update wf set is_active=0, comment='не требуется', modified=now(), modifier_id=#USER_ID#
+    where wf_id=#WF_ID# and step>#CURR_STEP# and role_id=5
+[end]
+
+
+[return]
+    update wf set is_active=1, result='', comment='', modified=now(), modifier_id=#USER_ID#
+    where wf_id=#WF_ID# and step>#CURR_STEP# and role_id=5
+[end]
+
+
+    select is_active as "ACTIVE"
+    from wf
+    where wf_id=#WF_ID# and step>#CURR_STEP# and role_id=5
+    ;

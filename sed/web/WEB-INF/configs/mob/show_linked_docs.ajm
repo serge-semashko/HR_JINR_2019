@@ -1,0 +1,168 @@
+mob/show_linked_docs.ajm
+
+[comments]
+descr=U: Выбор типа документа при создании потомка
+input=pid=562; child_type_id=8
+output=Перечень возможных типов документов-потомков
+parents=docs/view_doc.cfg
+childs=docs/edit_doc
+test_URL=?c=docs/create_child_type&pid=562
+author=Куняев
+[end]
+
+
+[parameters]
+request_name=U:Создание потомка документа
+service=dubna.walt.service.TableServiceSpecial
+tableCfg=table_no
+LOG=ON
+[end]
+
+
+[report header]
+$INCLUDE [top] ??!recurse
+    <ul class="linked_docs">
+[end]
+
+[top]
+    <style type="text/css">
+        ul.linked_docs {
+            margin:3px 0 7px 20px; 
+            padding:0 0 0 10px; 
+        }
+        ul.linked_docs li {
+            list-style-type: circle; 
+            margin: 0 10px 10px 10px; 
+        } 
+        .current {
+            background-color:##EFFFA0; 
+            font-weight:normal; 
+            font-style:italic;
+        }
+    </style>
+
+    $SET_PARAMETERS ROOT_ID=#doc_id#; ORIGINAL_DOC_ID=#doc_id# 
+    $GET_DATA [get root]
+
+    $SET_PARAMETERS current=current;  ??ROOT_ID=#ORIGINAL_DOC_ID#
+
+    $INCLUDE [ROOT]  ??!mode=list|!current
+    $SET_PARAMETERS doc_id=#ROOT_ID#;
+[end]
+
+[ROOT]
+    
+<div class="pt" style="padding: 1px 5px 1px 5px; float:right; font-weight:bold;" onClick="$('##linked_cont').hide(100);">&nbsp;X&nbsp;</div> ??!mode=list
+    <span class="
+        pt ??!current
+        #current#" 
+        onClick="$('##doc_overlay').show(); AjaxCall('doc_content', 'c=mob/view_doc&doc_id=#ROOT_ID#&mode=popup', true);"  ??!mode=ext&!current
+        onClick="window.location.href='#ServletPath#?c=mob/view_doc&doc_id=#ROOT_ID#&mode=ext';"  ??mode=ext&!current
+    >
+        #DOC_TYPE#
+        №#NUMBER#  ??NUMBER
+        от #DOC_DATE#  ??DOC_DATE       
+        #TITLE# ??
+        <small>#CREATOR#, #CREATED#</small>
+    </span>
+    <div style="clear:both;"></div>
+[end]
+
+[get root]
+    select pid as "ROOT_ID" from d_list where id=#ROOT_ID# and not pid is null;
+    select pid as "ROOT_ID" from d_list where id=#ROOT_ID# and not pid is null;
+    select pid as "ROOT_ID" from d_list where id=#ROOT_ID# and not pid is null;
+    select pid as "ROOT_ID" from d_list where id=#ROOT_ID# and not pid is null;
+    select pid as "ROOT_ID" from d_list where id=#ROOT_ID# and not pid is null
+    ;
+    select
+        dh.ID, dh.TYPE_ID, dtp.NAME AS DOC_TYPE
+        , dh.NUMBER, dh.TITLE, dh.STATUS
+        , DATE_FORMAT(dh.doc_date,'%d.%m.%Y') as DOC_DATE
+        , DATE_FORMAT(dh.created,'%d.%m.%Y') as CREATED
+        , concat(ucr.F, ' ', left(IFNULL(ucr.I,''),1), '.', left(IFNULL(ucr.O,''),1),'.') as CREATOR
+        , dh.is_deleted
+    from d_list dh
+        left join d_types dtp on dtp.Id = dh.type_id
+        left join a_users_jinr ucr on ucr.id=dh.creator_id
+    where
+        dh.id=#ROOT_ID#  
+[end]
+
+
+[item]
+    $SET_PARAMETERS current=;
+    $SET_PARAMETERS current=current;  ??ID=#ORIGINAL_DOC_ID#
+
+    <li>
+        <span class="
+            pt
+              ??!current
+            #current#" 
+            onClick="$('##doc_overlay').show(); AjaxCall('doc_content', 'c=mob/view_doc&doc_id=#ID#&mode=popup', true);"  ??!mode=ext
+            onClick="window.location.href='#ServletPath#?c=mob/view_doc&doc_id=#ID#&mode=ext';"  ??mode=ext
+            ??&!current
+        >
+        #ID# ??USER_ID=2309
+        <span class="bg_red"> ??is_deleted=1
+            #DOC_TYPE#
+            №#NUMBER#  ??NUMBER
+            от #DOC_DATE#  ??DOC_DATE
+            </span> ??is_deleted=1
+        #TITLE# ??
+        <small>#CREATOR#, #CREATED#</small>
+        </span>
+        $SET_PARAMETERS is_deleted=;
+        $GET_DATA [count item childs]
+        $INCLUDE [recurse]  ??NUM_ITEM_CHILDS>0
+    </li>
+[end]
+
+[recurse]
+    $STORE_PARAMETERS
+    $SET_PARAMETERS recurse=1; doc_id=#ID#; 
+    $CALL_SERVICE c=docs/show_linked_docs; 
+    $RESTORE_PARAMETERS
+[end]
+
+<td class="bottom_dotted" >
+В процессе согласования ??STATUS=1
+На этапе завершения ??STATUS=2
+Завершен ??STATUS=3
+</td>
+
+
+[report footer]
+</ul>
+[end]
+
+[count item childs]
+    select count(dh.id) as NUM_ITEM_CHILDS 
+    from d_list dh 
+        join d_types dt on dt.id=dh.type_id and dt.group_id<98 
+    where dh.pid=#ID#
+        and dh.id<>#ORIGINAL_DOC_ID# ??
+[end]
+
+[preSQLs]
+    select count(dh.id) as NUM_CHILDS from d_list dh join d_types dt on dt.id=dh.type_id and dt.group_id<98 where dh.pid=#doc_id#;
+[end]
+
+[SQL]
+    select
+        dh.ID, dh.TYPE_ID, dh.status, dtp.NAME AS DOC_TYPE
+        , dh.NUMBER, dh.TITLE
+        , DATE_FORMAT(dh.doc_date,'%d.%m.%Y') as DOC_DATE
+        , DATE_FORMAT(dh.created,'%d.%m.%Y') as CREATED
+        , concat(ucr.F, ' ', left(IFNULL(ucr.I,''),1), '.', left(IFNULL(ucr.O,''),1),'.') as CREATOR
+        , dh.status AS "STATUS"
+        , dh.is_deleted
+    from d_list dh
+        left join d_types dtp on dtp.Id = dh.type_id
+        left join a_users_jinr ucr on ucr.id=dh.creator_id
+    where
+        dh.pid=#doc_id#  
+        and dh.is_deleted=0
+        and dtp.group_id<98
+    order by dh.modified 
+[end]

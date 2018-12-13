@@ -1,0 +1,137 @@
+svs/roles_dd.ajm
+
+[comments]
+descr=Модуль вывода 2-х уровнего drop-down фильтра роли пользователей по группам)
+input=
+output=
+parents=
+childs=
+testURL=?c=svs/doc_types_dd
+author=Куняев
+[end]
+
+[parameters]
+request_name=U:фильтр по роли
+service=dubna.walt.service.TableServiceSpecial
+service=jinr.sed.ServiceShowInfoData ??
+tableCfg=table_no
+
+rpp=9999
+LOG=ON
+[end]
+
+
+
+[description]
+    <ul>
+        <li></li>
+    </ul>
+[end]
+
+[filter]
+     <input type=hidden size=4 value="#f_role_id#" id="f_role_id" name="f_role_id">
+     <div id="f_role" 
+         class="filter_dd_input pt big ellipsis" 
+         style="display: inline-block; width:300px; height:20px; border:solid 1px gray; 
+             margin: 0 7px -8px 0;
+             overflow: hidden; text-overflow: ellipsis; ??
+         " 
+         onClick="showDD('f_role', 'svs/roles_dd&selected_id=#f_role_id#', 'pasteRole');"
+     >
+         все ??!f_role
+         #f_role#
+     </div>
+
+    <script type="text/javascript">
+        var pasteRole=function(id,text){
+            log(1,"pasteRole: " + id + " / " + text); 
+            $("##f_role_id").val(id);
+            $("##f_role").html(text);
+            resetSort(); 
+            submitForm(true);
+        }
+
+    </script>
+[end]
+
+[select]
+     <input type=hidden size=4 value="#f_role_id#" id="f_role_id" name="f_role_id">
+     <div id="f_role" 
+         class="filter_dd_input pt big ellipsis" 
+         style="display: inline-block; width:300px; height:20px; border:solid 1px gray; 
+             margin: 0 7px -8px 0;
+             overflow: hidden; text-overflow: ellipsis; ??
+         " 
+         onClick="showDD('f_role', 'svs/roles_dd&selected_id=#f_role_id#&select=Y', 'pasteRole');"
+     >
+         #f_role#
+     </div>
+
+    <script type="text/javascript">
+        var pasteRole=function(id,text){
+            log(1,"pasteRole: " + id + " / " + text); 
+            $("##f_role_id").val(id);
+            $("##f_role").html(text);
+        }
+
+    </script>
+[end]
+
+[report header]
+    <table border=0 cellpadding=0 cellspacing=1 class="big" style="margin:1px 1px 10px 0px; border-bottom:solid 1px grey;">
+    <tr><td></td><td class="pt big" style="padding-top:3px;" onClick="#callback#('', ''); " > </td></tr>  ??select=Y
+    <tr><td></td><td class="pt big" style="padding-top:3px;" onClick="#callback#('', 'все'); " > --- все ---</td></tr>  ??!select=Y
+    <tr><td></td><td class="pt" onClick="#callback#('Y', '+ любая'); " >&nbsp;+ любая</td></tr>  ??!select=Y
+    <tr><td></td><td class="pt" onClick="#callback#('N', '- нет роли'); " >&nbsp;- нет роли</td></tr>  ??!select=Y
+[end]
+
+
+============== Вывод одного поля  ======= ??
+[item]
+
+    <tr><td style="padding-top:3px; border-top:solid 1px grey;" colspan=2><b>#group_name#:</b></td></tr>  ??!OLD_GROUP_NAME=#group_name#
+    <tr><td style="width:20px;">&nbsp;</td>
+        <td class="pt
+            bg_yellow ??type_id=#selected_id#
+            " 
+            onClick="#callback#('#role_id#', '#role_name#'); " 
+            style="white-space:normal; border-top:dotted 1px ##c0c0c0;"
+        ><div style="max-width:400px;  font-size:10pt; white-space:normal;">
+            #role_name#
+        </div></td>
+    <td><small>#role_id#</small></td> ??USER_ID=2309
+    </tr>
+    $SET_PARAMETERS OLD_GROUP_NAME=#group_name#;
+[end]
+
+
+[report footer]
+    </table>
+
+    <script type="text/javascript">
+        $('##dd_info').show();
+    </script>
+
+[end]
+
+
+***************************** Шаблоны SQL запросов ***************************
+
+[preSQLs]
+[end]
+
+
+[SQL]
+    select distinct grp.group_name, r.id as "role_id"
+        , r.name as "role_name"
+        , grp.sort, r.sort
+    from a_role_groups grp 
+         join a_roles r on r.group_id=grp.id
+    where 
+    (   r.is_deleted=0
+        and dtp.group_id<80 ??
+    )
+    order by grp.sort, r.sort
+[end]
+
+

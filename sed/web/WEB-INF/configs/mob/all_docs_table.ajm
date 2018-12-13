@@ -1,0 +1,240 @@
+mob/all_docs_table.ajm
+
+[comments]
+descr=U: Модуль вывода списка документов (вывод самой таблицы) Вызывается из tab_allDocs (Submit)
+
+input=
+output=HTML таблица документов
+parents=reports/all_docs
+childs=docs/view_doc
+testURL=?c=reports/all_docs_table&FULL_READ_ACCESS=Y
+author=Куняев, Яковлев
+[end]
+
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=U:Таблица всех документов
+LOG=ON 
+tableCfg=table_no
+$INCLUDE dat/common.dat[rowLinks] 
+[end]
+
+
+[report header]
+    $INCLUDE dat/common.dat[check login]
+    $INCLUDE [OK report header]  ??USER_ID>0|USER_ID<0
+[end]
+
+
+[OK report header]
+                    $SET_PARAMETERS srt=ifnull(dh.doc_date, dh.created); desc=desc; ??!srt
+                    $SET_PARAMETERS srn=1; rpp=20;  ??!srn
+                    $SET_PARAMETERS rpp=20; ??!rpp
+
+    ++++++++++++++++++ Шапка таблицы документов +++++++++++++++++++++ ??
+    <table id="allDocTabl"
+    class="table-hover allDoc-table-striped" cellspacing=0 style="padding: 5px 3px;">
+    <thead class="allDoc-thead">
+        <tr>
+            <th class="srh" sr="dh.ID" style="widht: 10%;"></th>
+            <th class="srh" sr="ifnull(dh.doc_date, dh.created)">Документ</th>             
+            <th class="srh" sr="dh.TITLE">Содержание</th>
+            <th class="srh" sr="dh.DIVS">Подразд.</th>
+            <th class="srh" sr="dh.created">Создан</th>
+            <th class="srh" sr="dh.status">Статус</th> 
+        </tr>
+    </thead>
+
+[end]
+
+
+[item]  *******
+    <tr class="pt" onClick="AjaxCall('doc_content', 'c=docs/view_doc&doc_id=#ID#&mode=popup', true, '',true);">??
+    $SET_PARAMETERS odd=; img=none;
+    $SET_PARAMETERS odd=oddRow; ??oddRow=1
+<tr class="#odd# doc_item" doc_id="#ID#"> ??
+<tr class="pt #odd#" onClick="AjaxCall('doc_content', 'c=mob/view_doc&doc_id=#ID#&mode=popup', true, '',true);">     
+<tr class="pt #odd#" onClick="AjaxCall('doc_content', 'c=mob/test&doc_id=#ID#&mode=popup', true, '',true);">         ??
+ 
+$INCLUDE [linkedMark]
+
+        <td>
+            $INCLUDE reports/all_docs_table[mark]  ??MARKED
+            #DOC_TYPE# 
+            №#NUMBER#  ??NUMBER
+            от #DOC_DATE#  ??DOC_DATE
+        </td>               
+        <td>#TITLE#</td> 
+        <td>#DIVS#</td>
+        <td>#CREATED#, #CREATOR#</td>
+        $INCLUDE admin/monitor/all_docs_table.ajm[status] 
+    </tr>
+
+    $INCLUDE [linkedData] ??!img=none
+
+    $SET_PARAMETERS MARKED=;
+
+[end]
+
+[window modal doc]
+        <div class="modal fade" id="WindowModalDoc" tabindex="-1" role="dialog">
+            <div class="modal-dialog-doc modal-lg">                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="dialog_title">
+                            <div id="dialog_title" style="float:left;">Просмотр документа</div>                                        
+                                <button class="btn-close" type="button" data-dismiss="modal">x</button>                                    
+                        </div>                   
+                        <div id="doc_content_doc" class="modal-body container-fluid"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+[end]
+
+[linkedData]
+<tr class="#odd#">
+    <td style="padding:0;"></td>
+    <td id="linked_#report##ID#" colspan=5 style="display:none; padding:0; border-left:dotted 1px gray; border-bottom:none 1px gray;"></td>
+</tr> 
+[end]
+
+[linkedMark]
+        +++++ картинки для показа связанных документов +++++++ ??
+        $SET_PARAMETERS img=up-down; ??pid>0&num_children>0
+        $SET_PARAMETERS img=up; ??pid>0&num_children=0
+        $SET_PARAMETERS img=down; ??num_children>0&!pid>0
+
+        <td style="white-space:nowrap; widht: 10%;" 
+         onClick="mobShowLinked(event, #ID#, '#img#', '#report#')"  ??!img=none
+        >
+            $SET_PARAMETERS color=green; 
+            $SET_PARAMETERS color=gray; ??VIEWED
+            <i class="fa fa-info" style="color:#color#; font-size:10pt;" aria-hidden="true"></i>   ??cnt>0&!hist_cnt>0
+            <img src="#imgPath#none.png" width=5 height=1> ??!cnt>0|hist_cnt>0 
+            <img src="#imgPath##img#.png" > ??img
+        </td> 
+
+[end]
+
+[info mark]
+    <td style="padding:0;">
+        #ID# ??USER_ID=2309
+        <img src="#imgPath#info_16.png" width=16 height=16> ??cnt>0&!hist_cnt>0
+        cnt=#cnt#; hist_cnt=#hist_cnt#; ??
+        </td> 
+[end]
+
+[mark]
+    <i class="fa fa-flag clr-red" aria-hidden="true"></i>
+[end]
+
+[report footer]
+    $SET_PARAMETERS NumTableCols=6;
+    <tr>
+        <td colspan=#NumTableCols# class="pager last">
+        $INCLUDE admin/monitor/all_docs[status legend]        
+        </td>
+    </tr>
+    <tr>
+        <td colspan=#NumTableCols# class="pager last">        
+        $INCLUDE mob/all_docs_table.ajm[rpp]  ??!NumTableRows=0
+        <input type=hidden name="rpp" value="#rpp#"> ??NumTableRows=0
+        </td>
+    </tr>
+    </table>
+ 
+    <script>
+        var mobShowLinked=function(event, id, img, report) {
+          event.preventDefault();
+          event.stopPropagation();
+          if(img === "none") return false;
+          var cont = $('#linked_' + report + id);
+        log(3,"mobShowLinked:" + img + "; " + 'linked_' + report + id + "; display=" + cont.css('display'));
+          if(cont.css('display') != 'none') cont.hide(100);
+          else {
+            AjaxCall('linked_' + report + id, 'c=mob/show_linked_docs&mode=list&doc_id=' + id, true);
+            cont.show(300);
+          }
+          return false;
+        }
+        $(".doc_item").click(openDoc);
+    </script>
+[end]
+
+***************************** Шаблон SQL запроса ***************************
+
+[SQL]
+    select
+        dh.ID, dh.TYPE_ID, dh.status
+        , left_dots(dtp.SHORT_NAME,48) AS DOC_TYPE
+        , dh.pid, dh.num_children
+        , dh.NUMBER, dh.TITLE, dh.STATUS, dh.DIVS
+        , DATE_FORMAT(dh.doc_date,'#dateFormat#') as DOC_DATE 
+        , DATE_FORMAT(dh.created,'#dateFormat#') as CREATED 
+        , dh.creator_id
+        , concat(ucr.F, '&nbsp;', left(IFNULL(ucr.I,''),1), '.', left(IFNULL(ucr.O,''),1),'.') as CREATOR
+                
+    from d_list dh
+    $INCLUDE [criteria]  
+    order by #srt# #desc#, dh.modified desc 
+[end]
+
+
+[criteria]
+    left join d_marked dm on (dm.doc_id=dh.id and dm.user_id=#USER_ID# )
+    left join d_types dtp on dtp.Id = dh.type_id
+    left join #table_users_full# ucr on ucr.id=dh.creator_id 
+     
+    join d_divs dd on (dd.doc_id=dh.id and dd.div_id in(#f_div_id#)) ??f_div_id
+    left join d_sent_FYI_count fyi on fyi.doc_id=dh.id and fyi.user_id=#USER_ID#
+    left join wf_history_count wfh on wfh.doc_id=dh.id and wfh.user_id=#USER_ID# 
+    left join d_access a on(a.doc_id=dh.id and a.doc_version=dh.version and a.user_id=#USER_ID#)
+
+where dtp.group_id<98
+    and extract(year from dh.created) in(#f_year#) ??f_year&!f_year=ALL&!f_doc_id
+    and dh.is_deleted=0  ??!f_doc_id&!f_doc_number
+    and dm.mark=1  ??f_marked
+    and dh.status in(#f_stat#) ??f_stat&!f_stat=-2
+    and dh.status in(1,2,3) ??!f_doc_id&!f_stat|f_stat=-2
+    and (dh.NUMBER like '#f_doc_number#%' or dh.NUMBER like '%-#f_doc_number#') ??f_doc_number
+    and dh.TYPE_ID = #f_doc_type_id# ??f_doc_type_id
+    and dh.creator_id=#f_initiator_id# ??f_initiator_id
+    and dh.id in(select doc_id from d_index where context like '%#f_search#%') ??f_search
+    and dh.id=#f_doc_id# ??f_doc_id
+
+    and dh.created > STR_TO_DATE('#creation_date_1#', '%d.%m.%Y')  ??creation_date_1
+    and dh.created <= STR_TO_DATE('#creation_date_2#', '%d.%m.%Y')  ??creation_date_2
+
+    $INCLUDE reports/all_docs[access_filter] ??!FULL_READ_ACCESS=Y
+    and (dh.is_confidential=0 or not fyi.cnt is null)
+[end]
+
+[rowLinks]
+    rowLink=|<a class=page href="javascript:#execute#; goToRow(#srn_i#);">#srn_i#-#ern_i#</a> ??!currentPage
+    rowLink=|<span class=actPage>#srn_i#-#ern_i#</span> ??currentPage
+    prevSetLink=<a class=page href="javascript:#execute#; goToRow(#srn_i#);"> <<< предыд. </a> 
+    nextSetLink=| <a class=page href="javascript:#execute#; goToRow(#srn_i#);"> следующие >>> </a>
+[end]
+
+[rpp] param: execute;
+    <font color=white> ??
+    <p style="float:left; padding: 0 0 0 10px;">Строк на странице:</p>
+    <select style="float:left; " name="rpp" class=small onChange="#execute#; goToRow(1);">
+        <option value="20"
+        selected ??rpp=20
+        >20
+        <option value="50"
+        selected ??rpp=50
+        >50 
+        <option value="100"
+        selected ??rpp=100
+        >100
+        <option value="9999"
+        selected ??rpp=9999
+        >не огр.  
+         ??user_group=sys
+    </select> 
+ <p style="float:left; padding: 0 0 0 10px;">Строки: #rowLinks# |</p>
+[end]

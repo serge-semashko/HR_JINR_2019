@@ -1,0 +1,626 @@
+body {
+    background-color: #FFFFFF; 
+    font-size:8pt; 
+    font-family: Verdana,Arial,Helvetica,sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+footer {
+    margin:2px;
+}
+.container-fluid {
+    padding: 5px 3px 5px 3px;
+    width: 100%;
+}
+.nav-tabs {
+    margin-left: 1px;
+    border: 1px solid #fff;
+}
+form {
+    font-size: 9pt;
+    font-weight: normal;
+}
+.btn-vihod {
+    background-color: #D3D3D3;
+    margin-top: 0px;
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    font-size: 10pt;
+    padding-left: 2pt;
+    padding-top: 3pt;
+    text-align: center;
+}
+#logo  {
+    margin-right: 20px;
+    float:left;
+}
+.img-poln {
+    width: 80px;
+    height: 38px;    
+    margin-top: -73px;
+    margin-left: 220px;    
+}
+.img-polnAll {
+    width: 80px;
+    height: 38px;    
+    margin-top: -59px;
+    margin-left: 220px;    
+}
+.img-out {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.hr-myDoc {
+    border: none; /* Убираем границу */
+    background-color: #506a1a; /* Цвет линии */
+    height: 7px; /* Толщина линии */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+}
+li.navb {
+    height: 20px;
+    width: 80pt;
+    font-size: 8pt;
+    margin-bottom: 1px;
+}
+li.myDoc-active>a {
+    background-color: #506a1a;
+    color: #f2f2f2;
+    padding-left: 3pt;
+    padding-right: 3pt;
+}
+li.myDoc-active>a:focus,
+li.myDoc-active>a:hover {    
+    background: #6B8E23;
+    color: #f2f2f2;
+}
+li.allDoc-noactive>a {
+    background-color: #05335e;
+    color: #f2f2f2;
+    padding-left: 3pt;
+    padding-right: 3pt;
+}
+li.allDoc-noactive>a:focus,
+li.allDoc-noactive>a:hover {    
+    background: #08457e;
+    color: #f2f2f2;
+}
+.hr-allDoc {
+    border: none; /* Убираем границу */
+    background-color: #05335e; /* Цвет линии */
+    height: 7px; /* Толщина линии */
+    margin-top: -15px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+}
+li.allDoc-active>a {
+    background-color: #05335e;
+    color: #f2f2f2;
+    padding-left: 3pt;
+    padding-right: 3pt;
+}
+li.allDoc-active>a:focus,
+li.allDoc-active>a:hover {    
+    background: #08457e;
+    color: #f2f2f2;
+    
+}
+li.myDoc-noactive>a {
+    background-color: #506a1a;
+    color: #f2f2f2;
+    padding-left: 3pt;
+    padding-right: 3pt;
+}
+li.myDoc-noactive>a:focus,
+li.myDoc-noactive>a:hover {    
+    background: #6B8E23;
+    color: #f2f2f2;
+}
+.main {
+    background-color: #F5F5F5;
+    border-right: 2px solid #fff;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;        
+    font-size: 8px;    
+}
+.btn-default,
+.btn-default:focus,
+.btn-default:hover  {
+    font-size: 9pt;
+    background: #FFFACD;
+    margin-bottom: 10px;    
+}
+.button2,
+.button2:focus,
+.button2:hover  {
+    width: 130px; 
+    margin: 5px;    
+    display: inline-block;
+    height: 35px;
+    font-size: 11px;
+    border-radius: 6px;    
+}
+.button3,
+.button3:focus,
+.button3:hover  {
+    width: 160px;        
+    height: 20pt;
+    font-size: 12px;
+    border: none;
+    background-image: none; 
+    background-color: transparent;
+    font-style: italic;
+    font-weight: bold;
+}    
+table {
+    font-size: 11px;
+    width: 100%; /* Ширина таблицы */
+    border-collapse: separate;
+    border-spacing: 1px;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 3px;/* Поля вокруг текста */
+    vertical-align: top;
+    
+}
+#allDocTabl td, th {
+    border: 1px solid #E1DFDF;
+    
+}
+.myDoc-thead {
+    font-weight: normal;
+    background: #800000;
+    color: #FFFFFF;
+}
+.allDoc-thead {
+    font-weight: normal;
+    background: #05335e;
+    color: #FFFFFF;
+}
+.table-striped>tbody>tr {
+    background-color: #FFFFFF;
+}
+.allDoc-table-striped>tbody>tr {
+    background-color:#FFFFFF;
+}
+.allDoc-table-striped>tbody>tr.oddRow {
+    background-color:#E6E6FA; 
+}
+.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: #FFC0CB;
+}
+.pt:hover, .table-hover>tbody>tr.doc_item:hover{
+    background-color:#FFE4B5;
+}
+.td-podz {
+    background-color:#FFFACD;
+    border-bottom: 1px solid #000000;
+}
+.form form {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.col1 {
+    text-align: right;
+    width: 25%;
+    white-space:nowrap; 
+    width:105px;
+}
+
+td>a,
+td>a:focus,
+td>a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.form-control {
+    font-size: 12px;    
+}
+
+.form-control:hover {    
+    background-color: #FFE4B5;
+}
+.form-control option:hover {    
+    background-color: #FFE4B5;
+}
+.form-control option{
+    background-color: #FFFFFF;
+}
+.clickable, .pt {
+    cursor:pointer;
+}
+.fieldset-myDoc {
+    border: none;
+    border-top: 1px dotted  #AAAAAA;  
+    padding: 5px 0;
+}
+.legend-myDoc {
+    margin: 5px 0 0 10px;
+    font-size: 12px;
+    padding: 3px 7px;
+    border: solid 1px #808080;
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: #000000;
+    width: auto;        
+}
+.form-group {
+    padding-top: 10px;
+}
+#allDocTabl,
+#docWiat{    
+    font: 11px Arial,sans-serif;       
+}
+#theForm {
+    padding-top: 10px;
+}
+td.pager a.page {
+    color:#0000d0; 
+    text-decoration: none; 
+    font-size:8pt;
+}
+td.pager .actPage {
+    color:#000000; 
+    font-weight:bold; 
+    font-size:8pt;
+}
+#dd_info {
+    border:solid 1px gray; 
+    position:absolute; 
+    width:10px; 
+    background-color:white; 
+    z-index: 990;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+table.dd_info td, 
+table.dd_info th {
+    border-bottom:dotted 1px gray; 
+    padding:1px 0 1px 4px; 
+    font-size:10pt;
+}
+table.dd_info th {
+    border:dotted 1px gray; 
+}
+
+.modal-dialog {  
+    margin: auto;
+    position: absolute;
+    top: 40%; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+}
+
+.logg {
+    text-align: right;
+    color:#808080;
+}
+.zagolovok {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial,sans-serif;
+}
+
+/* Оксана, я убрал этот класс "как класс". Вместо этого переписал .label
+Это проще, т.к. не надо во многих местах заменять .label на .namePole путем условия ??APP_VERSION=MOBILE 
+Для этого, правда, пришлось переписать то, что приехало с классом .label из bootstrap.min.css .label
+Есть некоторая опасность, что что-то нарушится в bootstrape, но я пока ничего плохого не обнаружил.
+Зато во многих файлах удалено условие APP_VERSION=MOBILE
+Еще там присутствует удаление класса big для APP_VERSION=MOBILE. Тоже не думаю, что это правдано.
+Может, проще (правильнее) класс .big перекрыть, если есть такая потребность?
+Короче, я тут порезвился немного и изрядно покосил эти условия, где нет необходимости.
+Плохого ничего не заметил. Если найдешь - решим.
+
+.namePole {
+    font-size: 12px;    
+    text-align: right;
+    font-family: Arial,sans-serif;
+    background-color: #F0F0F0;
+}
+
+*/
+
+.label, td.label, table.tlist td.label {
+    font-size: 12px;    
+    text-align: right;
+    font-family: Arial,sans-serif;
+    background-color: #F0F0F0;
+    color:black;
+    display:table-cell;
+    border:none;
+    white-space: normal;
+    font-weight: 100;
+}
+.docPole, .docPole> .mw1000> .pre-wrap  {
+    font-size: 12px;    
+    font-family: Arial,sans-serif;
+}
+.grey {
+    background-color: #F0F0F0;
+}
+.hrTabl {
+    border-bottom:double #989BA0;
+}
+.hrTabl1 {
+    border-top:double #989BA0;
+}
+.button-note {
+    font-size: 10px;
+    font-family: Arial,sans-serif;
+    font-style:italic;
+    background-color: #FFFFA0;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+}
+div .wrapperRek div .bottom_dotted,  div .wrapperRek div .label{
+    border-bottom: none;
+    background-color: transparent;
+}
+
+.row {
+    margin-right:0; 
+    margin-left:0;
+}
+.wrapper22 {
+    text-align:  left;
+}
+.butt1 {
+    margin: 10px;
+    width: auto;
+    height: 35px;
+    font-weight:normal;
+}
+#linked_cont {
+    z-index: 1;
+}
+.nameCol{
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+}
+#tgreen1 {
+    background-color: #ffffff;
+    color: #000000;
+    border: 0;
+    border-bottom: dotted 1px gray;
+    font-style: italic;
+}
+.resolu {
+    margin-left: 20px;
+    text-align: left;
+}
+.wrapperRek {
+    width: 100%;
+    display: table;    
+    border-collapse: collapse;    
+}
+.rowRek {
+    display: table-row;    
+      
+}
+.colRek {    
+    display: table-cell;
+    vertical-align: top;
+    padding: 6px;
+    width: 30%;
+    border-top: dotted 1px #000000;    
+}
+.colRek1 {    
+    display: table-cell;
+    vertical-align: top;
+    padding: 6px;
+    width: 70%;
+    text-align: left;
+    border-top: dotted 1px #000000;    
+}
+/* == Для разрешения 501px-1024px == */
+
+@media only screen and (max-width: 1024px),
+(min-device-width: 500px) and (max-device-width: 1024px) {
+    
+    .rowRek > .colRek {
+        float: left;
+        width: 35%;
+        display: table-cell;
+        padding: 6px;
+    }
+    .rowRek > .colRek1 {
+        float: right;
+        width: 65%;
+        text-align: left;
+        display: table-cell;
+        padding: 6px;
+    }
+    .rowRek {
+        display: table-row;
+    }
+   
+    #popupCont {
+        display: table-row;
+        width: 100%;
+        white-space: normal;        
+    }      
+    
+    div #popupCont table {
+        margin-top: 10px;
+    }
+    div #popupCont table tbody tr td textarea{
+        width: 230px;
+    }
+    div #popupCont table tbody tr td{
+        width: 160px;
+    }
+    div #popupCont table tbody tr fieldset legend{
+        width: 20px;
+        margin-top: -10px;
+        margin-left: 5px;
+        margin-bottom: -20px;
+    }
+    div #popupCont table tbody tr fieldset{
+        width: 470px;
+        font-size: 12px;
+        font-family: Arial,sans-serif;
+        padding-top: 10px;
+    }
+    div #show_doc_wf {             
+        width: 100%;
+    }    
+}
+/* == Для разрешения < 500px == */
+
+@media only screen and (max-width: 500px),
+(min-device-width: 0px) and (max-device-width: 500px) {
+    .wrapperRek {
+        display: table;        
+    }
+    .rowRek > .colRek {
+        width: 100%;
+        text-align: left;         
+    }
+    .rowRek > .colRek1{
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        font-weight: bold;        
+    }
+    #popupCont {
+        display: table-row;
+        width: 100%;
+        white-space: normal;
+    }
+          
+    div #popupCont table tbody tr td textarea{
+        width: 200px;
+    }
+    div #popupCont table tbody tr td{
+        width: auto;
+    }
+    div #popupCont table tbody tr fieldset legend{
+        width: auto;
+        margin-top: -10px;
+        margin-left: 5px;
+        margin-bottom: -20px;
+    }
+    div #popupCont table tbody tr fieldset{
+        width: auto;
+        font-size: 11px;
+        font-family: Arial,sans-serif;
+        padding-top: 10px;
+        white-space: normal;
+        margin: 0px;
+    }
+    div #show_doc_wf {             
+        width: 100%;
+    }
+    
+}
+#dialog {
+    display: table-row;
+    max-width: 700px;
+    white-space: normal;
+    font-family: Arial,sans-serif;
+    position: absolute; 
+    top: 200px;
+    display:none;        
+} 
+
+div #linked_cont {
+    font-family: Arial,sans-serif; 
+    text-align:left; 
+    position:absolute; 
+    padding:10px; 
+    top:80px; 
+    right:10px; 
+    width:250px; 
+    display:none; 
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6); 
+    border:solid 1px #1f697d; 
+    background-color:#ffffff;
+    margin-top: -45px;
+}
+div #show_doc_wf {
+    font-family: Arial,sans-serif;        
+    width: 900px;
+    font-weight: normal;
+}
+
+
+#user_comment {
+    width: 100px;
+    overflow: auto;
+}
+
+.btn-close {	
+    border-bottom: solid 2px #336699;
+    background: #336699;    
+    margin-top: -10px;
+    padding-top: 0;
+    padding-left: 7px;
+    color: white;
+    font-weight: bold;    
+    border-radius: 3px;
+    width:30px; 
+    height:30px; 
+    font-size: 20px;    
+    float:right;
+}
+.dialog_title {
+    height: 30px;
+    border-bottom: solid 1px #336699;    
+    border-radius: 3px;
+    font-size: 13px;    
+    text-align: left;
+    margin-top: 0;
+    width: auto;
+}
+ 
+#dialog_title {
+    padding-top: 5px;
+    font-size: 13px;
+}
+#doc_window_title {
+    padding-top: 5px;
+    font-size: 13px;
+}
+
+div #popupCont table tbody tr fieldset legend{
+    width: 20px;
+    margin-top: -10px;
+    margin-left: 5px;
+    margin-bottom: -20px;
+}
+div #popupCont table tbody tr fieldset{
+     width: auto;
+     font-size: 11px;
+     font-family: Arial,sans-serif;
+     padding-top: 10px;
+     white-space: normal;
+     margin: 0px;
+}
+
+.white-space {
+    word-break:break-all;
+}
+
+div #WndowModalDoc {
+    width: 100%;
+}
+div #graph_doc_wf fieldset legend {
+    width: 180px;
+    font-size: 13px;
+}
+
+

@@ -1,0 +1,108 @@
+JINR/doc_13_protocol_ZK_tender.ajm
+
+[comments]
+descr=Печать списка участников конкурсов закупочных комиссий.
+input=tp_doc_id - ID родительского документа (из таблицы d_list)
+output=HTML форма просмотра списка участников конкурсов закупочных комиссий
+parents=JINR/doc_13_protocol_ZK.mod
+childs=
+testURL=?c=JINR/doc_13_protocol_ZK_tender&tp_doc_id=
+author=Яковлев, Куняев
+[end]
+
+[description]
+Модуль вывода данных участников конкурсов закупочных комиссий.
+[end]
+
+
+[parameters]
+request_name=U:Печать списка участников конкурсов закупочных комиссий
+service=jinr.sed.ServiceViewDoc  ??
+service=dubna.walt.service.TableServiceSpecial
+tableCfg=table_no
+LOG=ON
+t_start=<table class="item"><tr><td class="label">
+t_mid=</td><td class="cont">
+t_lab=</td><td class="label">
+t_end=</td></tr></table>
+SYS_FIELDS=DOC_ID
+SYS_FIELDS_TYPES=int
+[end]
+
+
+[report header]
+$SET_PARAMETERS SQL_mode = #mode#;  ??
+$SET_PARAMETERS TENDER_PART_NUM = 0;
+<table>
+[end]
+
+
+[report footer]
+</table>
+[end]
+
+
+[item]
+$SET_PARAMETERS TP_PROVIDER_ID=0; TP_PROVIDER=; TP_PRODUCT=; TP_TECHNICAL_TASK=; TP_COMMENT=;
+$SET_PARAMETERS TP_VAT=; TP_DELIVERY_TIME=; TP_GUARANTEE=; TP_TERMS_OF_PAYMENT=; TP_BANK_GUARANTEE=;
+
+$GET_DATA [getMoreInfo]  ??TP_DOC_ID
+
+<tr><td width='50'></td><td width='130'>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td width='50'></td><td colspan='2'>#TENDER_PART_NUM#. &nbsp;#TP_PROVIDER#</td></tr>
+
+<tr><td></td><td>Стоимость:</td><td>#TP_COST#</td></tr>  ??TP_COST
+
+<tr><td></td><td>Характеристика <br> товара:</td><td>#TP_PRODUCT#</td></tr> ??TP_PRODUCT
+
+<tr><td></td><td>Ставка НДС:</td><td>#TP_VAT#</td></tr>  ??TP_VAT
+
+<tr><td></td><td>Срок поставки:</td><td>#TP_DELIVERY_TIME#</td></tr>  ??TP_DELIVERY_TIME
+
+<tr><td></td><td>Гарантия:</td><td>#TP_GUARANTEE#</td></tr> ??TP_GUARANTEE
+
+<tr><td></td><td width='130'>Условия оплаты:</td><td>#TP_TERMS_OF_PAYMENT#</td></tr>  ??TP_TERMS_OF_PAYMENT
+
+<tr><td></td><td>Банковская <br>гарантия:</td><td valign='center'>#TP_BANK_GUARANTEE#</td></tr>  ??TP_BANK_GUARANTEE
+
+<tr><td></td><td>Соответствие <br> конкурсной <br> документации:</td><td>#TP_TECHNICAL_TASK#</td></tr>  ??TP_TECHNICAL_TASK
+
+<tr><td></td><td>Дополнительно:</td><td>#TP_COMMENT#</td></tr>  ??TP_COMMENT
+
+
+[end]
+
+[SQL]
+    select TP_d_data.doc_id AS TP_DOC_ID
+    from d_data_14 TP_d_data
+    left join d_list dh on dh.id = TP_d_data.doc_id
+    where dh.pid = #tp_doc_id# and dh.is_deleted=0
+[end]
+
+[getMoreInfo]
+    SET @row_num = #TENDER_PART_NUM#;
+
+    select TP_d_data.doc_id  AS TP_DOC_ID
+    , (@row_num + 1) AS TENDER_PART_NUM
+    , provider_id AS TP_PROVIDER_ID
+    , product_specification AS TP_PRODUCT
+    , VAT AS TP_VAT
+    , delivery_time AS TP_DELIVERY_TIME
+    , guarantee AS TP_GUARANTEE
+    , terms_of_payment AS TP_TERMS_OF_PAYMENT
+    , concat(replace(FORMAT(IFNULL(CAST(cost as CHAR),' '),2),',',' '), ' ', cost_curr) AS TP_COST
+    , bank_guarantee AS TP_BANK_GUARANTEE
+    , technical_task AS TP_TECHNICAL_TASK  ??
+    , (case when technical_task = 1 then 'да' else 'нет' end) AS TP_TECHNICAL_TASK
+    from d_data_14 TP_d_data
+    where TP_d_data.doc_id = #TP_DOC_ID#
+    ;
+    select full_name AS TP_PROVIDER
+    from i_jinr_tender_participant
+    where id = #TP_PROVIDER_ID#
+    ;
+    select comment as TP_COMMENT
+    from d_list
+    where id = #TP_DOC_ID#
+[end]

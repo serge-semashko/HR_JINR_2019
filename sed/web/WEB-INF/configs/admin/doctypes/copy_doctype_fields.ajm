@@ -1,0 +1,171 @@
+admin/doctypes/copy_doctype_fields.ajm
+
+
+[comments]
+descr=A: Просмотр формы  ввода документа
+
+input=type_id - ID типа документа 
+output=HTML форма редактирования документа, 
+parents=tab_myDocs.cfg
+childs=docs/edit_doc_form.ajm
+test_URL=?c=docs/edit_doc&doc_id=1
+author=Куняев
+[end]
+
+[description]
+Общая часть:
+<ul>
+<li>Получение информации о структуре документа</li>
+<li></li>
+</ul>
+[end]
+
+
+[parameters]
+request_name=U:
+service=dubna.walt.service.TableServiceSpecial
+tableCfg=table_no
+LOG=ON
+
+[end]
+
+
+
+
+
+
+[report header]
+
+$SET_PARAMETERS ALL_FIELD_IDS =;
+
+<input type=hidden name="all_field_ids" id="all_field_ids" value="">
+<input type=hidden name="selected_field_ids" id="selected_field_ids" value="">
+
+$GET_DATA [getFieldsIds]
+++++++++++++++++++ Шапка таблицы документов +++++++++++++++++++++ ??
+<table class="tlist tblue" cellspacing=0>
+
+<tr>
+<th class="pt" onClick="$('.CH_BX').click();"></th>
+<th>Название поля</th>
+<th>Вид поля</th> 
+<th>Тип данных</th> 
+<th>Тип поля формы</th> 
+
+</tr>
+
+<script type="text/javascript">
+    $("##all_field_ids").val('#ALL_FIELD_IDS#');
+
+    function setSelectedFields(){
+        var field_id_srt = '';
+        var curr_field_id_srt = '';
+        if($("##all_field_ids").val().length > 0 ){
+            var formatted_all_field_ids = $("##all_field_ids").val().substring(0, $("##all_field_ids").val().length-1)
+            var all_ids = formatted_all_field_ids.split(",");
+
+            for(i = 0 ; i < all_ids.length; i++){
+                var curr_id = all_ids[i];
+                if ($("##select_field_chbx_" + curr_id).prop('checked')){
+                    curr_field_id_srt += curr_id + ",";
+                }
+            }
+            if(curr_field_id_srt.length > 0 ){
+                field_id_srt = curr_field_id_srt.substring(0, curr_field_id_srt.length-1);
+            }
+        }
+        $("##selected_field_ids").val(field_id_srt);
+
+    }
+
+</script>  
+[end]
+
+
+
+[item]
+<tr>
+
+<td>
+<input type="checkbox" class='CH_BX' onclick="setSelectedFields();" name="select_field_chbx_#FIELD_ID#" id="select_field_chbx_#FIELD_ID#">
+</td> 
+
+<td>
+#NAME#
+<br><div style="float:left; background-color: ##ffe0e0; border:solid 1px red; padding:2px;">помечено на удаление</div> ??IS_ACTIVE=0
+<br><div style="float:left; background-color: ##ffffc0; border:solid 1px ##c0c000; padding:2px;">новое</div> ??IS_ACTIVE=2
+
+</td> 
+
+<td>
+(#FIELD_CATEGORY#)
+Служебное  ??FIELD_CATEGORY=1
+Определено пользователем  ??FIELD_CATEGORY=2  
+  ??FIELD_CATEGORY=3  
+</td> 
+
+<td>#TYPE#</td> 
+
+<td>(#FORM_FIELD_TYPE#) #FORM_FIELD_TYPE_NAME#</td> 
+
+</tr>
+
+[end]
+
+
+
+
+
+
+
+[report footer]
+</table>
+
+[end]
+
+
+***************************** Шаблоны SQL запросов ***************************
+    Запрос на выборку и обновление собственно данных документа 
+    формируется в сервисе ServiceEditDocData
+==============================================================================
+
+
+
+[SQL]
+select /* doc data fields description */
+  dtf.id as "FIELD_ID"
+, dtf.NR, dtf.NAME, dtf.TYPE, dtf.SIZE, dtf.FORM_FIELD_TYPE, dtf.FIELD_DB_NAME, dtf.field_category as FIELD_CATEGORY
+, dtf.NULLS, dtf.mand
+, dtf.IS_ACTIVE, dtf.IS_VISIBLE, dtf.rw_4_roles
+, dtf.INFO_ID, dtf.info_view_nr as INFO_VIEW
+
+, ft.comment AS "FORM_FIELD_TYPE_NAME"
+
+, case when dtf.autoResize=1 then 'Y' else '' end as "AUTORESIZE" ??
+, ifnull(dtf.lx, 400) as LX, ifnull(dtf.ly, 40) as LY, ROUND((ifnull(dtf.ly, 40) + 5)/15) as ROWS  ??
+, dtf.maxWidth  ??
+, ft.src_file as "FIELD_SRC_FILE"  ??
+
+
+from d_fields dtf
+left join d_form_fields_types ft on (ft.id = dtf.form_field_type)
+left join d_list dh on dtf.type_id = dh.type_id  ??
+where dtf.type_id=#type_id#
+order by nr
+[end]
+
+
+, ft.section_r  ??request=read
+, ft.section_w   ??!request=read 
+    as "FIELD_SECTION"
+, ft.section_w  as "FIELD_SECTION_RW"
+
+
+[getFieldsIds]
+select concat(dtf.id, ',') AS "ALL_FIELD_IDS"
+from d_fields dtf
+left join d_form_fields_types ft on (ft.id = dtf.form_field_type)
+left join d_list dh on dtf.type_id = dh.type_id  ??
+where dtf.type_id=#type_id#
+order by nr
+[end]

@@ -1,0 +1,211 @@
+mob/blocks.dat
+
+
+[head]
+$SET_PARAMETERS rootPath=/sed/mobile/;
+$SET_PARAMETERS_SESSION APP_VERSION=MOBILE;
+$SET_PARAMETERS APP_VERSION=MOBILE;  ??
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <!-- Кодировка веб-страницы -->
+        <meta charset="utf-8">
+        <!-- Настройка viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>СЭД мобильный</title>
+        <link rel="shortcut icon" href="favicon.ico?v=1.1.1" type="image/x-icon">
+
+        <!-- Подключаем Bootstrap CSS -->
+        <link rel="stylesheet" href="#rootPath#BS/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="#rootPath#css/mobile.css" >        
+
+        <!-- Подключаем jQuery -->
+        <script src="#rootPath#js/jquery-3.3.1.js"></script>
+        <!-- Подключаем Bootstrap JS -->
+        <script src="#rootPath#BS/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="#jsPath#jquery-ui-1.10.1.css" /> 
+    <script src="#jsPath#jquery-ui-1.10.1.min.js" type="text/javascript"></script>
+
+    $INCLUDE mob/blocks.dat[debug css]
+
+    $INCLUDE free/main_js_noDB.cfg[js]
+
+    <script type="text/javascript">
+    /**
+     * НЕ УДАЛЯТЬ! Эта функция переписывает определенню в free/js_jQuery.dat! 
+     */
+        var setStandardEvents=function() { ;   }
+    </script>
+[end]
+
+
+[top]
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="text-align:right">
+                <img id="logo" src="#rootPath#images/logo_russian.png" width="90" height="30">                    
+                <a href="vhod.html"><img class="img-out" src="#rootPath#images/power.png"></a>
+            </div>   
+        </div>
+    </div>
+Конструкция class="nav nav-tabs" для вкладок такого вида ??
+    <ul class="nav nav-tabs">
+        <li class=
+            "myDoc-active navb"     ??c=mob/tab_myDocs
+            "myDoc-noactive"   ??!c=mob/tab_myDocs
+            style="white-space:nowrap;"> <a href="#ServletPath#?c=mob/tab_myDocs">Мои документы</a>
+        </li>
+        <li class=
+            "allDoc-active navb"     ??c=mob/tab_AllDocs
+            "allDoc-noactive"   ??!c=mob/tab_AllDocs
+            > <a href="#ServletPath#?c=mob/tab_AllDocs">Все документы</a>
+        </li>        
+    </ul>
+[end]
+
+[footer]
+        <script>
+            var openDoc = function (ev) {
+                var doc_id = $(ev.target).parents().attr("doc_id");
+                window.location.href = "#ServletPath#?c=mob/view_doc&doc_id=" + doc_id;
+            };
+            $(".doc_item").click(openDoc);
+        </script>
+$SET_PARAMETERS showFrames=on;
+    <iframe width=400 
+        height=0 frameborder="0" ??!showFrames=on
+        height=200 scrolling="auto" frameborder="1" style="border:dotted 1px ##a0e0a0;" ??showFrames=on
+        name="wf" id="wf"></iframe>  
+    </body>
+    
+    <footer>
+        <p>&copy; ОИЯИ 2015-2018</p>
+    </footer>
+    </html>  
+[end]
+
+[popup divs] ======= POP-UP DIVs ==========
+    ----------------- Тень под документом --------------- ??
+    <div id="doc_overlay" class="dialog_overlay" style="z-index: 90; height:200%;"></div>   
+
+    ----------------- Контейнер для документа  --------------- ??
+    <div id="doc_container" style="position: absolute; left: 0px; top: 0px; display:none; 
+            margin:0; 
+            width:100%;
+            z-index: 91; background-color:##efefef; border:solid 1px ##606060;">
+        <div id="doc_container_title" class="dialog_title right">
+            <div id="doc_window_title" style="float:left; padding-left:10px;">Просмотр документа</div>
+            <div class="btn btn-close" onClick="showDoc(false);">x</div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="doc_content" style="padding:10px;"></div>
+    </div>
+
+    ----------------- Тень под диалогом --------------- ??
+    <div id="overlay" class="dialog_overlay"></div>   
+    ----------------- POP-UP диалог --------------- ??
+    <div id="dialog" class="dialog" style="position: absolute; top: 200px; display:none;">
+        <div class="dialog_title right" >
+            <div id="dialog_title" style="float:left;"></div>
+            <div class="btn btn-close" onClick="HideDialog();">x</div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="popupCont"></div>
+    </div>
+
+    ----------------- Тень под справочником --------------- ??
+    <div id="sprav_overlay" class="dialog_overlay" style="z-index: 900; background: ##888888; "></div>   
+
+    ----------------- POP-UP справочник ----------------- ??
+    <div id="d_sprav_window" class="dialog" style="position: absolute; left: 0px; top: 0px; max-width:100%; z-index: 905; display:none;">
+        <div class="dialog_title right" >
+            <div id="sprav_title" style="float:left;">Загрузка данных справочника</div>
+            <div class="btn btn-close" onClick="hideSprav();">x</div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="d_spravCont" style="display:block; 
+            height:90%; overflow:auto; ??
+        ">....</div>
+    </div>
+
+    ----------------- DD-справочник ----------------- ??
+    <div id="dd_info"></div>
+
+    ----------------- POP-UP TOOLTIP ----------------- ??
+    <div id="d_tooltip" class="tooltip"></div>
+
+    ----------------- POP-UP PROGRESSBAR ----------------- ??
+    <div id="progressbar_wrapper"> ??
+        <span onClick="showLoading(false);">Загрузка...</span> ??
+        <div id="progressbar"></div>??
+        <div id="progress-label" style="text-align:right; font-size:8pt;">Loading...</div>??
+    </div>??
+[end]
+
+[login]
+    $SET_PARAMETERS_SESSION VU=;
+    $SET_PARAMETERS param=%3Fsid=#sid#; ??sid
+    $SET_PARAMETERS param=%3Fchspwd=1&key=#key#; ??chspwd=1
+    <br><br><p><center><span style="font-size:13pt;">Вход в СЭД "Дубна" ОИЯИ</span>
+    <br><br>
+    <iframe width=400 height=90 frameBorder=no scrolling=no src="#loginURL#?c=wlogin_dms&amp;back_url=#back_url##param#"></iframe> 
+
+    <div class=big>
+       <!-- (для входа используется тот же логин-пароль,<br> что и в системах 
+        <a href="https://adb2.jinr.ru/adb/adb">ADB2</a> и 
+        <a class="pt" href="https://baza.jinr.ru/arch/arch">"База документов ОИЯИ"</a> &nbsp;)-->
+        $INCLUDE oauth_check_user.cfg[login link] ??!USER_ID
+        <br><br>
+        <small>По вопросу регистрации в системе обращайтесь<br>
+            к администратору СЭД Вашей лаборатории<br>или в Cекретариат.
+        </small>
+        <br><br>
+        Забыли пароль? 
+        <input type="button" class="butt1 pt" style="width:110;" value='Восстановить' onClick="AjaxCall('login_div', 'c=user/reset_pwd');" >  
+    </div>
+    </center>
+[end]
+
+[form]
+    <form name="theForm" method="POST" enctype="multipart/form-data" 
+    onSubmit="return doIt();"  ??
+    target="wf" id = "theForm"
+    autocomplete="off"
+    >
+    <input type=hidden name="c" value="#c#">
+    <input type=hidden name="cop" value="">
+    <input type=hidden name="lang_" value="">
+    <input type=hidden name="request_param" value="">
+
+    <script type="text/javascript">
+        var doIt=function ()
+        { 
+            alert("doIt - не определено!"); 
+            return false;
+        }
+        var submitForm=function(){
+            alert("submitForm - не определено!"); 
+        }
+    </script>
+[end]
+
+[debug css]
+    <style type="text/css"> 
+        .doc_item {cursor:pointer;}
+....................... object_table .............................. ??
+        table.object_table th {background-color: ##5C753B; color:white; text-align:left;
+            border: 1px solid gray; border-left: none; border-right: 1px dotted gray; ??
+            padding:2px;
+        }
+
+        table.object_table td {border-top: 1px dotted gray; font-size: 10pt; padding:3px; text-align:left;} 
+        tr.total_row td { font-weight: bold; text-align:right; font-size:10pt; white-space:nowrap; background-color: white; border-right: 1px dotted gray; border-top: solid 1px gray; border-bottom: solid 1px gray; }
+
+        table.edit_object_table {max-width:1100px;}
+        table.edit_object_table td {border:none; padding:7px;}
+        table.edit_object_table td.label {white-space:nowrap;}
+
+    </style>
+[end]

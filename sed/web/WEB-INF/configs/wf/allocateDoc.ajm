@@ -1,0 +1,85 @@
+wf/allocateDoc.ajm
+
+[comments]
+descr=U: Взять документ на рассмотрение
+
+input=[step_id - ID шага WF] ИЛИ [doc_id - ID документа
+output=в таблице wf отмечается result=взят на рассмотрение
+parents=docs/doc_user_action.cfg
+childs=
+author=Куняев
+[end]
+
+[description]
+<ol>
+    <li></li>
+</ol>
+[end]
+
+[parameters]
+request_name=U:Взять  док.#doc_id# на рассмотрение
+LOG=ON
+[end]
+
+
+[report]
+    $CALL_SERVICE c=sys/getARUD; ??!AR_R=Y&USER_ID
+    $GET_DATA docs/view_doc.mod[getDocInfo]
+AR_R=#AR_R#; WF_ID=#WF_ID#; CURR_STEP=#CURR_STEP#; CURR_STEP_ROLE_ID=#CURR_STEP_ROLE_ID#; ??
+    $INCLUDE [report_] ??AR_R=Y&WF_ID&CURR_STEP
+  ??&CURR_STEP_ROLE_ID
+[end]
+
+[report_]
+HERE! doc_id=#doc_id#; take=#take#; USER_ID=#USER_ID#; ??
+    $INCLUDE [process]     
+    $GET_DATA [check] 
+    $INCLUDE [cb] ??AR_S=Y|AR_X=Y
+    взят на рассмотрение: <b>#STEP_MODIFIER#,</b> #STEP_MODIFIED#  ??STEP_MODIFIER
+    #ERROR#
+    $LOG  take=#take#; USER_ID=#USER_ID#;<br>
+[end]
+
+[cb]
+    <input type=checkbox name="DOC_ALLOCATED" onClick="doAllocate(this.checked);"
+        checked ??STEP_MODIFIER
+        disabled ??STEP_MODIFIER_ID&!STEP_MODIFIER_ID=#USER_ID#
+    > 
+    <b>Взять документ на рассмотрение</b> ??!STEP_MODIFIER
+[end]
+
+[process]
+    $GET_DATA [allocate]    ??cop=true
+    $GET_DATA [deallocate]  ??cop=false
+[end]
+
+
+
+==============================================================
+==============================================================
+==============================================================
+[check]
+    select DATE_FORMAT(w.modified,'#dateTimeFormat#') as STEP_MODIFIED
+        , w.modifier_id as STEP_MODIFIER_ID , u.FIO as STEP_MODIFIER
+    from wf w
+        left join a_users_jinr u on u.Id = w.modifier_id
+    where wf_id=#WF_ID# and step=#CURR_STEP#
+        and result='взят на рассмотрение.'
+[end]
+
+[allocate]
+    update wf set result='взят на рассмотрение.', modified=now(), modifier_id=#USER_ID#
+    where id=#CURR_STEP_ID# and is_active=1
+    ;
+    update wf set is_active=0, comment='не требуется', modified=now(), modifier_id=#USER_ID#
+    where wf_id=#WF_ID# and step=#CURR_STEP#
+        and role_id=#CURR_STEP_ROLE_ID#
+        and (result is null or not result='взят на рассмотрение.')
+[end]
+
+[deallocate]
+    update wf set result='', comment='', is_active=1, modified=now()
+        , modifier_id=0
+        , modifier_id=#USER_ID# ??
+    where wf_id=#WF_ID# and step=#CURR_STEP# and role_id=#CURR_STEP_ROLE_ID#
+[end]

@@ -1,0 +1,60 @@
+tab_allDocs.ajm
+
+[comments]
+descr=U: Вывод таба "Все документы" 
+
+input=none
+output=HTML форма списка документов
+parents=main.cfg
+childs=reports/all_docs.cfg
+testURL=?c=tab_allDocs
+author=Куняев
+[end]
+
+
+[parameters]
+request_name=U:Список всех документов
+LOG=ON
+debug=off
+[end]
+
+[report]
+$INCLUDE dat/common.dat[check login]
+$INCLUDE [report_] ??USER_ID
+[end]
+
+[report_]
+$SET_PARAMETERS srt=dh.status; desc=; ??!srt&ZZZ
+$SET_PARAMETERS srt=ifnull(dh.doc_date, dh.created); desc=desc; ??!srt
+<div id="all_docs"></div>
+
+<script type="text/javascript">
+var submitForm=function(reset) {
+    log (3, "tab_allDocs.ajm.submitForm(); srn=" + document.theForm.srn.value + "; ");
+    if(reset) {
+        document.theForm.srn.value=1;
+    }
+    AjaxCall("all_docs", "c=reports/all_docs", true, "filters_div",true);    
+    return false;
+}
+
+
+var resetSort=function(){
+    document.theForm.srt.value="dh.status"; ??
+    document.theForm.desc.value="";  ??
+    document.theForm.srt.value="ifnull(dh.doc_date, dh.created)"; 
+    document.theForm.desc.value="desc";
+    document.theForm.srn.value=1; 
+}
+
+$SET_PARAMETERS f_doc_type_id=6; f_stat=3; ??!f_doc_type_id&!srn&USER_ID=4722
+$SET_PARAMETERS f_doc_type_id=1;    ??!f_doc_type_id&!srn&SSS
+
+AjaxCall("all_docs","c=reports/all_docs&f_doc_type_id=#f_doc_type_id#&f_stat=#f_stat#&f_year=#CURR_YEAR#",true,"",true);
+
+setModule("reports/all_docs");
+showPageTop(true);
+
+
+</script>
+[end]

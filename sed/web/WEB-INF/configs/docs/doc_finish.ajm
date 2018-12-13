@@ -1,0 +1,72 @@
+docs/doc_finish.ajm
+
+[comments]
+descr=S: Автоматическая отметка о завершении документа.
+input=doc_id - ID документа
+output=
+parents=
+childs=
+author=Куняев
+[end]
+
+[parameters]
+request_name=S: Автоматическая пометка документа завершенным
+LOG=ON
+[end]
+
+
+
+[report]
+    $CALL_SERVICE c=sys/getARUD;   
+    $CALL_SERVICE c=wf/check_next_step; ??
+    $INCLUDE [OK report]  ??AR_A=Y|AR_T=Y|AR_X=Y
+    $CALL_SERVICE c=sys/log_doc_access; access_type=4; rejected=1;    ??!AR_A=Y&!AR_T=Y&!AR_X=Y
+[end]
+
+
+[OK report]
+    $GET_DATA [get last step] ??!CURR_STEP_ID&WF_ID
+    $SET_PARAMETERS result_code=#~doc_action_processed#; step_id=#CURR_STEP_ID#; autofinish=Y; comment_opened=Y;
+
+    $SET_PARAMETERS INPUT_ERROR=;
+    $SET_PARAMETERS user_comment=auto; COMMENT_OK=Y; ??!user_comment
+
+    $GET_DATA [count other steps]  ??!ERROR&WF_ID
+    $SET_PARAMETERS ERROR=Есть незавершенные шаги; ??NUM_OTHER_STEPS>0
+    $INCLUDE [really process] ??!ERROR
+    $LOG_ERROR #ERROR# #INPUT_ERROR# ??ERROR
+    <center><b>ДОКУМЕНТ ЗАВЕРШЕН!</b></center> ??!ERROR
+    <center><b>ОШИБКА: #ERROR#!</b></center> ??ERROR
+<script>
+AjaxCall('doc_wf', 'c=wf/show_wf_for_doc&doc_id=#doc_id#');
+</script>
+[end]
+
+
+[really process] ----- Выполнение команды, если все ОК ------
+    $CALL_SERVICE c=wf/user_action; result_code=#~doc_action_processed#; ??WF_ID
+    $GET_DATA [just mark doc]  ??!WF_ID
+[end]
+
+[get last step]
+    select max(id) as "CURR_STEP_ID" 
+    from wf 
+    where wf_id=#WF_ID# 
+        and is_active=1
+        and step_type<3
+[end]
+
+[count other steps]
+    select count(*) as NUM_OTHER_STEPS 
+    from wf 
+    where wf_id=#WF_ID# 
+        and step>#CURR_STEP# 
+        and is_active=1
+        and step_type<3
+        and finished is null 
+[end]
+
+
+[just mark doc]
+    update d_list set status=3 where id=#doc_id#
+[end]

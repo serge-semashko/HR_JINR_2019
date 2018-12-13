@@ -1,0 +1,84 @@
+JINR/doc_21_fields.dat
+
+[comments]
+descr=S: Поля для заявки на закупку персональных компьютеров и оргтехники (doc_type=21)
+input=поля для заявки на закупку персональных компьютеров и оргтехники
+output=
+parents=docs/edit_doc.cfg
+childs=
+author=Куняев, Яковлев
+[end]
+
+
+
+=================== 1022 - Конфигурация приобретаемой Техники (объект 22) =======================
+[configuration_list_read]  
+    $STORE_PARAMETERS
+    $SET_PARAMETERS INITIATOR_COMMENT=; 
+    $LOG3 Configuration collection: FIELD_DB_NAME=#FIELD_DB_NAME#;
+    </td></tr>
+
+    <tr><td colspan=2 class="bottom_dotted" style="text-align:right;">
+        <div id="collection_#doc_id#_#TYPE#" class="embedded_object" style="max-width:1400px; float:right;">
+            $CALL_SERVICE c=obj/show_collection;
+        </div>
+    $RESTORE_PARAMETERS  ??!mode_write=Y
+[end]
+
+
+[configuration_list_write]
+    $SET_PARAMETERS editable=Y; mode_write=Y;
+    $SET_PARAMETERS COLLECTION_DOC_TYPE=#TYPE#; PARENT_DOC_ID=#doc_id#; 
+
+    $INCLUDE JINR/doc_21_fields.dat[configuration_list_read]
+    $INCLUDE JINR/doc_21_fields.dat[add first configuration] ??!MODIFIER
+    $RESTORE_PARAMETERS 
+[end]
+
+[add first configuration]
+    <style type="text/css">
+        table.object_table td {border-top: 1px dotted gray; font-size: 10pt; padding:3px;}
+        table.edit_object_table, table.edit_object_table td.label {background-color: ##fdffd8;}
+        table.edit_object_table td {border:none;} 
+    </style>
+
+    <script type="text/javascript" language="JavaScript">
+        var add_config=function() {$("##add_#FIELD_DB_NAME#").click();} ??
+        var add_config=function() {
+log(2," JINR/doc_21_fields.dat.add_config(): container=edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#");
+            $('##edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#').show(); 
+            $('##edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#').html('NEW CONF!'); 
+            AjaxCall('edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#'
+                , 'c=obj/create_object&container=edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#&doc_id=#PARENT_DOC_ID#&COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#&title_section=#title_section#&total_row_section=#total_row_section#'
+                , true);
+            $('##add_#FIELD_DB_NAME#').hide(); 
+        }
+
+        window.setTimeout(add_config, 500);
+    </script>
+[end]
+
+
+[zzzadd first source]
+    <script type="text/javascript" language="JavaScript">
+        src_type_id ??
+        var add_src=function() {$("##add_#FIELD_DB_NAME#").click();} ??
+        var add_src=function() {
+                    event.preventDefault(); event.stopPropagation(); ??
+            $('.edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#').show(); 
+            $('.object_edit_form').html('HERE!'); 
+            AjaxCall('edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#', 'c=obj/create_object&container=edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#&doc_id=#PARENT_DOC_ID#&COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#&title_section=#title_section#&total_row_section=#total_row_section#', true);
+            $('##add_#FIELD_DB_NAME#').hide(); 
+        }
+
+        window.setTimeout(add_src, 500);
+    </script>
+[end]
+
+
+
+[configuration_list_save]
+$LOG ========= [configuration_list_save] WORKS! =========<br>
+[end]
+
+

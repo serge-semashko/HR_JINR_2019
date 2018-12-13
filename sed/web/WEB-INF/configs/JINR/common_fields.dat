@@ -1,0 +1,321 @@
+JINR/common_fields.dat
+
+
+=================== 1011 - Сотрудник ОИЯИ =======================
+[f_1011_W]
+    $INCLUDE dat/doc_fields_info.dat[info]
+[end]
+
+[f_1011_R]
+    $SET_PARAMETERS person_posts=; person_phone=; person_email=; f_val=;
+    $SET_PARAMETERS f_name=#FIELD_DB_NAME#; f_id_name=#FIELD_DB_NAME#_id; 
+    $SET_PARAMETERS f_id_value=^#f_id_name#; f_val=^#FIELD_DB_NAME#;
+    FIELD_DB_NAME=#FIELD_DB_NAME#; f_val=#f_val#; f_id_value=#f_id_value#; ??
+    $GET_DATA JINR/common_fields.dat[get person info]  ??f_id_value
+    <b>#f_val#</b> 
+    <i class="fa fa-phone" aria-hidden="true" style="margin:0 3px 0 10px;"></i>#person_phone#  ??person_phone
+    &nbsp;  <a href="mailto:#person_email#"><i class="fa fa-envelope-o" aria-hidden="true"></i> #person_email#</a> ??person_email
+    <br><small>#person_posts#</small>
+[end]
+
+
+===========================================================================
+=============== Создание / изменение полей в таблице данных================
+=============== для типа Сотрудник ОИЯИ (1011) ================
+===========================================================================
+[f_1011 DB]
+    $GET_DATA dat/doc_fields_info.dat[add info fields] ??cop=add
+    $GET_DATA dat/doc_fields_info.dat[drop info fields] ??cop=del
+    $GET_DATA dat/doc_fields_info.dat[update info fields] ??cop=u
+[end]
+
+
+[get person info]
+select post as "person_posts" from info_11 where person_id=#f_id_value# and usl_rab not like '%по совместительству%' 
+;
+select posts as "person_posts" from info_11 where person_id=#f_id_value#  limit 1 ??
+;
+select email as "person_email", phone as "person_phone" from a_users_jinr_v where id=#f_id_value# limit 1
+[end]
+
+=================== 1004 - Список источников финансирования =======================
+[bc_list_read]  ****** 1004 - Список источников финансирования
+    $STORE_PARAMETERS
+    $SET_PARAMETERS INITIATOR_COMMENT=;
+    CURR_STEP_ROLES=#CURR_STEP_ROLES#; ??
+    ..... даем возможность экономистам (8,57) и ПФО (25,3) править источники фин. на их этапе согласования ..... ??
+    $SET_PARAMETERS editable=Y;  ??AR_S=Y&!mode=print&CURR_STEP_ROLES=8|CURR_STEP_ROLES=57|CURR_STEP_ROLES=3|CURR_STEP_ROLES=25
+    $SET_PARAMETERS HAS_TOTALS=Y; total_row_section=JINR/common_fields.dat[total row]; 
+    $LOG3 <b>+++++ BC collection:</b> FIELD_DB_NAME=#FIELD_DB_NAME#; editable=#editable#; doc_id=#doc_id#; PARENT_DOC_ID=#PARENT_DOC_ID#; COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#;<br>
+
+    css_modificator=#css_modificator#; ??
+    </td><td> ??
+    </tr><tr><td colspan=2 class="bottom_dotted"> ??
+
+    <div id="collection_#doc_id#_#TYPE#" class="embedded_object"
+        style="#css_modificator#" ??css_modificator
+    >
+    $CALL_SERVICE c=obj/show_collection;
+    </div><div class="clr"></div>
+    $RESTORE_PARAMETERS  ??!mode_write=Y
+[end]
+
+
+[bc_list_write]
+    $SET_PARAMETERS editable=Y; mode_write=Y;
+    $SET_PARAMETERS COLLECTION_DOC_TYPE=#TYPE#; PARENT_DOC_ID=#doc_id#; 
+    $INCLUDE JINR/common_fields.dat[bc_list_read]
+    $INCLUDE JINR/common_fields.dat[add first source]  ??!MODIFIER&DOC_TYPE_ID=1|DOC_TYPE_ID=8|DOC_TYPE_ID=6|DOC_TYPE_ID=21
+    $RESTORE_PARAMETERS 
+[end]
+
+[add first source]
+    <style type="text/css">
+        table.object_table td {border-top: 1px dotted gray; font-size: 10pt; padding:3px;}
+        table.edit_object_table, table.edit_object_table td.label {background-color: ##fdffd8; margin:0;}
+        table.edit_object_table td {border:none;} 
+    </style>
+
+    <script type="text/javascript" language="JavaScript">
+        var add_src=function() {$("##add_#FIELD_DB_NAME#").click();} ??
+        var add_src=function() {
+            $('##edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#').show(); 
+            $('.object_edit_form').html('HERE!'); ??
+            AjaxCall('edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#', 'c=obj/create_object&container=edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#&doc_id=#PARENT_DOC_ID#&COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#&title_section=#title_section#&total_row_section=#total_row_section#', true);
+            $('##add_#FIELD_DB_NAME#').hide(); 
+        }
+
+        window.setTimeout(add_src, 500);
+    </script>
+[end]
+
+[total row]  ****** Список источников финансирования - строка "Всего:"
+$GET_DATA dat/doc_fields_sums.dat[get parent data record] ??PARENT_DOC_ID>0
+$GET_DATA JINR/common_fields.dat[get parent summs] ??PARENT_DOC_DATA_RECORD_ID
+$GET_DATA JINR/common_fields.dat[get doc currency settings] ??PARENT_DOC_TYPE_ID
+<tr class="total_row"><td colspan=4 class="right">Всего:</td>
+<td>#RUB#</td> ??has_rub=Y
+<td>#USD#</td> ??has_usd=Y
+<td>#EUR#</td> ??has_eur=Y
+<td style="border-right:none;"></td>
+</tr>
+[end]
+
+[get parent summs]
+select replace(FORMAT(summa_rub,2),',',' ') as "RUB"
+    , replace(FORMAT(summa_usd,2),',',' ') as "USD"
+    , replace(FORMAT(summa_eur,2),',',' ') as "EUR"
+from #PARENT_TABLE_NAME# 
+where id=#PARENT_DOC_DATA_RECORD_ID#
+[end]
+
+[get doc currency settings]
+    select type_id as "PARENT_DOC_TYPE_ID" from d_list where id = #MAIN_DOC_ID#; ??
+    select 'Y' as "has_rub" from d_fields where type_id=#PARENT_DOC_TYPE_ID# and field_db_name='summa_rub' and is_active=1;
+    select 'Y' as "has_usd" from d_fields where type_id=#PARENT_DOC_TYPE_ID# and field_db_name='summa_usd' and is_active=1;
+    select 'Y' as "has_eur" from d_fields where type_id=#PARENT_DOC_TYPE_ID# and field_db_name='summa_eur' and is_active=1;
+[end]
+
+
+[bc_list_save]
+$LOG ========= [bc_list_save] WORKS! =========<br>
+$GET_DATA JINR/common_fields.dat[delete empty items]
+[end]
+
+[delete empty items]
+    delete from d_data_7
+    where doc_id in(select id from d_list where pid=#doc_id# and type_id=7 and (comment is null or comment='') )
+        and (bc_id is null or bc_id='')
+        and (statia_id is null or statia_id='')
+        and (summa is null or summa=0)        
+    ;
+    delete from d_list 
+    where pid=#doc_id# and type_id=7 and (comment is null or comment='') 
+        and id not in(select doc_id from d_data_7) 
+[end]
+
+
+
+===========================================================================
+=============== Создание / изменение полей в таблице данных================
+===========================================================================
+[bc list DB]
+    $GET_DATA JINR/common_fields.dat[add bc list fields] ??cop=add
+    $GET_DATA JINR/common_fields.dat[drop bc list fields] ??cop=del
+    $GET_DATA JINR/common_fields.dat[update bc list fields] ??cop=u
+[end]
+
+
+[add bc list fields]
+    alter table #DATA_TABLE# add column #new_db_field_name# int(11) DEFAULT NULL COMMENT 'ID типа документов источника фин.';
+
+    update d_fields set name='#name#', field_db_name='#new_db_field_name#', type='7' where type_id=#type_id# and field_db_name='#new_db_field_name#';
+[end]
+
+[drop bc list fields]
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#;
+
+    delete from d_fields where type_id=#type_id# and field_db_name='#old_db_field_name#';
+[end]
+
+[update bc list fields]
+    alter table #DATA_TABLE# change column #old_db_field_name# #new_db_field_name# int(11) DEFAULT NULL COMMENT 'ID типа документов источника фин.';
+
+    update d_fields set name='#name#', field_db_name='#new_db_field_name#', type='7' where type_id=#type_id# and field_db_name='#old_db_field_name#';
+[end]
+
+
+=================== 1025 - Список источников финансирования (+ Строка Ориентировочная стоимость) =======================
+[bc_est_cst_list_read]  ****** 1025 - Список источников финансирования (+ Ориентировочная стоимость)
+    $SET_PARAMETERS title_section=JINR/common_fields.dat[estimated cost];
+    $INCLUDE JINR/common_fields.dat[bc_list_read]
+    $SET_PARAMETERS title_section=;
+[end]
+
+
+[bc_est_cst_list_write]
+    $SET_PARAMETERS title_section=JINR/common_fields.dat[estimated cost];
+    $INCLUDE JINR/common_fields.dat[bc_list_write]
+    $SET_PARAMETERS title_section=;
+[end]
+
+
+[estimated cost]  ****** Ориентировочная стоимость закупки - строка перед таблицей источников финансирования
+    $SET_PARAMETERS SF_CHILD_DOC_IDS=;
+
+    $GET_DATA dat/doc_fields_sums.dat[get parent data record]   ??PARENT_DOC_ID>0
+    $GET_DATA JINR/common_fields.dat[get parent summs]          ??PARENT_DOC_DATA_RECORD_ID
+    $GET_DATA JINR/common_fields.dat[get doc currency settings] ??PARENT_DOC_TYPE_ID
+    $GET_DATA JINR/common_fields.dat[getChildDocIdsInfo]        ??PARENT_DOC_ID>0
+
+    <div style="border-bottom:dotted 1px ##a0a0a0; margin:0 0 3px 0; padding:3px; text-align:left; background-color:white;">
+        $INCLUDE JINR/common_fields.dat[max sum and currency] ??SF_CHILD_DOC_IDS
+        <b>Не задана</b> ??!SF_CHILD_DOC_IDS
+    </div>
+    $GET_DATA JINR/common_fields.dat[checkParentTotals]        ??PARENT_DOC_ID>0
+    $GET_DATA JINR/common_fields.dat[setParentTotals]        ??HAS_TOTALS
+[end]
+
+
+[max sum and currency]
+    $SET_PARAMETERS MAX_CHILD_RUB_SUM=0; MAX_CHILD_CURR=;
+    $EXECUTE_LOOP SF_child_doc_id; #SF_CHILD_DOC_IDS#; JINR/common_fields.dat[cycle max child sum]
+
+    #RUB# руб.  ??MAX_CHILD_CURR=руб.
+    #USD# USD   ??MAX_CHILD_CURR=USD
+    #EUR# EUR   ??MAX_CHILD_CURR=EUR
+     &nbsp; (
+        #RUB# руб.&nbsp;    ??!MAX_CHILD_CURR=руб.
+        #USD# USD&nbsp;     ??!MAX_CHILD_CURR=USD
+        #EUR# EUR           ??!MAX_CHILD_CURR=EUR
+    )
+[end]
+
+[cycle max child sum]
+    $GET_DATA JINR/common_fields.dat[getMaxChildSumInfo]
+[end]
+
+[getChildDocIdsInfo]
+    select concat(SF_d_data.doc_id,',') as "SF_CHILD_DOC_IDS"
+    from #TABLE_NAME# SF_d_data
+        left join d_list dh on dh.id = SF_d_data.doc_id
+    where dh.pid = #PARENT_DOC_ID# and dh.is_deleted=0
+[end]
+
+[getMaxChildSumInfo]
+    select IF(SF_d_data.summa_rub>#MAX_CHILD_RUB_SUM#, SF_d_data.summa_rub, #MAX_CHILD_RUB_SUM#) AS MAX_CHILD_RUB_SUM
+    , IF(SF_d_data.summa_rub>#MAX_CHILD_RUB_SUM#, SF_d_data.summa_curr, '#MAX_CHILD_CURR#') AS MAX_CHILD_CURR
+        from #TABLE_NAME# SF_d_data
+    where SF_d_data.doc_id = #SF_child_doc_id#
+[end]
+
+
+[checkParentTotals]  ****** проверка, есть ли у документа поле "общая сумма" (рудимент, было в договорах)
+    select 'Y' as "HAS_TOTALS" from d_fields where type_id=#PARENT_DOC_TYPE_ID# and field_db_name='total_sum_curr' and is_active=1
+[end]
+
+[setParentTotals]   ***** для совместимости с договорами - заполнение полей "total_sum_..."
+    update #PARENT_TABLE_NAME# set 
+        total_sum_rub=summa_rub
+        , total_sum_usd=summa_usd
+        , total_sum_eur=summa_eur
+        , total_sum_curr='#MAX_CHILD_CURR#'
+        , total_sum=summa_usd ??MAX_CHILD_CURR=USD
+        , total_sum=summa_eur ??MAX_CHILD_CURR=EUR
+        , total_sum=summa_rub ??!MAX_CHILD_CURR=USD&!MAX_CHILD_CURR=EUR
+        , total_sum=summa_rub ??zzz
+                ??MAX_CHILD_CURR=руб.|MAX_CHILD_CURR=rub
+    where doc_id=#PARENT_DOC_ID# 
+[end]
+==========================================================
+
+
+=================== 1016 - МНТС - Список финансовых условий (объект 16) =======================
+[mnts_list_read]  ****** 1016 - Список источников финансирования
+$STORE_PARAMETERS
+$SET_PARAMETERS INITIATOR_COMMENT=;
+CURR_STEP_ROLES=#CURR_STEP_ROLES#; ??
+..... даем возможность экономистам и ПФО править источники фин. на их этапе согласования ..... ??
+$SET_PARAMETERS editable=Y;  ??AR_S=Y&!mode=print&CURR_STEP_ROLES=8|CURR_STEP_ROLES=3|CURR_STEP_ROLES=25
+$SET_PARAMETERS HAS_TOTALS=Y; total_row_section=JINR/common_fields.dat[mnts total row];
+$LOG3 MNTS collection: FIELD_DB_NAME=#FIELD_DB_NAME#;
+
+css_modificator=#css_modificator#; ??
+</td></tr><tr><td colspan=2 class="bottom_dotted"> ??
+<div id="collection_#doc_id#_#TYPE#" class="embedded_object" 
+style="#css_modificator#" ??css_modificator
+>
+$CALL_SERVICE c=obj/show_collection;
+</div><div class="clr"></div>
+$RESTORE_PARAMETERS
+[end]
+
+
+[mnts_list_write]
+$SET_PARAMETERS editable=Y;
+$INCLUDE JINR/common_fields.dat[mnts_list_read]
+$INCLUDE JINR/common_fields.dat[add first mnts] ??!MODIFIER&DOC_TYPE_ID=15&ZZZ
+[end]
+
+[add first mnts]
+<script type="text/javascript" language="JavaScript">
+src_type_id ??
+var add_src=function() {$("##add_#FIELD_DB_NAME#").click();}
+window.setTimeout(add_src, 500);
+</script>
+[end]
+
+
+[mnts total row]  ****** Список источников финансирования - строка "Всего:"
+$GET_DATA dat/doc_fields_sums.dat[get parent data record] ??PARENT_DOC_ID>0
+$GET_DATA JINR/common_fields.dat[get parent summs] ??PARENT_DOC_DATA_RECORD_ID
+$GET_DATA JINR/common_fields.dat[get doc currency settings] ??PARENT_DOC_TYPE_ID
+<tr class="total_row"><td colspan=3 class="right">Итого:</td>
+<td>#RUB#</td> ??has_rub=Y
+<td>#USD#</td> ??has_usd=Y_ZZZ
+<td>#EUR#</td> ??has_eur=Y_ZZZ
+<td style="border-right:none;"></td>
+</tr>
+[end]
+
+[get parent summs]
+select replace(FORMAT(summa_rub,2),',',' ') as "RUB"
+    , replace(FORMAT(summa_usd,2),',',' ') as "USD"
+    , replace(FORMAT(summa_eur,2),',',' ') as "EUR"
+from #PARENT_TABLE_NAME# 
+where id=#PARENT_DOC_DATA_RECORD_ID#
+[end]
+
+
+[mnts_list_save]
+$LOG ========= [mnts_list_save] WORKS! =========<br>
+[end]
+
+
+=================== 1029 - № ADB2 (автоимпорт, отображение ссылки на документ) =======================
+
+[ADB_NR_R]
+    $SET_PARAMETERS val=^#FIELD_DB_NAME#;
+    <a href="https://adb2.jinr.ru/adb/adb?c=doc/docView&type=ext&DOC_ID=#val#&key=#tm#" target=_blank>#val#</a>  ??val
+    <a href="#ServletPath#?c=gateway/post_doc&doc_id=#doc_id#&mode=print" target="_blank">=></a>  ??
+[end]

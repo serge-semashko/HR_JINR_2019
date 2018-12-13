@@ -1,0 +1,172 @@
+JINR/fizlitsa_fields.dat
+
+
+[field_view]
+^#FIELD_DB_NAME#
+[end]
+
+
+[field_write]
+    $SET_PARAMETERS item_id_param=#FIELD_DB_NAME#_id
+    <div class="info_input" id="#FIELD_DB_NAME#" style="width:100px;"
+    info_id="#INFO_ID#" info_view="#INFO_VIEW#" info_type="#INFO_TYPE#" searchFor='none'
+    >выбрать</div> 
+
+    <input type=hidden id="#FIELD_DB_NAME#_id" name="#FIELD_DB_NAME#_id" size=4 value="^#item_id_param#">
+    <input type=hidden id="#FIELD_DB_NAME#_text" name="#FIELD_DB_NAME#" size=45 value="^#FIELD_DB_NAME#"> 
+
+    <div id="JINR_FIZLITSO">
+    $CALL_SERVICE c=JINR/field_Fizlitso;
+    </div>
+
+    <script type="text/javascript">
+    var customSelectInfoRow= function(el, text)
+    {
+        if($(el).attr("info_id") == 12 ) {
+            AjaxCall("JINR_FIZLITSO", "c=JINR/field_Fizlitso&FIELD_DB_NAME=#FIELD_DB_NAME#&info_id=#INFO_ID#&record_id=" + $(el).attr("returnId")  , true);
+            hideSprav();
+        }
+    }
+
+    AjaxCall("JINR_FIZLITSO", "c=JINR/field_Fizlitso&FIELD_DB_NAME=#FIELD_DB_NAME#&DOC_TYPE_ID=#DOC_TYPE_ID#&doc_id=#doc_id#" , true); ??
+    </script>
+[end]
+
+
+[save]
+    $GET_DATA JINR/fizlitsa_fields.dat[updateFizlitso]
+    $SET_PARAMETERS #CUSTOM_FIELD_DB_NAME#=#JINR_FIZLITSO_F# #JINR_FIZLITSO_I# #JINR_FIZLITSO_O#;
+[end]
+
+
+[updateFizlitso]
+    UPDATE d_data_#DOC_TYPE_ID# SET 
+        #CUSTOM_FIELD_DB_NAME# = '#JINR_FIZLITSO_F# #JINR_FIZLITSO_I# #JINR_FIZLITSO_O#'
+      , #CUSTOM_FIELD_DB_NAME#_F = '#JINR_FIZLITSO_F#'
+      , #CUSTOM_FIELD_DB_NAME#_I = '#JINR_FIZLITSO_I#'
+      , #CUSTOM_FIELD_DB_NAME#_O = '#JINR_FIZLITSO_O#'
+      , #CUSTOM_FIELD_DB_NAME#_dr = STR_TO_DATE("#JINR_FIZLITSO_dr#",'#dateFormat#') ??JINR_FIZLITSO_dr
+      , #CUSTOM_FIELD_DB_NAME#_dr = null ??!JINR_FIZLITSO_dr
+      , #CUSTOM_FIELD_DB_NAME#_inn = '#JINR_FIZLITSO_inn#'
+      , #CUSTOM_FIELD_DB_NAME#_pfr = '#JINR_FIZLITSO_pfr#'
+      , #CUSTOM_FIELD_DB_NAME#_strana = '#JINR_FIZLITSO_strana#'
+      , #CUSTOM_FIELD_DB_NAME#_vid_doc = '#JINR_FIZLITSO_vid_doc#' ??
+      , #CUSTOM_FIELD_DB_NAME#_seria = '#JINR_FIZLITSO_seria#'
+      , #CUSTOM_FIELD_DB_NAME#_nomer = '#JINR_FIZLITSO_nomer#'
+      , #CUSTOM_FIELD_DB_NAME#_vidan = '#JINR_FIZLITSO_vidan#'
+      , #CUSTOM_FIELD_DB_NAME#_kod_podrazd = '#JINR_FIZLITSO_kod_podrazd#' ??
+      , #CUSTOM_FIELD_DB_NAME#_dat_vid = STR_TO_DATE("#JINR_FIZLITSO_dat_vid#",'#dateFormat#') ??JINR_FIZLITSO_dat_vid
+      , #CUSTOM_FIELD_DB_NAME#_dat_vid = null         ??!JINR_FIZLITSO_dat_vid
+      , #CUSTOM_FIELD_DB_NAME#_dat_reg = STR_TO_DATE("#JINR_FIZLITSO_dat_reg#",'#dateFormat#') ??
+      , #CUSTOM_FIELD_DB_NAME#_dat_reg = null         ??
+      , #CUSTOM_FIELD_DB_NAME#_address = '#JINR_FIZLITSO_address#'
+      , #CUSTOM_FIELD_DB_NAME#_phon = '#JINR_FIZLITSO_phon#'
+     WHERE doc_id = #doc_id#
+    ;
+[end]
+
+
+
+===========================================================================
+=============== Создание / изменение полей в таблице данных================
+===========================================================================
+[fizlitsa DB]
+    $GET_DATA JINR/fizlitsa_fields.dat[add fizlitsa fields] ??cop=add
+    $GET_DATA JINR/fizlitsa_fields.dat[drop fizlitsa fields] ??cop=del
+    $GET_DATA JINR/fizlitsa_fields.dat[update fizlitsa fields] ??cop=u
+[end]
+
+
+1. Создаем набор полей в таблице данных:
+ - fieldname mediumtext - значения из справочника
+ - fieldname_id varchar(4000) - IDs справочника - 
+ - fieldname_F varchar(63) - Фамилия
+ - fieldname_I varchar(63) - Имя
+ - fieldname_O varchar(63) - Отчество
+ - fieldname_dr date - Дата рождения
+ - fieldname_inn varchar(32) - ИНН
+ - fieldname_pfr varchar(32) - ПФР
+ - fieldname_strana varchar(63) - Страна
+ - fieldname_sex char(1) - пол
+ - fieldname_vid_doc varchar(63) - Вид документа
+ - fieldname_seria varchar(32) - Серия
+ - fieldname_nomer varchar(64) - Номер
+ - fieldname_vidan varchar(255) - Кем выдан
+ - fieldname_kod_podrazd varchar(16) - Код подразд.
+ - fieldname_dat_vid date - Дата выдачи
+ - fieldname_dat_reg date - Дата регистрации
+ - fieldname_address varchar(255) - Адрес прописки
+ - fieldname_phon varchar(64) - Телефон
+
+
+[add fizlitsa fields]
+    alter table #DATA_TABLE# add column #new_db_field_name# mediumtext DEFAULT NULL COMMENT '#name#';
+    alter table #DATA_TABLE# add column #new_db_field_name#_id varchar(4000) DEFAULT NULL COMMENT 'IDs справочника - #name#';
+    alter table #DATA_TABLE# add column #new_db_field_name#_F varchar(63) DEFAULT NULL COMMENT 'Фамилия';
+    alter table #DATA_TABLE# add column #new_db_field_name#_I varchar(63) DEFAULT NULL COMMENT 'Имя';
+    alter table #DATA_TABLE# add column #new_db_field_name#_O varchar(63) DEFAULT NULL COMMENT 'Отчество';
+    alter table #DATA_TABLE# add column #new_db_field_name#_dr date DEFAULT NULL COMMENT 'Дата рождения';
+    alter table #DATA_TABLE# add column #new_db_field_name#_inn varchar(32) DEFAULT NULL COMMENT 'ИНН';
+    alter table #DATA_TABLE# add column #new_db_field_name#_pfr varchar(32) DEFAULT NULL COMMENT 'ПФР';
+    alter table #DATA_TABLE# add column #new_db_field_name#_strana varchar(63) DEFAULT NULL COMMENT 'Страна';
+    alter table #DATA_TABLE# add column #new_db_field_name#_sex char(1) DEFAULT NULL COMMENT 'пол';
+    alter table #DATA_TABLE# add column #new_db_field_name#_vid_doc varchar(63) DEFAULT NULL COMMENT 'Вид документа';
+    alter table #DATA_TABLE# add column #new_db_field_name#_seria varchar(32) DEFAULT NULL COMMENT 'Серия';
+    alter table #DATA_TABLE# add column #new_db_field_name#_nomer varchar(64) DEFAULT NULL COMMENT 'Номер';
+    alter table #DATA_TABLE# add column #new_db_field_name#_vidan varchar(255) DEFAULT NULL COMMENT 'Кем выдан';
+    alter table #DATA_TABLE# add column #new_db_field_name#_kod_podrazd varchar(16) DEFAULT NULL COMMENT 'Код подразд.';
+    alter table #DATA_TABLE# add column #new_db_field_name#_dat_vid date DEFAULT NULL COMMENT 'Дата выдачи';
+    alter table #DATA_TABLE# add column #new_db_field_name#_dat_reg date DEFAULT NULL COMMENT 'Дата регистрации';
+    alter table #DATA_TABLE# add column #new_db_field_name#_address varchar(255) DEFAULT NULL COMMENT 'Адрес прописки';
+    alter table #DATA_TABLE# add column #new_db_field_name#_phon varchar(64) DEFAULT NULL COMMENT 'Телефон';
+
+[end]
+
+
+[drop fizlitsa fields]
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_id;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_F;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_I;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_O;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_dr;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_inn;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_pfr;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_strana;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_sex;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_vid_doc;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_seria;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_nomer;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_vidan;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_kod_podrazd;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_dat_vid;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_dat_reg;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_address;
+    try: alter table #DATA_TABLE# drop column #old_db_field_name#_phon;
+
+    delete from d_fields where type_id=#type_id# and field_db_name='#old_db_field_name#';
+[end]
+
+[update fizlitsa fields]
+    alter table #DATA_TABLE# change column #old_db_field_name# #new_db_field_name# mediumtext DEFAULT NULL COMMENT '#name#';
+    alter table #DATA_TABLE# change column #old_db_field_name#_id #new_db_field_name#_id varchar(4000) DEFAULT NULL COMMENT 'IDs справочника - #name#';
+    alter table #DATA_TABLE# change column #old_db_field_name#_F #new_db_field_name#_F varchar(63) DEFAULT NULL COMMENT 'Фамилия';
+    alter table #DATA_TABLE# change column #old_db_field_name#_I #new_db_field_name#_I varchar(63) DEFAULT NULL COMMENT 'Имя';
+    alter table #DATA_TABLE# change column #old_db_field_name#_O #new_db_field_name#_O varchar(63) DEFAULT NULL COMMENT 'Отчество';
+    alter table #DATA_TABLE# change column #old_db_field_name#_dr #new_db_field_name#_dr date DEFAULT NULL COMMENT 'Дата рождения';
+    alter table #DATA_TABLE# change column #old_db_field_name#_inn #new_db_field_name#_inn varchar(32) DEFAULT NULL COMMENT 'ИНН';
+    alter table #DATA_TABLE# change column #old_db_field_name#_pfr #new_db_field_name#_pfr varchar(32) DEFAULT NULL COMMENT 'ПФР';
+    alter table #DATA_TABLE# change column #old_db_field_name#_strana #new_db_field_name#_strana varchar(63) DEFAULT NULL COMMENT 'Страна';
+    alter table #DATA_TABLE# change column #old_db_field_name#_sex #new_db_field_name#_sex char(1) DEFAULT NULL COMMENT 'пол';
+    alter table #DATA_TABLE# change column #old_db_field_name#_vid_doc #new_db_field_name#_vid_doc varchar(63) DEFAULT NULL COMMENT 'Вид документа';
+    alter table #DATA_TABLE# change column #old_db_field_name#_seria #new_db_field_name#_seria varchar(32) DEFAULT NULL COMMENT 'Серия';
+    alter table #DATA_TABLE# change column #old_db_field_name#_nomer #new_db_field_name#_nomer varchar(64) DEFAULT NULL COMMENT 'Номер';
+    alter table #DATA_TABLE# change column #old_db_field_name#_vidan #new_db_field_name#_vidan varchar(255) DEFAULT NULL COMMENT 'Кем выдан';
+    alter table #DATA_TABLE# change column #old_db_field_name#_kod_podrazd #new_db_field_name#_kod_podrazd varchar(16) DEFAULT NULL COMMENT 'Код подразд.';
+    alter table #DATA_TABLE# change column #old_db_field_name#_dat_vid #new_db_field_name#_dat_vid date DEFAULT NULL COMMENT 'Дата выдачи';
+    alter table #DATA_TABLE# change column #old_db_field_name#_dat_reg #new_db_field_name#_dat_reg date DEFAULT NULL COMMENT 'Дата регистрации';
+    alter table #DATA_TABLE# change column #old_db_field_name#_address #new_db_field_name#_address varchar(255) DEFAULT NULL COMMENT 'Адрес прописки';
+    alter table #DATA_TABLE# change column #old_db_field_name#_phon #new_db_field_name#_phon varchar(64) DEFAULT NULL COMMENT 'Телефон';
+
+    update d_fields set name='#name#', field_db_name='#new_db_field_name#', info_id=12, info_view_nr=2 where type_id=#type_id# and field_db_name='#old_db_field_name#';
+[end]

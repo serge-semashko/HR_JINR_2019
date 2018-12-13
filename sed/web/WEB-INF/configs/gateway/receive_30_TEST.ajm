@@ -1,0 +1,33 @@
+gateway/receive_30_TEST.ajm
+
+
+
+[comments]
+descr=S: Прием из шлюза - ТЕСТ
+input=Command - команда, object - объект в JSON + распарзенные параметры из JSON
+output=занесение / пометка удаленным / снятие пометки в таблице info_11
+parents=gateway/receive
+author=Куняев
+[end]
+
+
+[description]
+<ol>
+<li></li>
+</ul>
+</ol>
+[end]
+
+[parameters]
+request_name=S:Прием-ТЕСТ
+LOG=ON
+[end]
+
+
+
+[report]
+    $LOG <hr><b>receive_30_TEST</b><br>
+    $LOG3 <xmp>object=#Object#;</xmp><br> 
+    $SET_PARAMETERS ERR_CODE=0; ERROR=; 
+[end]
+

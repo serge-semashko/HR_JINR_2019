@@ -1,0 +1,97 @@
+docs/add_comment_for_doc.ajm
+
+[parameters]
+request_name=U:регистрация в БД коммента к доку и посылка мэйла инициатору, если не он добавлял коммент.
+LOG=ON
+[end]
+
+[report]
+    $INCLUDE [report_]  ??user_comment&USER_ID&doc_id
+[end]
+
+[report_]
+$LOG <b>=================== docs/add_comment_for_doc.ajm:</b> event_type=#event_type#; comment_type=#comment_type#; ================= <br>
+    $SET_PARAMETERS creator_id=; 
+    $INCLUDE [addComment]       ??!comment_id|comment_id=NEW
+    $INCLUDE [updateComment]    ??comment_id&!comment_id=NEW
+    #user_comment#   ??comment_id&!comment_id=NEW
+[end]
+
+
+[addComment]
+    $GET_DATA [addCommentSQL] 
+    $GET_DATA [get doc initiator]   ??comment_opened
+    $SET_PARAMETERS creator_id=;    ??creator_id=#USER_ID#
+    $GET_DATA [add event]           ??!ERROR&creator_id&comment_opened&!event_type=#~doc_action_inform_extra#
+    $CALL_SERVICE c=wf/send_notif_mail ??!ERROR&creator_id&comment_opened&!event_type=#~doc_action_inform_extra#
+
+    <div id="R_#COMMENT_ID#" class="ro mw800 pre-wrap bg_white">#user_comment#</div> 
+    <div class="pt" style="float:right;" onClick="$('##R_#COMMENT_ID#').hide(); $('##RW_#COMMENT_ID#').show(); "><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div> 
+    <div style="clear:both;"></div>
+    $SET_PARAMETERS COMMENTS=#user_comment#;
+    $INCLUDE docs/show_users_comments.ajm[RW block]        
+    $CALL_SERVICE c=sys/indexDoc;
+[end]
+
+[updateComment]
+    $SET_PARAMETERS CAN_EDIT=Y;
+    $GET_DATA [check right 2 update]
+    $SET_PARAMETERS CAN_EDIT=; ??COMMENT_AGE_MIN>30|!AUTHOR_ID=#USER_ID#
+    $SET_PARAMETERS CAN_EDIT=Y; ??USER_ID=2309
+    $GET_DATA [updateCommentSQL]
+    $INCLUDE [errMsg]    ??!CAN_EDIT
+[end]
+
+[errMsg]
+<script>
+    alert("ОШИБКА: комментарий не может быть изменен.\n\rПрошло более 30 минут.");  ??AUTHOR_ID=#USER_ID#
+    alert("ОШИБКА: комментарий не может быть изменен.\n\rНет права доступа.");      ??!AUTHOR_ID=#USER_ID#
+</script>
+[end]
+
+
+[check right 2 update]
+    select c.user_id as "AUTHOR_ID"
+       , TIMESTAMPDIFF(MINUTE, c.dat, now()) as "COMMENT_AGE_MIN"
+    from d_comments c
+    where id=#comment_id#
+[end]
+
+[updateCommentSQL]
+    update d_comments set comment='#user_comment#' where id=#comment_id#    ??CAN_EDIT
+    ;
+    select comment as "user_comment" from d_comments c where id=#comment_id#
+[end]
+
+
+[addCommentSQL]
+    select 3 as comment_type from d_list where id=#doc_id# and  creator_id=#USER_ID# ??!comment_type
+    ;
+    insert into d_comments(doc_id, user_id
+        , receiver_ids  ??!comment_opened
+        ,dat, comment_type, comment)
+    values (#doc_id#, #USER_ID#
+        , ',#extra_users_id#,'  ??!comment_opened
+        , now()
+        , #comment_type# ??comment_type
+        , 2 ??!comment_type
+        , '#doc_info# <div class="p">#user_comment#</div>'  ??comment_type=15
+        , '#user_comment#'  ??!comment_type=15
+        ) 
+    ;
+    select LAST_INSERT_ID() as "COMMENT_ID"
+[end]
+
+
+
+[get doc initiator]
+    select creator_id, type_id from d_list where id=#doc_id# 
+    and creator_id not in(#extra_users_id#)  ??extra_users_id
+[end]
+
+[add event]
+    insert into wf_events(doc_id, event_type, event_date, notify_user_id, event_text)
+    values(#doc_id#, #~doc_comment_added#, now(), #creator_id#, '#COMMENT_ID#')
+    ;
+    select LAST_INSERT_ID() as "event_id"
+[end]

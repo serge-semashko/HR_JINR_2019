@@ -1,0 +1,6129 @@
+<HTML>
+<HEAD><TITLE></TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<style>
+td {vertical-align:top;}
+</style>
+</head><body>
+<table border=1 cellpadding=5 cellspacing=0>
+<tr><td class="label" >
+Сумма по выборке:</td>
+<td>за месяц = 1</td>
+<td>за год = 3</td>
+</tr>
+</table> </br>
+<table class="tlist tgreen" cellspacing=0" border=1>
+<tr>
+<th colspan=3  style="border: none">
+</th>
+<th colspan=5  style="border: none">
+п.п.1.5 Приложение №1
+</th>
+</tr>
+<tr>
+<th colspan=3  style="border: none">
+</th>
+<th colspan=5  style="border: none">
+к Положению по бухгалтерскому
+</th>
+</tr>
+<tr>
+<th colspan=3  style="border: none">
+</th>
+<th colspan=5  style="border: none">
+и налоговому учету"Учетная политика"
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+"УТВЕРЖДАЮ"
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+Директор ЛФВЭ
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+&nbsp
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+_____________В.Д.Кекелидзе
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+&nbsp
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+"____"____________2018г
+</th>
+</tr>
+<tr>
+<th colspan=5  style="border: none">
+</th>
+<th colspan=3  style="border: none">
+&nbsp
+</th>
+</tr>
+<tr>
+<th colspan=5  style="border: none">
+</th>
+<th colspan=3  style="border: none">
+ВЕДОМОСТЬ
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+на выплату премии сотрудникам ________________________ ЛФВЭ
+</th>
+</tr>
+<tr>
+<th colspan=4  style="border: none">
+</th>
+<th colspan=4  style="border: none">
+по результатам работы за __-й квартал    года
+</th>
+</tr>
+<tr>
+<th colspan=5  style="border: none">
+</th>
+<th colspan=3  style="border: none">
+&nbsp
+</th>
+</tr>
+<tr>
+<th class="srh" sr="sotr.tab_n">Таб.№</th>
+<th class="srh" sr="sotr.FIO">ФИО</th>
+<th  class="srh"  sr="sotr.TopParent_name">Отделение</th>
+<th  class="srh"  sr="sotr.subTopParent_name">Отдел/сектор</th>
+<th>ФЗП<br>(за месяц)</th>
+<th>ФМП<br>(за месяц)</th>
+<th>NICA<br>(за месяц)</th>
+<th>Прочее<br>(за месяц)</th>
+<th>ФЗП<br>(за год)</th>
+<th>ФМП<br>(за год)</th>
+<th>NICA<br>(за год)</th>
+<th>Прочее<br>(за год)</th>
+<th>Сумма<br>(за год)</th>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=161477&month=12&year=2018', true);">
+<td style="border-right: none">161477</td>
+<td style="border-left: none;border-right: none">Богомолова А. С.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=61742&month=12&year=2018', true);">
+<td style="border-right: none">61742</td>
+<td style="border-left: none;border-right: none">Бычкова М. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=92284&month=12&year=2018', true);">
+<td style="border-right: none">92284</td>
+<td style="border-left: none;border-right: none">Гоголева С. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=81203&month=12&year=2018', true);">
+<td style="border-right: none">81203</td>
+<td style="border-left: none;border-right: none">Гореликова Н. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=132364&month=12&year=2018', true);">
+<td style="border-right: none">132364</td>
+<td style="border-left: none;border-right: none">Заикина М. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3178&month=12&year=2018', true);">
+<td style="border-right: none">3178</td>
+<td style="border-left: none;border-right: none">Игнатова Л. Г.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6530&month=12&year=2018', true);">
+<td style="border-right: none">6530</td>
+<td style="border-left: none;border-right: none">Кириченко Т. Н.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=131118&month=12&year=2018', true);">
+<td style="border-right: none">131118</td>
+<td style="border-left: none;border-right: none">Кузнецова Е. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3315&month=12&year=2018', true);">
+<td style="border-right: none">3315</td>
+<td style="border-left: none;border-right: none">Кузьмичева Т. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=175576&month=12&year=2018', true);">
+<td style="border-right: none">175576</td>
+<td style="border-left: none;border-right: none">Лясникова О. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=203495&month=12&year=2018', true);">
+<td style="border-right: none">203495</td>
+<td style="border-left: none;border-right: none">Рассадова А. Ю.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=96754&month=12&year=2018', true);">
+<td style="border-right: none">96754</td>
+<td style="border-left: none;border-right: none">Чубакова С. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3344&month=12&year=2018', true);">
+<td style="border-right: none">3344</td>
+<td style="border-left: none;border-right: none">Шевцова В. Ю.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6560&month=12&year=2018', true);">
+<td style="border-right: none">6560</td>
+<td style="border-left: none;border-right: none">Шестова И. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=81852&month=12&year=2018', true);">
+<td style="border-right: none">81852</td>
+<td style="border-left: none;border-right: none">Шпак И. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Адм. бюро</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=145259&month=12&year=2018', true);">
+<td style="border-right: none">145259</td>
+<td style="border-left: none;border-right: none">Акимов М. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=131427&month=12&year=2018', true);">
+<td style="border-right: none">131427</td>
+<td style="border-left: none;border-right: none">Баранова Т. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=253478&month=12&year=2018', true);">
+<td style="border-right: none">253478</td>
+<td style="border-left: none;border-right: none">Бобровская А. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=110690&month=12&year=2018', true);">
+<td style="border-right: none">110690</td>
+<td style="border-left: none;border-right: none">Виноградов М. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=122879&month=12&year=2018', true);">
+<td style="border-right: none">122879</td>
+<td style="border-left: none;border-right: none">Воробьева Г. Е.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=65951&month=12&year=2018', true);">
+<td style="border-right: none">65951</td>
+<td style="border-left: none;border-right: none">Гарматюк В. Е.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=291201&month=12&year=2018', true);">
+<td style="border-right: none">291201</td>
+<td style="border-left: none;border-right: none">Горностаева И. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=284431&month=12&year=2018', true);">
+<td style="border-right: none">284431</td>
+<td style="border-left: none;border-right: none">Гусев Ю. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=125770&month=12&year=2018', true);">
+<td style="border-right: none">125770</td>
+<td style="border-left: none;border-right: none">Дубовицкий И. Н.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=260271&month=12&year=2018', true);">
+<td style="border-right: none">260271</td>
+<td style="border-left: none;border-right: none">Еврецких В. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=250278&month=12&year=2018', true);">
+<td style="border-right: none">250278</td>
+<td style="border-left: none;border-right: none">Зотова Н. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=254382&month=12&year=2018', true);">
+<td style="border-right: none">254382</td>
+<td style="border-left: none;border-right: none">Карасев Е. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=146047&month=12&year=2018', true);">
+<td style="border-right: none">146047</td>
+<td style="border-left: none;border-right: none">Карасев М. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=57364&month=12&year=2018', true);">
+<td style="border-right: none">57364</td>
+<td style="border-left: none;border-right: none">Коптева Т. Н.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=150238&month=12&year=2018', true);">
+<td style="border-right: none">150238</td>
+<td style="border-left: none;border-right: none">Короткова Т. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=275481&month=12&year=2018', true);">
+<td style="border-right: none">275481</td>
+<td style="border-left: none;border-right: none">Коршунова Т. Н.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=173308&month=12&year=2018', true);">
+<td style="border-right: none">173308</td>
+<td style="border-left: none;border-right: none">Котова Н. П.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=9838&month=12&year=2018', true);">
+<td style="border-right: none">9838</td>
+<td style="border-left: none;border-right: none">Лысов В. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=181267&month=12&year=2018', true);">
+<td style="border-right: none">181267</td>
+<td style="border-left: none;border-right: none">Маралина Н. Е.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=114677&month=12&year=2018', true);">
+<td style="border-right: none">114677</td>
+<td style="border-left: none;border-right: none">Митюхина О. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160052&month=12&year=2018', true);">
+<td style="border-right: none">160052</td>
+<td style="border-left: none;border-right: none">Назарова Н. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=27810&month=12&year=2018', true);">
+<td style="border-right: none">27810</td>
+<td style="border-left: none;border-right: none">Неверова Е. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=282621&month=12&year=2018', true);">
+<td style="border-right: none">282621</td>
+<td style="border-left: none;border-right: none">Новикова Е. Н.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=292614&month=12&year=2018', true);">
+<td style="border-right: none">292614</td>
+<td style="border-left: none;border-right: none">Нуриева А. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=290494&month=12&year=2018', true);">
+<td style="border-right: none">290494</td>
+<td style="border-left: none;border-right: none">Павлов Д. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=111756&month=12&year=2018', true);">
+<td style="border-right: none">111756</td>
+<td style="border-left: none;border-right: none">Павлов С. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=755&month=12&year=2018', true);">
+<td style="border-right: none">755</td>
+<td style="border-left: none;border-right: none">Пятибратова В. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=120782&month=12&year=2018', true);">
+<td style="border-right: none">120782</td>
+<td style="border-left: none;border-right: none">Рабко Н. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=133345&month=12&year=2018', true);">
+<td style="border-right: none">133345</td>
+<td style="border-left: none;border-right: none">Рисов С. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=221263&month=12&year=2018', true);">
+<td style="border-right: none">221263</td>
+<td style="border-left: none;border-right: none">Рогова З. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=122533&month=12&year=2018', true);">
+<td style="border-right: none">122533</td>
+<td style="border-left: none;border-right: none">Румянцева Н. С.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=210894&month=12&year=2018', true);">
+<td style="border-right: none">210894</td>
+<td style="border-left: none;border-right: none">Рыжова Л. Ф.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160132&month=12&year=2018', true);">
+<td style="border-right: none">160132</td>
+<td style="border-left: none;border-right: none">Савельева И. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=103763&month=12&year=2018', true);">
+<td style="border-right: none">103763</td>
+<td style="border-left: none;border-right: none">Смирнова Н. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=170828&month=12&year=2018', true);">
+<td style="border-right: none">170828</td>
+<td style="border-left: none;border-right: none">Смирнова Н. Я.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=250980&month=12&year=2018', true);">
+<td style="border-right: none">250980</td>
+<td style="border-left: none;border-right: none">Соколов В. Ф.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6548&month=12&year=2018', true);">
+<td style="border-right: none">6548</td>
+<td style="border-left: none;border-right: none">Соколова Г. Е.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=141030&month=12&year=2018', true);">
+<td style="border-right: none">141030</td>
+<td style="border-left: none;border-right: none">Соловьева С. П.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=165683&month=12&year=2018', true);">
+<td style="border-right: none">165683</td>
+<td style="border-left: none;border-right: none">Строганова Е. Ю.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=102967&month=12&year=2018', true);">
+<td style="border-right: none">102967</td>
+<td style="border-left: none;border-right: none">Титов С. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=142183&month=12&year=2018', true);">
+<td style="border-right: none">142183</td>
+<td style="border-left: none;border-right: none">Ткач В. Ю.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=164627&month=12&year=2018', true);">
+<td style="border-right: none">164627</td>
+<td style="border-left: none;border-right: none">Токарева С. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=101710&month=12&year=2018', true);">
+<td style="border-right: none">101710</td>
+<td style="border-left: none;border-right: none">Тур Н. Д.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=253345&month=12&year=2018', true);">
+<td style="border-right: none">253345</td>
+<td style="border-left: none;border-right: none">0</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=78048&month=12&year=2018', true);">
+<td style="border-right: none">78048</td>
+<td style="border-left: none;border-right: none">Шалаевский В. Р.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=124023&month=12&year=2018', true);">
+<td style="border-right: none">124023</td>
+<td style="border-left: none;border-right: none">Шарапова Г. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=993664&month=12&year=2018', true);">
+<td style="border-right: none">993664</td>
+<td style="border-left: none;border-right: none">Шарапова Л. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=151245&month=12&year=2018', true);">
+<td style="border-right: none">151245</td>
+<td style="border-left: none;border-right: none">Шимкус Л. Н.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=101713&month=12&year=2018', true);">
+<td style="border-right: none">101713</td>
+<td style="border-left: none;border-right: none">Шлёпкина Т. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=40578&month=12&year=2018', true);">
+<td style="border-right: none">40578</td>
+<td style="border-left: none;border-right: none">Шмаренкова Е. С.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=144522&month=12&year=2018', true);">
+<td style="border-right: none">144522</td>
+<td style="border-left: none;border-right: none">Щетинина Л. Е.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=221441&month=12&year=2018', true);">
+<td style="border-right: none">221441</td>
+<td style="border-left: none;border-right: none">Яшкова Т. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=185333&month=12&year=2018', true);">
+<td style="border-right: none">185333</td>
+<td style="border-left: none;border-right: none">Буланова Е. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=152651&month=12&year=2018', true);">
+<td style="border-right: none">152651</td>
+<td style="border-left: none;border-right: none">Бурашникова Н. В.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=818&month=12&year=2018', true);">
+<td style="border-right: none">818</td>
+<td style="border-left: none;border-right: none">Ковшикова В. Е.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=172766&month=12&year=2018', true);">
+<td style="border-right: none">172766</td>
+<td style="border-left: none;border-right: none">Попадейкина Л. И.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=180349&month=12&year=2018', true);">
+<td style="border-right: none">180349</td>
+<td style="border-left: none;border-right: none">Титова С. А.</td>
+<td >АХП</td>
+<td style="border-right: none;border-left: none">Х.O.</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7084&month=12&year=2018', true);">
+<td style="border-right: none">7084</td>
+<td style="border-left: none;border-right: none">Глаголев В. В.</td>
+<td >Группа советников и консультантов</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7446&month=12&year=2018', true);">
+<td style="border-right: none">7446</td>
+<td style="border-left: none;border-right: none">Кривохижин В. Г.</td>
+<td >Группа советников и консультантов</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=282364&month=12&year=2018', true);">
+<td style="border-right: none">282364</td>
+<td style="border-left: none;border-right: none">Малахов А. И.</td>
+<td >Группа советников и консультантов</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3046&month=12&year=2018', true);">
+<td style="border-right: none">3046</td>
+<td style="border-left: none;border-right: none">Мельниченко И. М.</td>
+<td >Группа советников и консультантов</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3256&month=12&year=2018', true);">
+<td style="border-right: none">3256</td>
+<td style="border-left: none;border-right: none">Щинов Б. Г.</td>
+<td >Группа советников и консультантов</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3219&month=12&year=2018', true);">
+<td style="border-right: none">3219</td>
+<td style="border-left: none;border-right: none">Степанов В. М.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=151685&month=12&year=2018', true);">
+<td style="border-right: none">151685</td>
+<td style="border-left: none;border-right: none">Григорьев С. Г.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=110413&month=12&year=2018', true);">
+<td style="border-right: none">110413</td>
+<td style="border-left: none;border-right: none">Елишев А. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=67991&month=12&year=2018', true);">
+<td style="border-right: none">67991</td>
+<td style="border-left: none;border-right: none">Иванова Л. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7747&month=12&year=2018', true);">
+<td style="border-right: none">7747</td>
+<td style="border-left: none;border-right: none">Каретник А. М.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7737&month=12&year=2018', true);">
+<td style="border-right: none">7737</td>
+<td style="border-left: none;border-right: none">Карташова Т. Н.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=133322&month=12&year=2018', true);">
+<td style="border-right: none">133322</td>
+<td style="border-left: none;border-right: none">Серочкина Е. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=176303&month=12&year=2018', true);">
+<td style="border-right: none">176303</td>
+<td style="border-left: none;border-right: none">Соколов Д. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=66080&month=12&year=2018', true);">
+<td style="border-right: none">66080</td>
+<td style="border-left: none;border-right: none">Ставинская Е. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=115533&month=12&year=2018', true);">
+<td style="border-right: none">115533</td>
+<td style="border-left: none;border-right: none">Счетчиков А. К.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7785&month=12&year=2018', true);">
+<td style="border-right: none">7785</td>
+<td style="border-left: none;border-right: none">Чистов А. С.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7819&month=12&year=2018', true);">
+<td style="border-right: none">7819</td>
+<td style="border-left: none;border-right: none">Шилов В. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3221&month=12&year=2018', true);">
+<td style="border-right: none">3221</td>
+<td style="border-left: none;border-right: none">Щукина Т. С.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160442&month=12&year=2018', true);">
+<td style="border-right: none">160442</td>
+<td style="border-left: none;border-right: none">Яковлев В. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №1</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=185263&month=12&year=2018', true);">
+<td style="border-right: none">185263</td>
+<td style="border-left: none;border-right: none">Алексеенко Д. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=164296&month=12&year=2018', true);">
+<td style="border-right: none">164296</td>
+<td style="border-left: none;border-right: none">Бабаков В. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=153789&month=12&year=2018', true);">
+<td style="border-right: none">153789</td>
+<td style="border-left: none;border-right: none">Гуров В. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=68467&month=12&year=2018', true);">
+<td style="border-right: none">68467</td>
+<td style="border-left: none;border-right: none">Дубовик Л. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=283448&month=12&year=2018', true);">
+<td style="border-right: none">283448</td>
+<td style="border-left: none;border-right: none">Журин В. Ю.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=283220&month=12&year=2018', true);">
+<td style="border-right: none">283220</td>
+<td style="border-left: none;border-right: none">Киров В. С.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=141060&month=12&year=2018', true);">
+<td style="border-right: none">141060</td>
+<td style="border-left: none;border-right: none">Корнилов М. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=114819&month=12&year=2018', true);">
+<td style="border-right: none">114819</td>
+<td style="border-left: none;border-right: none">Коробков А. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7749&month=12&year=2018', true);">
+<td style="border-right: none">7749</td>
+<td style="border-left: none;border-right: none">Кузнецова Г. Г.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=290279&month=12&year=2018', true);">
+<td style="border-right: none">290279</td>
+<td style="border-left: none;border-right: none">Мигулин М. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=100400&month=12&year=2018', true);">
+<td style="border-right: none">100400</td>
+<td style="border-left: none;border-right: none">Морозов А. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7810&month=12&year=2018', true);">
+<td style="border-right: none">7810</td>
+<td style="border-left: none;border-right: none">Смирнов В. Н.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7781&month=12&year=2018', true);">
+<td style="border-right: none">7781</td>
+<td style="border-left: none;border-right: none">Туманов А. М.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3222&month=12&year=2018', true);">
+<td style="border-right: none">3222</td>
+<td style="border-left: none;border-right: none">Храбров А. Г.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №2</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=200436&month=12&year=2018', true);">
+<td style="border-right: none">200436</td>
+<td style="border-left: none;border-right: none">Белов С. Н.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=102237&month=12&year=2018', true);">
+<td style="border-right: none">102237</td>
+<td style="border-left: none;border-right: none">Васильев В. Н.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=264147&month=12&year=2018', true);">
+<td style="border-right: none">264147</td>
+<td style="border-left: none;border-right: none">Васильев С. Ю.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=213475&month=12&year=2018', true);">
+<td style="border-right: none">213475</td>
+<td style="border-left: none;border-right: none">Васильев С. Ю.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=100637&month=12&year=2018', true);">
+<td style="border-right: none">100637</td>
+<td style="border-left: none;border-right: none">Галанкин А. Б.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=10610&month=12&year=2018', true);">
+<td style="border-right: none">10610</td>
+<td style="border-left: none;border-right: none">Галанкин Л. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3206&month=12&year=2018', true);">
+<td style="border-right: none">3206</td>
+<td style="border-left: none;border-right: none">Демидова А. С.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=150856&month=12&year=2018', true);">
+<td style="border-right: none">150856</td>
+<td style="border-left: none;border-right: none">Иванов А. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=283984&month=12&year=2018', true);">
+<td style="border-right: none">283984</td>
+<td style="border-left: none;border-right: none">Иванов В. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=293263&month=12&year=2018', true);">
+<td style="border-right: none">293263</td>
+<td style="border-left: none;border-right: none">Иванов Ю. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=291513&month=12&year=2018', true);">
+<td style="border-right: none">291513</td>
+<td style="border-left: none;border-right: none">Ковалев А. С.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6760&month=12&year=2018', true);">
+<td style="border-right: none">6760</td>
+<td style="border-left: none;border-right: none">Кокин В. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=223772&month=12&year=2018', true);">
+<td style="border-right: none">223772</td>
+<td style="border-left: none;border-right: none">Коптелов А. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=201813&month=12&year=2018', true);">
+<td style="border-right: none">201813</td>
+<td style="border-left: none;border-right: none">Котляров А. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=78331&month=12&year=2018', true);">
+<td style="border-right: none">78331</td>
+<td style="border-left: none;border-right: none">Куранов А. М.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=141867&month=12&year=2018', true);">
+<td style="border-right: none">141867</td>
+<td style="border-left: none;border-right: none">Куфтин А. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=25286&month=12&year=2018', true);">
+<td style="border-right: none">25286</td>
+<td style="border-left: none;border-right: none">Лабазин А. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=77948&month=12&year=2018', true);">
+<td style="border-right: none">77948</td>
+<td style="border-left: none;border-right: none">Лукьянов С. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=48393&month=12&year=2018', true);">
+<td style="border-right: none">48393</td>
+<td style="border-left: none;border-right: none">Морозов Д. Б.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=145122&month=12&year=2018', true);">
+<td style="border-right: none">145122</td>
+<td style="border-left: none;border-right: none">Носков А. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=142372&month=12&year=2018', true);">
+<td style="border-right: none">142372</td>
+<td style="border-left: none;border-right: none">Петровский Г. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=166545&month=12&year=2018', true);">
+<td style="border-right: none">166545</td>
+<td style="border-left: none;border-right: none">Салапин В. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=290414&month=12&year=2018', true);">
+<td style="border-right: none">290414</td>
+<td style="border-left: none;border-right: none">Свинцицкий А. Ю.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7805&month=12&year=2018', true);">
+<td style="border-right: none">7805</td>
+<td style="border-left: none;border-right: none">Свинцицкий Ю. Д.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=41584&month=12&year=2018', true);">
+<td style="border-right: none">41584</td>
+<td style="border-left: none;border-right: none">Сергеева О. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=185245&month=12&year=2018', true);">
+<td style="border-right: none">185245</td>
+<td style="border-left: none;border-right: none">Туманов А. К.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=131944&month=12&year=2018', true);">
+<td style="border-right: none">131944</td>
+<td style="border-left: none;border-right: none">Федоров В. Н.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=125170&month=12&year=2018', true);">
+<td style="border-right: none">125170</td>
+<td style="border-left: none;border-right: none">Хрипунков И. А.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=20879&month=12&year=2018', true);">
+<td style="border-right: none">20879</td>
+<td style="border-left: none;border-right: none">Черняев В. П.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=176463&month=12&year=2018', true);">
+<td style="border-right: none">176463</td>
+<td style="border-left: none;border-right: none">Шальнов И. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=113066&month=12&year=2018', true);">
+<td style="border-right: none">113066</td>
+<td style="border-left: none;border-right: none">Шимкус С. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=186079&month=12&year=2018', true);">
+<td style="border-right: none">186079</td>
+<td style="border-left: none;border-right: none">Шлепкин В. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=66502&month=12&year=2018', true);">
+<td style="border-right: none">66502</td>
+<td style="border-left: none;border-right: none">Шлепкин Е. И.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=40102&month=12&year=2018', true);">
+<td style="border-right: none">40102</td>
+<td style="border-left: none;border-right: none">Шлепкин И. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=143236&month=12&year=2018', true);">
+<td style="border-right: none">143236</td>
+<td style="border-left: none;border-right: none">Ячный А. Ю.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №3</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=31386&month=12&year=2018', true);">
+<td style="border-right: none">31386</td>
+<td style="border-left: none;border-right: none">Купцов А. В.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №4</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3217&month=12&year=2018', true);">
+<td style="border-right: none">3217</td>
+<td style="border-left: none;border-right: none">Ребизин С. С.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №4</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=30646&month=12&year=2018', true);">
+<td style="border-right: none">30646</td>
+<td style="border-left: none;border-right: none">Сотников А. Н.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №4</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6414&month=12&year=2018', true);">
+<td style="border-right: none">6414</td>
+<td style="border-left: none;border-right: none">Шилов В. Ю.</td>
+<td >ИЭТО</td>
+<td style="border-right: none;border-left: none">Группа №4</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=185206&month=12&year=2018', true);">
+<td style="border-right: none">185206</td>
+<td style="border-left: none;border-right: none">Гаевский А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=173174&month=12&year=2018', true);">
+<td style="border-right: none">173174</td>
+<td style="border-left: none;border-right: none">Гусарова М. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3166&month=12&year=2018', true);">
+<td style="border-right: none">3166</td>
+<td style="border-left: none;border-right: none">Жабицкий В. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=182074&month=12&year=2018', true);">
+<td style="border-right: none">182074</td>
+<td style="border-left: none;border-right: none">Лалаян М. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7619&month=12&year=2018', true);">
+<td style="border-right: none">7619</td>
+<td style="border-left: none;border-right: none">Мончинский В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7986&month=12&year=2018', true);">
+<td style="border-right: none">7986</td>
+<td style="border-left: none;border-right: none">Семенюшкин И. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=275391&month=12&year=2018', true);">
+<td style="border-right: none">275391</td>
+<td style="border-left: none;border-right: none">Сидорин А. О.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=230370&month=12&year=2018', true);">
+<td style="border-right: none">230370</td>
+<td style="border-left: none;border-right: none">Сыресин Е. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=173646&month=12&year=2018', true);">
+<td style="border-right: none">173646</td>
+<td style="border-left: none;border-right: none">Шатохин В. Л.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none"></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=230577&month=12&year=2018', true);">
+<td style="border-right: none">230577</td>
+<td style="border-left: none;border-right: none">Алфеев А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">ДСН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=150004&month=12&year=2018', true);">
+<td style="border-right: none">150004</td>
+<td style="border-left: none;border-right: none">Карягин А. Ю.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">ДСН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=131020&month=12&year=2018', true);">
+<td style="border-right: none">131020</td>
+<td style="border-left: none;border-right: none">Кутенков С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">ДСН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=131759&month=12&year=2018', true);">
+<td style="border-right: none">131759</td>
+<td style="border-left: none;border-right: none">Нефедьев С. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">ДСН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6655&month=12&year=2018', true);">
+<td style="border-right: none">6655</td>
+<td style="border-left: none;border-right: none">Чуркин В. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">ДСН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6204&month=12&year=2018', true);">
+<td style="border-right: none">6204</td>
+<td style="border-left: none;border-right: none">Юдин И. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">ДСН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6351&month=12&year=2018', true);">
+<td style="border-right: none">6351</td>
+<td style="border-left: none;border-right: none">Агафонова Т. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=122456&month=12&year=2018', true);">
+<td style="border-right: none">122456</td>
+<td style="border-left: none;border-right: none">Арефьев С. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=152486&month=12&year=2018', true);">
+<td style="border-right: none">152486</td>
+<td style="border-left: none;border-right: none">Ахмадризялов Р. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6602&month=12&year=2018', true);">
+<td style="border-right: none">6602</td>
+<td style="border-left: none;border-right: none">Блинов Н. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=2264&month=12&year=2018', true);">
+<td style="border-right: none">2264</td>
+<td style="border-left: none;border-right: none">Виноградов А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=165816&month=12&year=2018', true);">
+<td style="border-right: none">165816</td>
+<td style="border-left: none;border-right: none">Гришина Ю. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160110&month=12&year=2018', true);">
+<td style="border-right: none">160110</td>
+<td style="border-left: none;border-right: none">Гулина М. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6515&month=12&year=2018', true);">
+<td style="border-right: none">6515</td>
+<td style="border-left: none;border-right: none">Добрынина О. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6663&month=12&year=2018', true);">
+<td style="border-right: none">6663</td>
+<td style="border-left: none;border-right: none">Жильцова Н. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=260143&month=12&year=2018', true);">
+<td style="border-right: none">260143</td>
+<td style="border-left: none;border-right: none">Зорин А. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=133491&month=12&year=2018', true);">
+<td style="border-right: none">133491</td>
+<td style="border-left: none;border-right: none">Калагин И. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=123991&month=12&year=2018', true);">
+<td style="border-right: none">123991</td>
+<td style="border-left: none;border-right: none">Караваев А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=80734&month=12&year=2018', true);">
+<td style="border-right: none">80734</td>
+<td style="border-left: none;border-right: none">Карпинский В. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=152579&month=12&year=2018', true);">
+<td style="border-right: none">152579</td>
+<td style="border-left: none;border-right: none">Киров С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=184897&month=12&year=2018', true);">
+<td style="border-right: none">184897</td>
+<td style="border-left: none;border-right: none">Козляковская А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6386&month=12&year=2018', true);">
+<td style="border-right: none">6386</td>
+<td style="border-left: none;border-right: none">Кондратьев Н. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=144673&month=12&year=2018', true);">
+<td style="border-right: none">144673</td>
+<td style="border-left: none;border-right: none">Копченов А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=172869&month=12&year=2018', true);">
+<td style="border-right: none">172869</td>
+<td style="border-left: none;border-right: none">Кузнецов М. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=293765&month=12&year=2018', true);">
+<td style="border-right: none">293765</td>
+<td style="border-left: none;border-right: none">Кузнецов П. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6630&month=12&year=2018', true);">
+<td style="border-right: none">6630</td>
+<td style="border-left: none;border-right: none">Кукушкин А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=145093&month=12&year=2018', true);">
+<td style="border-right: none">145093</td>
+<td style="border-left: none;border-right: none">Кулаева Т. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=123024&month=12&year=2018', true);">
+<td style="border-right: none">123024</td>
+<td style="border-left: none;border-right: none">Купцов А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6457&month=12&year=2018', true);">
+<td style="border-right: none">6457</td>
+<td style="border-left: none;border-right: none">Морохова Т. Б.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=146293&month=12&year=2018', true);">
+<td style="border-right: none">146293</td>
+<td style="border-left: none;border-right: none">Нефедов О. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=103657&month=12&year=2018', true);">
+<td style="border-right: none">103657</td>
+<td style="border-left: none;border-right: none">Ноженко Ю. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=104683&month=12&year=2018', true);">
+<td style="border-right: none">104683</td>
+<td style="border-left: none;border-right: none">Орлов А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=230542&month=12&year=2018', true);">
+<td style="border-right: none">230542</td>
+<td style="border-left: none;border-right: none">Осипенков А. Л.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6435&month=12&year=2018', true);">
+<td style="border-right: none">6435</td>
+<td style="border-left: none;border-right: none">Попков Р. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=134894&month=12&year=2018', true);">
+<td style="border-right: none">134894</td>
+<td style="border-left: none;border-right: none">Рябов В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6280&month=12&year=2018', true);">
+<td style="border-right: none">6280</td>
+<td style="border-left: none;border-right: none">Савельев А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=21185&month=12&year=2018', true);">
+<td style="border-right: none">21185</td>
+<td style="border-left: none;border-right: none">Силушин Г. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=134827&month=12&year=2018', true);">
+<td style="border-right: none">134827</td>
+<td style="border-left: none;border-right: none">Степанов В. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=111578&month=12&year=2018', true);">
+<td style="border-right: none">111578</td>
+<td style="border-left: none;border-right: none">Товстуха В. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=162313&month=12&year=2018', true);">
+<td style="border-right: none">162313</td>
+<td style="border-left: none;border-right: none">Травин Н. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=27977&month=12&year=2018', true);">
+<td style="border-right: none">27977</td>
+<td style="border-left: none;border-right: none">Уразаков Э. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=102728&month=12&year=2018', true);">
+<td style="border-right: none">102728</td>
+<td style="border-left: none;border-right: none">Федоров В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6408&month=12&year=2018', true);">
+<td style="border-right: none">6408</td>
+<td style="border-left: none;border-right: none">Филиппов А. Я.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=170719&month=12&year=2018', true);">
+<td style="border-right: none">170719</td>
+<td style="border-left: none;border-right: none">Филиппов М. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6406&month=12&year=2018', true);">
+<td style="border-right: none">6406</td>
+<td style="border-left: none;border-right: none">Филиппов Н. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=173915&month=12&year=2018', true);">
+<td style="border-right: none">173915</td>
+<td style="border-left: none;border-right: none">Чебыкин И. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6412&month=12&year=2018', true);">
+<td style="border-right: none">6412</td>
+<td style="border-left: none;border-right: none">Шахматов А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=102852&month=12&year=2018', true);">
+<td style="border-right: none">102852</td>
+<td style="border-left: none;border-right: none">Шурыгин А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160723&month=12&year=2018', true);">
+<td style="border-right: none">160723</td>
+<td style="border-left: none;border-right: none">Щербаков А. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИОСЭН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=20909&month=12&year=2018', true);">
+<td style="border-right: none">20909</td>
+<td style="border-left: none;border-right: none">Аверичев А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=112769&month=12&year=2018', true);">
+<td style="border-right: none">112769</td>
+<td style="border-left: none;border-right: none">Арефьев А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160220&month=12&year=2018', true);">
+<td style="border-right: none">160220</td>
+<td style="border-left: none;border-right: none">Балдин Н. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6106&month=12&year=2018', true);">
+<td style="border-right: none">6106</td>
+<td style="border-left: none;border-right: none">Батин В. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=212754&month=12&year=2018', true);">
+<td style="border-right: none">212754</td>
+<td style="border-left: none;border-right: none">Башева М. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=291229&month=12&year=2018', true);">
+<td style="border-right: none">291229</td>
+<td style="border-left: none;border-right: none">Белов Д. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=185706&month=12&year=2018', true);">
+<td style="border-right: none">185706</td>
+<td style="border-left: none;border-right: none">0</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6110&month=12&year=2018', true);">
+<td style="border-right: none">6110</td>
+<td style="border-left: none;border-right: none">Борзунов Ю. Т.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=161208&month=12&year=2018', true);">
+<td style="border-right: none">161208</td>
+<td style="border-left: none;border-right: none">Гореликов С. П.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=232504&month=12&year=2018', true);">
+<td style="border-right: none">232504</td>
+<td style="border-left: none;border-right: none">Громова Е. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=294313&month=12&year=2018', true);">
+<td style="border-right: none">294313</td>
+<td style="border-left: none;border-right: none">Гудков С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6125&month=12&year=2018', true);">
+<td style="border-right: none">6125</td>
+<td style="border-left: none;border-right: none">Дробин В. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6136&month=12&year=2018', true);">
+<td style="border-right: none">6136</td>
+<td style="border-left: none;border-right: none">Егорова Л. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=164010&month=12&year=2018', true);">
+<td style="border-right: none">164010</td>
+<td style="border-left: none;border-right: none">Емельянов А. Э.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=112134&month=12&year=2018', true);">
+<td style="border-right: none">112134</td>
+<td style="border-left: none;border-right: none">Емельянов Н. Э.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=104125&month=12&year=2018', true);">
+<td style="border-right: none">104125</td>
+<td style="border-left: none;border-right: none">Епимахов В. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=175803&month=12&year=2018', true);">
+<td style="border-right: none">175803</td>
+<td style="border-left: none;border-right: none">Каширин В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=230880&month=12&year=2018', true);">
+<td style="border-right: none">230880</td>
+<td style="border-left: none;border-right: none">Клементьев В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=171148&month=12&year=2018', true);">
+<td style="border-right: none">171148</td>
+<td style="border-left: none;border-right: none">Климанский Д. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=282551&month=12&year=2018', true);">
+<td style="border-right: none">282551</td>
+<td style="border-left: none;border-right: none">Кондратьев М. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=103157&month=12&year=2018', true);">
+<td style="border-right: none">103157</td>
+<td style="border-left: none;border-right: none">Константинов А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=294314&month=12&year=2018', true);">
+<td style="border-right: none">294314</td>
+<td style="border-left: none;border-right: none">Косинов В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=100015&month=12&year=2018', true);">
+<td style="border-right: none">100015</td>
+<td style="border-left: none;border-right: none">Куликов Е. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=91284&month=12&year=2018', true);">
+<td style="border-right: none">91284</td>
+<td style="border-left: none;border-right: none">Лабазова В. Ф.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6152&month=12&year=2018', true);">
+<td style="border-right: none">6152</td>
+<td style="border-left: none;border-right: none">Липченко В. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=233310&month=12&year=2018', true);">
+<td style="border-right: none">233310</td>
+<td style="border-left: none;border-right: none">Лобанов Д. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=122927&month=12&year=2018', true);">
+<td style="border-right: none">122927</td>
+<td style="border-left: none;border-right: none">Майорова Н. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3666&month=12&year=2018', true);">
+<td style="border-right: none">3666</td>
+<td style="border-left: none;border-right: none">Мельникова Н. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=211268&month=12&year=2018', true);">
+<td style="border-right: none">211268</td>
+<td style="border-left: none;border-right: none">Митрофанова Ю. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=182483&month=12&year=2018', true);">
+<td style="border-right: none">182483</td>
+<td style="border-left: none;border-right: none">Морозов А. Д.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=60931&month=12&year=2018', true);">
+<td style="border-right: none">60931</td>
+<td style="border-left: none;border-right: none">Орлов В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=151884&month=12&year=2018', true);">
+<td style="border-right: none">151884</td>
+<td style="border-left: none;border-right: none">Петров И. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=176393&month=12&year=2018', true);">
+<td style="border-right: none">176393</td>
+<td style="border-left: none;border-right: none">Семашко С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=174588&month=12&year=2018', true);">
+<td style="border-right: none">174588</td>
+<td style="border-left: none;border-right: none">Семенов В. Е.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=291647&month=12&year=2018', true);">
+<td style="border-right: none">291647</td>
+<td style="border-left: none;border-right: none">Сидоров С. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6177&month=12&year=2018', true);">
+<td style="border-right: none">6177</td>
+<td style="border-left: none;border-right: none">Тараканов В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=163331&month=12&year=2018', true);">
+<td style="border-right: none">163331</td>
+<td style="border-left: none;border-right: none">Тарасюк Д. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=181126&month=12&year=2018', true);">
+<td style="border-right: none">181126</td>
+<td style="border-left: none;border-right: none">Томкув Л. Т.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=185602&month=12&year=2018', true);">
+<td style="border-right: none">185602</td>
+<td style="border-left: none;border-right: none">Филимонов А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=95613&month=12&year=2018', true);">
+<td style="border-right: none">95613</td>
+<td style="border-left: none;border-right: none">Филиппова Е. Ю.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=151220&month=12&year=2018', true);">
+<td style="border-right: none">151220</td>
+<td style="border-left: none;border-right: none">Швидкий Д. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=210896&month=12&year=2018', true);">
+<td style="border-right: none">210896</td>
+<td style="border-left: none;border-right: none">Яровикова О. Б.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НИКО</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3084&month=12&year=2018', true);">
+<td style="border-right: none">3084</td>
+<td style="border-left: none;border-right: none">Александров В. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=66397&month=12&year=2018', true);">
+<td style="border-right: none">66397</td>
+<td style="border-left: none;border-right: none">Андреев В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=220918&month=12&year=2018', true);">
+<td style="border-right: none">220918</td>
+<td style="border-left: none;border-right: none">Бутенко А. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7560&month=12&year=2018', true);">
+<td style="border-right: none">7560</td>
+<td style="border-left: none;border-right: none">Василишин Б. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7564&month=12&year=2018', true);">
+<td style="border-right: none">7564</td>
+<td style="border-left: none;border-right: none">Волков В. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=47499&month=12&year=2018', true);">
+<td style="border-right: none">47499</td>
+<td style="border-left: none;border-right: none">Горбачев Е. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=292811&month=12&year=2018', true);">
+<td style="border-right: none">292811</td>
+<td style="border-left: none;border-right: none">Горченко В. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=152904&month=12&year=2018', true);">
+<td style="border-right: none">152904</td>
+<td style="border-left: none;border-right: none">Гусев С. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=994311&month=12&year=2018', true);">
+<td style="border-right: none">994311</td>
+<td style="border-left: none;border-right: none">Елисеев А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=113060&month=12&year=2018', true);">
+<td style="border-right: none">113060</td>
+<td style="border-left: none;border-right: none">Елкин В. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6973&month=12&year=2018', true);">
+<td style="border-right: none">6973</td>
+<td style="border-left: none;border-right: none">Ефимов А. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7634&month=12&year=2018', true);">
+<td style="border-right: none">7634</td>
+<td style="border-left: none;border-right: none">Ефимова Л. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=100003&month=12&year=2018', true);">
+<td style="border-right: none">100003</td>
+<td style="border-left: none;border-right: none">Исадов В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=154849&month=12&year=2018', true);">
+<td style="border-right: none">154849</td>
+<td style="border-left: none;border-right: none">0</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=71785&month=12&year=2018', true);">
+<td style="border-right: none">71785</td>
+<td style="border-left: none;border-right: none">Кириченко А. Е.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3109&month=12&year=2018', true);">
+<td style="border-right: none">3109</td>
+<td style="border-left: none;border-right: none">Ковалев В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=26211&month=12&year=2018', true);">
+<td style="border-right: none">26211</td>
+<td style="border-left: none;border-right: none">Козлов О. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=20557&month=12&year=2018', true);">
+<td style="border-right: none">20557</td>
+<td style="border-left: none;border-right: none">Королева Г. Е.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7194&month=12&year=2018', true);">
+<td style="border-right: none">7194</td>
+<td style="border-left: none;border-right: none">Кочуров А. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7947&month=12&year=2018', true);">
+<td style="border-right: none">7947</td>
+<td style="border-left: none;border-right: none">Кукушкина Р. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=133883&month=12&year=2018', true);">
+<td style="border-right: none">133883</td>
+<td style="border-left: none;border-right: none">Купцов В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3116&month=12&year=2018', true);">
+<td style="border-right: none">3116</td>
+<td style="border-left: none;border-right: none">Лебедев Н. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6267&month=12&year=2018', true);">
+<td style="border-right: none">6267</td>
+<td style="border-left: none;border-right: none">Липченко Л. П.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7616&month=12&year=2018', true);">
+<td style="border-right: none">7616</td>
+<td style="border-left: none;border-right: none">Михайлов В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=233106&month=12&year=2018', true);">
+<td style="border-right: none">233106</td>
+<td style="border-left: none;border-right: none">Михайлов С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=132828&month=12&year=2018', true);">
+<td style="border-right: none">132828</td>
+<td style="border-left: none;border-right: none">Монахов Д. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=141112&month=12&year=2018', true);">
+<td style="border-right: none">141112</td>
+<td style="border-left: none;border-right: none">Назлев Х. П.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=262018&month=12&year=2018', true);">
+<td style="border-right: none">262018</td>
+<td style="border-left: none;border-right: none">Панюшкин В. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3131&month=12&year=2018', true);">
+<td style="border-right: none">3131</td>
+<td style="border-left: none;border-right: none">Пиляр Н. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=31428&month=12&year=2018', true);">
+<td style="border-right: none">31428</td>
+<td style="border-left: none;border-right: none">Пушкин М. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6277&month=12&year=2018', true);">
+<td style="border-right: none">6277</td>
+<td style="border-left: none;border-right: none">Романов С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7482&month=12&year=2018', true);">
+<td style="border-right: none">7482</td>
+<td style="border-left: none;border-right: none">Рукояткин П. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=11690&month=12&year=2018', true);">
+<td style="border-right: none">11690</td>
+<td style="border-left: none;border-right: none">Рукояткина Т. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7666&month=12&year=2018', true);">
+<td style="border-right: none">7666</td>
+<td style="border-left: none;border-right: none">Сальникова Г. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=58510&month=12&year=2018', true);">
+<td style="border-right: none">58510</td>
+<td style="border-left: none;border-right: none">Свешникова Л. Е.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=263013&month=12&year=2018', true);">
+<td style="border-right: none">263013</td>
+<td style="border-left: none;border-right: none">Седых Г. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=233249&month=12&year=2018', true);">
+<td style="border-right: none">233249</td>
+<td style="border-left: none;border-right: none">Смолков Р. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3071&month=12&year=2018', true);">
+<td style="border-right: none">3071</td>
+<td style="border-left: none;border-right: none">Тарасов В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=243654&month=12&year=2018', true);">
+<td style="border-right: none">243654</td>
+<td style="border-left: none;border-right: none">Тузиков А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=181983&month=12&year=2018', true);">
+<td style="border-right: none">181983</td>
+<td style="border-left: none;border-right: none">Филатов Г. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=201387&month=12&year=2018', true);">
+<td style="border-right: none">201387</td>
+<td style="border-left: none;border-right: none">Филиппов А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=16890&month=12&year=2018', true);">
+<td style="border-right: none">16890</td>
+<td style="border-left: none;border-right: none">Ширкова Е. Э.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НТОП</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=82772&month=12&year=2018', true);">
+<td style="border-right: none">82772</td>
+<td style="border-left: none;border-right: none">Аверьянов М. Ю.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=68700&month=12&year=2018', true);">
+<td style="border-right: none">68700</td>
+<td style="border-left: none;border-right: none">Акимов В. П.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7671&month=12&year=2018', true);">
+<td style="border-right: none">7671</td>
+<td style="border-left: none;border-right: none">Базанов А. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3354&month=12&year=2018', true);">
+<td style="border-right: none">3354</td>
+<td style="border-left: none;border-right: none">Балалыкин Н. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3353&month=12&year=2018', true);">
+<td style="border-right: none">3353</td>
+<td style="border-left: none;border-right: none">Бекетова Г. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=182585&month=12&year=2018', true);">
+<td style="border-right: none">182585</td>
+<td style="border-left: none;border-right: none">Бесфамильный С. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=173733&month=12&year=2018', true);">
+<td style="border-right: none">173733</td>
+<td style="border-left: none;border-right: none">Богатов А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=121040&month=12&year=2018', true);">
+<td style="border-right: none">121040</td>
+<td style="border-left: none;border-right: none">Бойцов А. Ю.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6608&month=12&year=2018', true);">
+<td style="border-right: none">6608</td>
+<td style="border-left: none;border-right: none">Бугринов Е. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=68399&month=12&year=2018', true);">
+<td style="border-right: none">68399</td>
+<td style="border-left: none;border-right: none">Бутенко А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=261043&month=12&year=2018', true);">
+<td style="border-right: none">261043</td>
+<td style="border-left: none;border-right: none">Вадеев А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7562&month=12&year=2018', true);">
+<td style="border-right: none">7562</td>
+<td style="border-left: none;border-right: none">Вадеев В. П.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=41349&month=12&year=2018', true);">
+<td style="border-right: none">41349</td>
+<td style="border-left: none;border-right: none">Вандровский Г. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=253971&month=12&year=2018', true);">
+<td style="border-right: none">253971</td>
+<td style="border-left: none;border-right: none">Воронин А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=272666&month=12&year=2018', true);">
+<td style="border-right: none">272666</td>
+<td style="border-left: none;border-right: none">Гаранжа Н. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7567&month=12&year=2018', true);">
+<td style="border-right: none">7567</td>
+<td style="border-left: none;border-right: none">Говоров А. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=114233&month=12&year=2018', true);">
+<td style="border-right: none">114233</td>
+<td style="border-left: none;border-right: none">Головенский Б. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=182997&month=12&year=2018', true);">
+<td style="border-right: none">182997</td>
+<td style="border-left: none;border-right: none">Гончаров С. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=141043&month=12&year=2018', true);">
+<td style="border-right: none">141043</td>
+<td style="border-left: none;border-right: none">Горелышев И. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=98066&month=12&year=2018', true);">
+<td style="border-right: none">98066</td>
+<td style="border-left: none;border-right: none">Гудков С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=170953&month=12&year=2018', true);">
+<td style="border-right: none">170953</td>
+<td style="border-left: none;border-right: none">0</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7573&month=12&year=2018', true);">
+<td style="border-right: none">7573</td>
+<td style="border-left: none;border-right: none">Джакупов И. К.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3363&month=12&year=2018', true);">
+<td style="border-right: none">3363</td>
+<td style="border-left: none;border-right: none">Дмитриева Е. И.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=96718&month=12&year=2018', true);">
+<td style="border-right: none">96718</td>
+<td style="border-left: none;border-right: none">Донец Д. Е.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7575&month=12&year=2018', true);">
+<td style="border-right: none">7575</td>
+<td style="border-left: none;border-right: none">Донец Е. Д.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=45739&month=12&year=2018', true);">
+<td style="border-right: none">45739</td>
+<td style="border-left: none;border-right: none">Донец Е. Е.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=141485&month=12&year=2018', true);">
+<td style="border-right: none">141485</td>
+<td style="border-left: none;border-right: none">Дорофеев Г. Л.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160003&month=12&year=2018', true);">
+<td style="border-right: none">160003</td>
+<td style="border-left: none;border-right: none">Захаров А. Ю.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=160860&month=12&year=2018', true);">
+<td style="border-right: none">160860</td>
+<td style="border-left: none;border-right: none">Зиновьев Л. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7595&month=12&year=2018', true);">
+<td style="border-right: none">7595</td>
+<td style="border-left: none;border-right: none">Кислогубов А. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=101605&month=12&year=2018', true);">
+<td style="border-right: none">101605</td>
+<td style="border-left: none;border-right: none">Кобец В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6142&month=12&year=2018', true);">
+<td style="border-right: none">6142</td>
+<td style="border-left: none;border-right: none">Комогоров Э. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=66392&month=12&year=2018', true);">
+<td style="border-right: none">66392</td>
+<td style="border-left: none;border-right: none">Коровяков В. Д.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=143058&month=12&year=2018', true);">
+<td style="border-right: none">143058</td>
+<td style="border-left: none;border-right: none">Косачев В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=110320&month=12&year=2018', true);">
+<td style="border-right: none">110320</td>
+<td style="border-left: none;border-right: none">Кузнецов С. М.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=170665&month=12&year=2018', true);">
+<td style="border-right: none">170665</td>
+<td style="border-left: none;border-right: none">Кузякин Р. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=184468&month=12&year=2018', true);">
+<td style="border-right: none">184468</td>
+<td style="border-left: none;border-right: none">Куликов М. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=173781&month=12&year=2018', true);">
+<td style="border-right: none">173781</td>
+<td style="border-left: none;border-right: none">Куликов М. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=17719&month=12&year=2018', true);">
+<td style="border-right: none">17719</td>
+<td style="border-left: none;border-right: none">Кутузова Л. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=240095&month=12&year=2018', true);">
+<td style="border-right: none">240095</td>
+<td style="border-left: none;border-right: none">Левтеров К. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=124767&month=12&year=2018', true);">
+<td style="border-right: none">124767</td>
+<td style="border-left: none;border-right: none">Люосев Д. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=161330&month=12&year=2018', true);">
+<td style="border-right: none">161330</td>
+<td style="border-left: none;border-right: none">Мартынов А. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=101859&month=12&year=2018', true);">
+<td style="border-right: none">101859</td>
+<td style="border-left: none;border-right: none">Мялковский В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=1457&month=12&year=2018', true);">
+<td style="border-right: none">1457</td>
+<td style="border-left: none;border-right: none">Нестеров А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=143309&month=12&year=2018', true);">
+<td style="border-right: none">143309</td>
+<td style="border-left: none;border-right: none">Ноздрин М. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=146710&month=12&year=2018', true);">
+<td style="border-right: none">146710</td>
+<td style="border-left: none;border-right: none">Петров В. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=223197&month=12&year=2018', true);">
+<td style="border-right: none">223197</td>
+<td style="border-left: none;border-right: none">Пивин Р. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7630&month=12&year=2018', true);">
+<td style="border-right: none">7630</td>
+<td style="border-left: none;border-right: none">Платонов Ю. А.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=124621&month=12&year=2018', true);">
+<td style="border-right: none">124621</td>
+<td style="border-left: none;border-right: none">Понкин Д. О.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=244145&month=12&year=2018', true);">
+<td style="border-right: none">244145</td>
+<td style="border-left: none;border-right: none">Прокофьичев Ю. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=230507&month=12&year=2018', true);">
+<td style="border-right: none">230507</td>
+<td style="border-left: none;border-right: none">Пушкарь Р. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=102197&month=12&year=2018', true);">
+<td style="border-right: none">102197</td>
+<td style="border-left: none;border-right: none">Рамздорф А. Ю.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=161770&month=12&year=2018', true);">
+<td style="border-right: none">161770</td>
+<td style="border-left: none;border-right: none">Рассадов Д. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=151690&month=12&year=2018', true);">
+<td style="border-right: none">151690</td>
+<td style="border-left: none;border-right: none">Романенко С. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=101175&month=12&year=2018', true);">
+<td style="border-right: none">101175</td>
+<td style="border-left: none;border-right: none">Романов А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=20115&month=12&year=2018', true);">
+<td style="border-right: none">20115</td>
+<td style="border-left: none;border-right: none">Рязанцев Ю. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=7635&month=12&year=2018', true);">
+<td style="border-right: none">7635</td>
+<td style="border-left: none;border-right: none">Сальников В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6476&month=12&year=2018', true);">
+<td style="border-right: none">6476</td>
+<td style="border-left: none;border-right: none">Селезнев В. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=170560&month=12&year=2018', true);">
+<td style="border-right: none">170560</td>
+<td style="border-left: none;border-right: none">Семенов С. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=161434&month=12&year=2018', true);">
+<td style="border-right: none">161434</td>
+<td style="border-left: none;border-right: none">Сергеев А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6808&month=12&year=2018', true);">
+<td style="border-right: none">6808</td>
+<td style="border-left: none;border-right: none">Скворцов Г. Д.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=3383&month=12&year=2018', true);">
+<td style="border-right: none">3383</td>
+<td style="border-left: none;border-right: none">Скрыпник А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=164594&month=12&year=2018', true);">
+<td style="border-right: none">164594</td>
+<td style="border-left: none;border-right: none">Следнева А. С.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=186034&month=12&year=2018', true);">
+<td style="border-right: none">186034</td>
+<td style="border-left: none;border-right: none">0</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=100778&month=12&year=2018', true);">
+<td style="border-right: none">100778</td>
+<td style="border-left: none;border-right: none">Смирнов А. В.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt oddRow"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=100178&month=12&year=2018', true);">
+<td style="border-right: none">100178</td>
+<td style="border-left: none;border-right: none">Сорокин А. Г.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>
+<tr
+class="pt"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/premiya&tab_n=6645&month=12&year=2018', true);">
+<td style="border-right: none">6645</td>
+<td style="border-left: none;border-right: none">Сотников П. Н.</td>
+<td >Отделение №1</td>
+<td style="border-right: none;border-left: none">НЭОИКН</td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td  ></td>
+<td ></td>
+</tr>

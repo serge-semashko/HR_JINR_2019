@@ -1,0 +1,119 @@
+admin/doctypes/copy_doctype_property.ajm
+
+[comments]
+descr=A: Создание нового типа документа на основе существующего. 
+input=type_id - ID типа документа - образца (из таблицы d_types);
+
+output=HTML форма создания задания свойств нового типа документа 
+parents=admin/doctypes/copy_doctype.ajm
+childs=
+test_URL=?c=admin/doctypes/copy_doctype_property&type_id=1
+author=Яковлев, Куняев
+[end]
+
+
+[description]
+HTML форма создания задания свойств нового типа документа.
+[end]
+
+
+[parameters]
+request_name=A: Создание нового типа документа на основе существующего
+LOG=ON
+[end]
+
+[report]
+
+    $GET_DATA [getDoctypePropertyInfo]  ??type_id
+
+
+    <input type=hidden name="type_id" value="#type_id#">  ??
+    <input type=hidden name="c" value="#c#">  ??
+
+    <table cellpadding=5>
+
+
+
+    <tr><td class=label>Название типа:</td><td> <input size=60 name="f_name" value="#NAME#"> &nbsp; </td></tr>
+    <tr><td class=label>Короткое название:</td><td> <input size=60 name="f_short_name" value="#SHORT_NAME#"> &nbsp; </td></tr>
+
+    <tr><td class=label>Группа документов:</td><td>
+        <select name=f_group_id style="font-size:9pt;"
+            ><option value="0">без группы</option>
+        #DOC_GROUP_NAME#</select>
+    </td></tr>
+
+    <tr><td class=label>Секция, определяющая специфическое <br> финальное решение по документу
+        :</td><td> <input size=60 name="f_custom_final_decision" value="#CUSTOM_FINAL_DECISION#"> &nbsp; 
+    </td></tr>
+    <tr><td class=label>Модуль вывода списка документов <br> этого типа во вкладке "Все Документы"
+        :</td><td> <input size=60 name="f_modul_table" value="#MODUL_TABLE#"> &nbsp; 
+    </td></tr>
+    <tr><td class=label>Модуль вывода списка документов <br> этого типа во вкладке "Мониторинг"
+        :</td><td> <input size=60 name="f_monitor_table" value="#MONITOR_TABLE#"> &nbsp; 
+    </td></tr>
+
+    <tr><td class=label style="white-space:nowrap;" nowrap>Нумерация документа:</td><td>
+        <input type=radio name=f_number_type value="1" 
+        checked  ??number_type=1
+        >Автоматически устанавливается на маршруте
+        
+        <br>
+        <input type=radio name=f_number_type value="2" 
+        checked  ??number_type=2
+        >Кнопка "Зарегистрировать" на шаге
+
+        <br>
+        <input type=radio name=f_number_type value="3" 
+        checked  ??number_type=3
+        >Ручной ввод на шаге
+
+        <br>
+        <input type=radio name=f_number_type value="4" 
+        checked  ??number_type=4
+        >Ручной ввод при создании
+
+        <br>
+        <input type=radio name=f_number_type value="0" 
+        checked  ??number_type=0
+        >Нет номера
+    </td></tr>
+
+    </table>
+
+
+<script>
+</script>
+
+[end]
+
+
+
+
+
+***************************** Шаблон SQL запроса ***************************
+
+
+[getDoctypePropertyInfo]
+select dtp.ID
+, dtp.name as NAME 
+, dtp.short_name as SHORT_NAME 
+, dtp.GROUP_ID
+, dgr.GROUP_NAME
+, dtp.CUSTOM_FINAL_DECISION
+, dtp.MODUL_TABLE
+, dtp.MONITOR_TABLE
+, dtp.number_type
+
+from d_types dtp
+left join doc_groups dgr on dtp.group_id = dgr.Id
+
+where dtp.Id = #type_id#
+;
+select concat('<option value=', cast(id as char)
+, case when id=#GROUP_ID# then ' selected' else '' end ??GROUP_ID
+, '>', group_name, '</option>') as DOC_GROUP_NAME
+from doc_groups 
+order by sort
+;
+[end]

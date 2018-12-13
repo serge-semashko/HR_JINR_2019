@@ -1,0 +1,652 @@
+admin/doctypes/editFieldAttr.ajm
+
+
+[comments]
+descr=A: 
+
+input=field_id - ID поля документа, cop=u - сохранить атрибуты поля 
+
+output=
+parents=
+author=Куняев, Яковлев
+[end]
+
+[description]
+<b>При первом вызове</b> (!doIt=Y):
+<ul>
+<li>
+</li>
+</ul>
+
+<b>По Submit формы</b> (doIt=Y):
+<ul>
+<li></li>
+
+</ul>
+[end]
+
+
+[parameters]
+request_name=A:
+LOG=ON
+[end]
+
+[report]
+$INCLUDE [report_]   ??AR_SYS_ADMIN=1
+$LOG +++++ ERROR=#ERROR#;  ??ERROR
+[end]
+
+
+[report_] 
+    $INCLUDE  [add_field] ??!field_id&type_id&field_type_id
+    $GET_DATA [get field fixed attrs]
+    $SET_PARAMETERS cop=;   ??cop=add
+    $INCLUDE  [process command]  ??cop
+    $GET_DATA [get field]   ??!cop
+    $INCLUDE  [form]        ??!cop|ERROR|INPUT_ERROR
+    $INCLUDE  [return script] ??cop&!ERROR
+[end]
+
+[add_field]  ****** Добавление поля
+    $SET_PARAMETERS cop=add;
+    $GET_DATA [start transaction]
+    $GET_DATA [get_field_descr]  
+    $GET_DATA [add_field_DB]   ??!section_DB
+    $INCLUDE  #src_file#[#section_DB#]     ??section_DB
+    $GET_DATA [register_field]  ??!ERROR
+    $GET_DATA [commit]
+[end]
+
+[process command]  ****** Обработка команд изменения, пометки на удаление, удаления
+    $GET_DATA [start transaction]
+    $INCLUDE  [update field]  ??cop=u
+    $GET_DATA [inactivate field]  ??cop=inact
+    $INCLUDE  [delete field]  ??cop=del
+    $GET_DATA [commit]
+[end]
+
+[form] ****** Форма ввода данных
+$GET_DATA [get infos list]
+
+<form name="popupForm" id="popupForm" method="POST" enctype="multipart/form-data" target="wf" autocomplete="off">
+    <input type=hidden name="c" value="#c#">
+    <input type=hidden name="cop" value="">
+    <input type=hidden name="field_id" value='#field_id#'>
+    <input type=hidden name="dbChanged" value=''>
+
+    <input type=hidden name="Change_DataType" value=''>
+
+    <input type=hidden name="dbTypeSize" value=''>
+    <input type=hidden name="dbType" value=''>
+
+
+    <center><table border=0 cellpadding=7 cellspacing=0>
+    <tr><td colspan=2 class="big center">---</td></tr>
+
+    <tr><td class="label">Тип поля:</td><td class="big">
+    <select name="FIELD_TYPE"
+        disabled ??type
+        >#TYPES_LIST_OPTIONS#
+    </select>
+    <br>#TYPE_NAME#
+    <div style="margin:3px 0 3px 100px; font-size:9pt;">модули:
+        <table><tr><td> - просмотра:</td><td> #src_file#[#section_r#]</td></tr><tr><td> - ввода:</td><td> #src_file#[#section_w#]</td></tr><tr><td> - сохранения:</td><td> #src_file#[#section_w#]</td></tr></table>
+    </div>
+    </td></tr>
+
+    <tr><td class="label">Наименование:</td><td class="big" ><textarea name="name" cols=60 rows=2  onChange="setDbChanged();">#name#</textarea></td></tr>
+
+    $INCLUDE [infos] ??FIELD_HAS_INFO=1
+
+    $INCLUDE [sizes_] ??form_field_type=12
+
+    $INCLUDE [sizes] ??type=varchar
+
+    $INCLUDE [collection] ??form_field_type=14
+
+    
+
+    <tr><td class="label">Значение null:</td><td class="big">
+    <input name="nulls" type="radio" value="1" onClick="setDbChanged();"
+    checked ??is_nullable=YES
+    >разрешено <input name="nulls" type="radio" value="0" onClick="setDbChanged();"
+    checked ??!is_nullable=YES
+    >запрещено nulls=#nulls#;</td></tr>
+
+
+    <tr><td colspan=2 class=big>  </td></tr>
+
+    <tr><td class="label">Колонка <BR> таблицы БД:</td><td>
+    
+    <table>
+        <tr>
+            <td> 
+            <input name="new_db_field_name" class="center" size=15 value="#field_db_name#" onChange="setDbChanged();"> 
+            </td><td>
+            $INCLUDE [db field types]
+            </td>
+        </tr>
+        <tr>
+            <td><center> 
+            <input hidden name="old_db_field_name" readonly size=10 value="#field_db_name#" >#field_db_name#
+            </center></td><td>
+            </td>
+        </tr>
+
+    </table>
+    </td></tr> 
+
+    <tr><td class="label">Статус поля:</td><td>
+    <input name="is_active" type="radio" value="2"
+    checked ??is_active=2 
+    >Вновь созданное поле <br>
+    <input name="is_active" type="radio" value="1" 
+    checked ??is_active=1
+    >Активное поле <br>
+    <input name="is_active" type="radio" value="0" 
+    checked ??is_active=0
+    >Помечено на удаление
+    <input type="button" class="butt1" style="width:160;" value="Удалить окончательно" onClick="if(confirm('Имеющиеся в поле данные будут удалены безвозвратно!\n\rУдалить поле?')) doUpdate('del');">   ??is_active=0
+    </td></tr>
+
+    <tr><td colspan=2 class=center><br> <input type="button" class="butt1" style="width:120;" value="Отмена" onClick="HideDialog();">&nbsp; &nbsp;
+        <input type="button" class="butt1" style="width:120;" value="Сохранить" onClick="doUpdate();"> 
+    </td></tr>
+    <tr><td colspan=2><div class=big style="width:600px;">#ERROR#</div></td></tr> ??ERROR
+
+    </table>
+</form>
+
+<script type="text/javascript">
+    var setDbChanged=function(){
+        document.popupForm.dbChanged.value="Y";
+    }
+
+    var setTextFieldType=function(){
+        size = parseInt(document.popupForm.size.value);
+        if (isNaN(size) || size<1) size=255;
+        if(size<256) document.popupForm.db_field_type.value="varchar";
+        else document.popupForm.db_field_type.value="text";
+        setDbChanged();
+    }
+
+    var setFieldTypeSize=function(){
+        if (document.popupForm.db_field_type.value=='varchar')
+            {
+            var f_db_type_size = document.popupForm.db_field_type.value + "("
+                 + document.popupForm.size.value + ")";
+            document.popupForm.dbTypeSize.value=f_db_type_size;
+            document.popupForm.dbType.value="varchar";
+            };
+
+        if (document.popupForm.db_field_type.value=='int') 
+            {
+            document.popupForm.dbTypeSize.value=document.popupForm.db_field_type.value;
+            document.popupForm.dbType.value="int";
+            document.popupForm.size.value=11;
+            }
+
+        if (document.popupForm.db_field_type.value=='float(10,2)') 
+            {
+            document.popupForm.dbTypeSize.value=document.popupForm.db_field_type.value;
+            document.popupForm.dbType.value="float";
+            document.popupForm.size.value=10;
+            }
+
+        if (document.popupForm.db_field_type.value=='float(15,2)') 
+            {
+            document.popupForm.dbTypeSize.value=document.popupForm.db_field_type.value;
+            document.popupForm.dbType.value="float";
+            document.popupForm.size.value=15;
+            }
+
+        if (document.popupForm.db_field_type.value=='float(15,4)') 
+            {
+            document.popupForm.dbTypeSize.value=document.popupForm.db_field_type.value;
+            document.popupForm.dbType.value="float";
+            document.popupForm.size.value=15;
+            }
+
+        if (document.popupForm.db_field_type.value=='text') 
+            {
+            document.popupForm.dbTypeSize.value=document.popupForm.db_field_type.value;
+            document.popupForm.dbType.value="text";
+            }
+            
+        setDbChanged();
+    }
+
+
+    var doUpdate=function(cop){
+        if(cop && cop=='del')
+            AjaxCall('popupCont', 'cop=del', true, 'popupForm', true);
+        else
+            AjaxCall('popupCont', 'cop=u', true, 'popupForm', true);
+    }
+
+    showMsg("##dialog_title", "Редактирование свойств поля:" );
+    ShowDialog(true);
+    centerDialog(); 
+    selectOptionByVal(document.popupForm.FIELD_TYPE, '#FIELD_TYPE#'); 
+    selectOptionByVal(document.popupForm.FIELD_INFO, #info_id#); ??info_id
+    selectOptionByVal(document.popupForm.FIELD_INFO_VIEW, #info_view_nr#); ??info_view_nr
+    selectOptionByVal(document.popupForm.FIELD_OBJECT_TYPE, #type#); ??type&form_field_type=14
+</script>
+
+[end]
+
+
+[db field types]  ****** Специфические параметры в зависимости от типа поля
+    $SET_PARAMETERS CHANGED_DATA_TYPE=;
+    $SET_PARAMETERS CHANGED_DATA_TYPE=Y;  ??form_field_type=1|form_field_type=2|form_field_type=16|form_field_type=17|form_field_type=18
+
+    $INCLUDE [changeable data_type] ??CHANGED_DATA_TYPE=Y
+    $INCLUDE [unchangeable data_type] ??!CHANGED_DATA_TYPE
+[end]
+
+[changeable data_type]
+
+    <script>
+        document.popupForm.Change_DataType.value="Y";
+    </script>
+    $INCLUDE [unchangeable data_type]  ??is_active=0|is_active=1
+    $INCLUDE [change data_type]  ??is_active=2
+[end]
+
+[unchangeable data_type]
+    $INCLUDE [char] ??data_type=varchar|data_type=text
+    $INCLUDE [float] ??data_type=int|data_type=float|data_type=decimal
+[end]
+
+[change data_type]
+
+    <select name="db_field_type" onChange="setFieldTypeSize();">
+    
+    <option value="varchar"
+    selected ??data_type=varchar
+    >Строка (varchar)</option>
+
+    <option value="text"
+    selected ??data_type=text
+    >Большой текст (text)</option>
+    
+    <option value="int"
+    selected ??data_type=int
+    >Целое число (int)</option>
+    
+    <option value="float(10,2)"
+    selected ??data_type=float&column_type=float(10,2)
+    >Число (float) (10,2)</option>
+
+    <option value="float(15,2)"
+    selected ??data_type=float&column_type=float(15,2)
+    >Число (float) (15,2)</option>
+
+    <option value="float(15,4)"
+    selected ??data_type=float&column_type=float(15,4)
+    >Число (float) (15,4)</option>
+
+    </select>
+
+    <input
+     name="size" class="center" size=5
+    onChange="setFieldTypeSize();" 
+    value="#size#">
+
+    <script>
+        setFieldTypeSize();
+    </script>
+[end]
+
+
+
+[char] ****** для текстовых полей - макс.кол-во символов
+    <input type="hidden" size=10 name="db_field_type" value="text">
+    #column_type# 
+    макс. кол-во символов:<input name="size" class="center" size=5 onChange="setTextFieldType();" 
+    value="#character_maximum_length#"> ??!column_type=text
+    value="#size#"> (до #character_maximum_length#) ??column_type=text
+     /#size#
+[end]
+
+[float] ****** Тип данных числовых полей
+    <input type="hidden" size=10 name="db_field_type" value="text">
+    #column_type#
+    
+    <input name="size" class="center" size=5  
+    value="#size#">
+[end]
+
+[sizes] ****** Размеры поля ввода на формах и при просмотре
+    <tr><td class="label">Размеры (пикс.):</td><td class="nowrap">ширина: <input name="lx" class="center" size=4 value="#lx#"> &nbsp; высота: <input name="ly" class="center" size=4 value="#ly#"> 
+    макс.ширина при просмотре: <input name="maxWidth" class="center" size=4 value="#maxWidth#">
+    </td></tr><tr><td class="label">Авторесайз <BR> поля ввода:</td><td class="big">
+    <input name="autoResize" type="radio" value="1" 
+    checked ??autoResize=1
+    >да <input name="autoResize" type="radio" value="0" 
+    checked ??!autoResize=1
+    >нет</td></tr>
+[end]
+
+[infos] ****** Тип данных справочники
+    $SET_PARAMETERS info_id=12; info_view_nr=2  ??form_field_type=1003
+    $SET_PARAMETERS info_id=11; info_view_nr=1  ??form_field_type=1011
+    $SET_PARAMETERS info_id=11; info_view_nr=5  ??form_field_type=1012
+    
+    <tr><td class="label">Справочник:</td><td>
+    #INFO_NAME#<br> ??
+    <select 
+    disabled  ??form_field_type=1003|form_field_type=1011|form_field_type=1012
+    name="FIELD_INFO" ><option value="">-</option>#INFOS_LIST_OPTIONS#</select></td></tr> 
+    
+    <tr><td class="label">Представление:</td><td>
+    #INFO_VIEW_NAME#<br> ??
+    <select 
+    disabled  ??form_field_type=1003|form_field_type=1011|form_field_type=1012
+    name="FIELD_INFO_VIEW" ><option value="">-</option>#INFOS_VIEWS_LIST_OPTIONS#</select></td></tr> 
+
+    <tr><td class="label">Множественный <BR> выбор:</td><td>
+    <input name="single_value" type="radio" value="1" 
+    checked ??single_value=1
+    >Выбор только одного значения из справочника <br>
+    <input name="single_value" type="radio" value="0" 
+    checked ??single_value=0
+    >Выбор нескольких значений из справочника </td></tr>
+
+    $SET_PARAMETERS FIELD_INFO=11  ??form_field_type=1012
+[end]
+
+
+[collection] ****** Коллекция вложенных объектов
+    $GET_DATA [get object list]
+
+    <tr><td class="label">Вложенный объект:</td><td>
+    #INFO_NAME#<br> ??
+    <select name="FIELD_OBJECT_TYPE" ><option value="">-</option>#OBJECT_LIST_OPTIONS#</select></td></tr> 
+[end]
+
+
+min_doc_type_version=1
+max_doc_type_version=100
+created=2015-06-24 09:51:33.0
+creator_id=551
+modified=2015-06-24 09:51:33.0
+modifier_id=551
+
+===============================================================================
+============================== ОБРАБОТКА ДЕЙСТВИЙ с ПОЛЕМ =====================
+===============================================================================
+
+[update field] ****** Обновление свойств поля
+    $INCLUDE [set defaults] 
+    $INCLUDE [update DB field SQL]  ??dbChanged=Y&!section_DB
+    $GET_DATA [update field SQL] ??!ERROR
+    $INCLUDE  #src_file#[#section_DB#]     ??dbChanged=Y&!ERROR&section_DB
+    $GET_DATA [get fixed attrs]  ??ERROR&ZZZ
+    $SET_PARAMETERS type=#data_type#  ??ERROR
+[end]
+
+[delete field] ****** Окончательное удаление поля
+    $GET_DATA [delete field SQL]        ??!section_DB
+    $INCLUDE  #src_file#[#section_DB#]  ??section_DB
+    $SET_PARAMETERS type=#data_type#    ??ERROR
+[end]
+
+
+[set defaults] ****** Установка значений null для отсутствующих целочисленных параметров при обновлении поля
+    $SET_PARAMETERS lx=null; ??!lx
+    $SET_PARAMETERS ly=null; ??!ly
+    $SET_PARAMETERS maxWidth=null; ??!maxWidth
+    $SET_PARAMETERS size=null; ??!size
+    $SET_PARAMETERS FIELD_INFO=null; ??!FIELD_INFO
+    $SET_PARAMETERS FIELD_INFO_VIEW=null; ??!FIELD_INFO_VIEW
+    $SET_PARAMETERS single_value=0; ??!single_value
+
+[end]
+
+
+[return script] ******* Обновление формы документа на главной странице и выход
+<script type="text/javascript">
+    setMode(mode);
+    HideDialog();
+</script>
+[end]
+
+
+==============================================================================
+***************************** Шаблоны SQL запросов ***************************
+==============================================================================
+
+[get field fixed attrs]  ****** Получаем атрибуты поля, которые здесь не изменяются, а также свойства колонки в таблице данных
+    select f.type_id
+        , concat('d_data_', cast(f.type_id as char)) as "DATA_TABLE"
+        , f.nr
+        , f.form_field_type
+        , t.comment as "TYPE_NAME"
+        , f.type
+        , t.has_info AS FIELD_HAS_INFO
+        , t.src_file, t.section_w, t.section_r, t.section_s, section_DB
+        , t.doc_types
+        , f.field_db_name
+        , f.created, f.creator_id, f.modified, f.modifier_id ??
+    from d_fields f 
+        join d_form_fields_types t on t.id=f.form_field_type
+        left join i_infos i on i.id=f.info_id
+    where f.id=#field_id#
+    ;
+    SELECT is_nullable, data_type, character_maximum_length, column_type, column_comment 
+    FROM INFORMATION_SCHEMA.COLUMNS 
+    WHERE table_name = '#DATA_TABLE#' 
+        and COLUMN_NAME = '#field_db_name#' 
+        and table_schema='dms' 
+[end]
+
+
+[get_field_descr]  ----- получение нового имени поля БД и параметров выбранного типа поля при добавлении
+    select concat('f_', cast((max(id)+1) as char)) as "new_db_field_name"
+    , 'd_data_#type_id#' as 'DATA_TABLE' from d_fields
+;
+    select curr_doc_type_version from d_types where id=#type_id#
+;
+    select ifnull(type,'varchar') as "data_type"
+        , ifnull(size, 255) as size
+        , has_info
+        , src_file, section_DB
+    from d_form_fields_types
+    where id=#field_type_id#
+[end]
+
+
+[add_field_DB]  ----- Добавление простого поля в таблицу данных (стандартное)
+alter table #DATA_TABLE# add column #new_db_field_name#
+    #data_type#(#size#)    ??data_type=varchar
+    #data_type#         ??!data_type=varchar
+    not  ??nulls=0
+    null
+[end]
+
+
+[register_field]  ****** Добавление поля в реестр полей (таблица d_fields)
+    insert into d_fields (type_id, form_field_type, field_category, type, field_db_name
+        , nr, is_active, min_doc_type_version,  creator_id)
+    values(#type_id#, #field_type_id#, 2, '#data_type#', '#new_db_field_name#'
+        , 0, 2, #curr_doc_type_version#, #USER_ID#)
+    ;
+    select last_insert_id() as "field_id"
+[end]
+
+[delete field SQL] ----- Удаление поля из таблицы данных и из реестра
+    alter table #DATA_TABLE#
+    drop column #old_db_field_name#
+    ;
+    delete from d_fields where id=#field_id#
+[end]
+
+[inactivate field]   ***** вызывается из edit_toolbar. Инвертирует активность поля. Если поле новое, то делает неактивным
+    update d_fields set is_active=1-is_active where id=#field_id# and is_active<2;
+    update d_fields set is_active=0 where id=#field_id# and is_active=2
+[end]
+
+
+[update DB field SQL__] ***** update свойства поля в таблице данных
+    alter 
+    IGNORE ??
+    table #DATA_TABLE# change column #old_db_field_name# #new_db_field_name# 
+        #data_type#(#size#)    ??data_type=varchar
+        #data_type#         ??!data_type=varchar
+        not  ??nulls=0
+        null
+        COMMENT '#name#'
+[end]
+
+
+[update DB field SQL] ***** update свойства поля в таблице данных
+    $GET_DATA [upd 1]  ??!Change_DataType 
+    $GET_DATA [upd 2]  ??Change_DataType=Y&is_active=0
+    $GET_DATA [upd 2]  ??Change_DataType=Y&is_active=1
+    $GET_DATA [upd 3]  ??Change_DataType=Y&is_active=2
+[end]
+
+[upd 1]
+    alter 
+    IGNORE ??
+    table #DATA_TABLE# change column #old_db_field_name# #new_db_field_name# 
+        #data_type#(#size#)    ??data_type=varchar
+        #data_type#         ??!data_type=varchar
+        not  ??nulls=0
+        null
+        COMMENT '#name#'
+[end]
+
+[upd 2]
+    alter 
+    IGNORE ??
+    table #DATA_TABLE# change column #old_db_field_name# #new_db_field_name#
+        #data_type#(#size#)    ??data_type=varchar
+        #column_type#           ??!data_type=varchar
+        not  ??nulls=0
+        null
+        COMMENT '#name#'
+[end]
+
+
+[upd 3]
+    alter 
+    IGNORE ??
+    table #DATA_TABLE# change column #old_db_field_name# #new_db_field_name#
+        #dbTypeSize#
+        not  ??nulls=0
+        null
+        COMMENT '#name#'
+
+    ;
+
+    update d_fields 
+        set type='#dbType#'
+    where id=#field_id#
+[end]
+
+
+
+[update field SQL] ***** update свойства поля в реестре
+update d_fields set name='#name#'
+    , form_field_type=#FIELD_TYPE#  ??FIELD_TYPE
+    , info_id=#FIELD_INFO#  ??!form_field_type=1003|!form_field_type=1011|!form_field_type=1012
+    , info_view_nr=#FIELD_INFO_VIEW#  ??!form_field_type=1003|!form_field_type=1011|!form_field_type=1012
+    , info_id=12  ??form_field_type=1003
+    , info_view_nr=2 ??form_field_type=1003
+    , info_id=11  ??form_field_type=1011
+    , info_view_nr=1  ??form_field_type=1011
+    , info_id=11  ??form_field_type=1012
+    , info_view_nr=5  ??form_field_type=1012
+    , type=#FIELD_OBJECT_TYPE#  ??form_field_type=14&FIELD_OBJECT_TYPE
+    , type=7  ??form_field_type=14&!FIELD_OBJECT_TYPE
+    , single_value=#single_value# 
+    , size=#size#, lx=#lx#, maxWidth=#maxWidth#, ly=#ly#
+    , is_active=#is_active#, nulls=#nulls#
+    , field_db_name='#new_db_field_name#' 
+where id=#field_id#
+[end]
+
+$SET_PARAMETERS info_id=12; info_view_nr=2  ??form_field_type=1003
+    $SET_PARAMETERS info_id=11; info_view_nr=1  ??form_field_type=1011
+    $SET_PARAMETERS info_id=11; info_view_nr=5  ??form_field_type=1012
+
+
+[get field]   ----- получение атрибутов поля
+select f.name, f.field_category
+    , f.info_id, f.info_view_nr, i.name as "INFO_NAME", iw.comment as "INFO_VIEW_NAME"
+    , f.size, f.nulls, f.lx, f.maxWidth, f.ly, f.single_value
+
+ , f.is_visible, f.is_active
+    , f.min_doc_type_version, f.max_doc_type_version  ??
+
+from d_fields f 
+    left join i_infos i on i.id=f.info_id
+    left join infos_views iw on iw.id=f.info_view_nr
+where f.id=#field_id#
+[end]
+
+join d_form_fields_types t on t.id=f.form_field_type
+f.field_category, f.nr, 
+    , t.src_file, t.section_w, t.section_r, t.section_s, t.doc_types
+   , f.field_db_name
+
+
+[get infos list]  ----- список справочников и допустимых типов полей
+    select concat('<option value="', Id, '">', name, '</option>') as "INFOS_LIST_OPTIONS"
+    from i_infos 
+    order by id
+    ;
+    select concat('<option value="', Id, '">', concat(comment, ': view(', view,')'), '</option>') as "INFOS_VIEWS_LIST_OPTIONS"
+    from infos_views 
+    order by id
+    ;
+
+    select concat('<option value="', Id, '" '
+    , case when id=#form_field_type# then 'selected' else '' end ??form_field_type
+    ,'>', comment, '</option>') as "TYPES_LIST_OPTIONS"
+    from d_form_fields_types 
+    where type='#type#' ??type_ZZZ
+    order by sort
+[end]
+
+
+[get object list]  ----- список вложенных объектов
+    select concat('<option value="', Id, '">', name, '</option>') as "OBJECT_LIST_OPTIONS"
+    from d_types
+    where
+    group_id = 99
+    order by id
+    ;
+
+[end]
+
+
+
+[start transaction]
+    START TRANSACTION;
+[end]
+
+[commit]
+    COMMIT;   ??!ERROR
+    ROLLBACK;  ??ERROR
+    alter table #DATA_TABLE# drop column #new_db_field_name#;  ??ERROR&new_db_field_name&cop=add
+[end]
+
+select Id, comment, src_file, section_w, section_r, section_s, doc_types from d_form_fields_types where
+
+
+
+
+
+
+
+
+
+$INCLUDE [static field]  ??form_field_type=1
+$INCLUDE [input field]  ??form_field_type=2
+$INCLUDE [info field]  ??form_field_type=3|form_field_type=4
+$INCLUDE [date field]  ??form_field_type=5|form_field_type=19
+$INCLUDE [file field]  ??form_field_type=666
+$INCLUDE [currency field]  ??form_field_type=7|form_field_type=8|form_field_type=10|form_field_type=11|form_field_type=12|form_field_type=15

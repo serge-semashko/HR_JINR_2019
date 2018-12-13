@@ -1,0 +1,290 @@
+admin/wf/edit_wf_step.ajm
+
+admin/doctypes/wf_edit_template_step.ajm
+
+[comments]
+descr=A: Редактирование свойств шага рабочего workflow документа. 
+
+input=step_id - ID шага workflow (из таблицы wf); cop - код операции: "update" - обновление свойств шага с ID = step_id;
+
+output=HTML форма редактирования свойств шага workflow, 
+parents=
+childs=
+test_URL=?c=admin/wf/edit_wf_step&step_id=1
+author=Куняев
+[end]
+
+[description]
+Редактор свойств шага workflow документа.<br>
+<br>
+Режимы работы (mode): <br>
+<ul>
+<li>"edit" - вызывается в этом режиме для редактирования свойств существующего шага<br>
+В качестве входного параметра в этом режиме требует - step_id - ID шага workflow <br>
+(из таблицы wf)</li>
+</ul>
+[end]
+
+
+[parameters]
+    request_name=A: Редактирование свойств шага workflow документа
+    LOG=ON
+[end]
+
+[report]
+    $INCLUDE [report_]  ??AR_SYS_ADMIN=1
+[end]
+
+
+[report_]
+    $INCLUDE [process]  ??cop
+    $INCLUDE [form]  ??!cop|ERROR
+[end]
+
+[form]
+    <center>
+<form name="popupForm" method="POST" enctype="multipart/form-data" target="wf">
+
+    $GET_DATA [getStepInfo]  ??!cop
+
+    
+    <input type=hidden name="c" value="#c#">
+    <input type=hidden name="cop" value="">
+
+    <table border=0 cellpadding=4>
+
+    $INCLUDE [form RW]  
+
+    </table>
+    #ERROR#    
+    <br>
+
+    <input type="button" class="butt1" style="width:100;" value="Отмена" onClick="HideDialog();">
+
+    <input type="button" class="butt1" style="width:100;" 
+        value="Сохранить" 
+        onClick="AjaxCall('popupCont', 'c=#c#&step_id=#step_id#&cop=update', true,'popupCont');"> 
+
+</form>
+
+<script>
+    ShowDialog(true); 
+    centerDialog();  
+    showMsg("##dialog_title", "Редактирование шага маршрута #step_id#");
+</script>
+
+[end]
+
+[form RW]
+    <tr><td class=label>Номер шага:</td><td> 
+        <input size="4" id="step" name="step" value="#step#">
+        <input type=hidden name="step_id" value="#step_id#" readonly>
+        <input type=hidden name="doc_id" value="#doc_id#" readonly>
+doc_id=#doc_id#; wf_id=#wf_id#; step_id=#step_id#
+    </td></tr>
+
+    <tr><td class=label right>Роль:</td><td> 
+        $SET_PARAMETERS LX=300; LY=20;
+
+        <input type=hidden name="ROLE_for_wf_id" id="ROLE_for_wf_id" size=5 value="#ROLE_ID#">
+        <input type=hidden name="ROLE_for_wf" id="ROLE_for_wf_txt" size=50 value="">
+        <div class="info_input pt bg_white" id="ROLE_for_wf" info_id="1" info_view="11" info_type="3" searchFor='none' 
+        style="display: inline-block; width:#LX#px; height:#LY#px; border:solid 1px gray;">#ROLE_NAME#
+        выбрать ??!ROLE_NAME
+        </div>
+    </td></tr>
+
+    <tr><td class=label right>Тип цели:</td><td> 
+        $SET_PARAMETERS LX=200; LY=20;
+
+        <input type=hidden name="TARGET_TYPE_for_wf_id" id="TARGET_TYPE_for_wf_id" size=5 value="#TARGET_TYPE_ID#">
+        <input type=hidden name="TARGET_TYPE_for_wf" id="TARGET_TYPE_for_wf_txt" size=50 value="">
+        <div class="info_input pt bg_white" id="TARGET_TYPE_for_wf" info_id="2" info_view="11" info_type="3" searchFor='none' 
+        style="display: inline-block; width:#LX#px; height:#LY#px; border:solid 1px gray;">#TARGET_TYPE#
+        выбрать ??!TARGET_TYPE
+        </div>
+    </td></tr>
+
+    <tr><td class=label right>Пользователь:</td><td> 
+        <div id = "USER_for_wf_list">
+            <ul class="p0">
+                <li class="nobull">#USER_IOF#<a class="delcross" title="Удалить" onclick="delSelectedInfoItemFromChoice(this)" delfromtext="USER_for_wf_text" delval="val_id" delfrom="USER_for_wf_id">✖</a></li>   ??SELECTED_USER_ID
+            </ul>
+        </div>
+        <input type=hidden id="USER_for_wf_id" name="USER_for_wf_id" size=5 value="#SELECTED_USER_ID#">
+        <input type=hidden id="USER_for_wf_text" name="USER_for_wf_text" size=20 value="">
+        <span class="info_input" id="USER_for_wf" info_id="5" searchFor='none' info_view="1">выбрать</span> 
+    </td></tr>
+
+    <tr><td class=label>Тип шага:</td><td>
+        <input type="radio" name="f_step_type" value="#~wf_step_in_progress#" 
+        checked  ??step_type=#~wf_step_in_progress#|!step_type
+        >Согласование
+        <br>
+        <input type="radio" name="f_step_type" value="#~wf_step_signed#" 
+        checked  ??step_type=#~wf_step_signed#
+        >Финальная подпись (Утверждение)
+        <br>
+        <input type="radio" name="f_step_type" value="#~wf_step_process#" 
+        checked  ??step_type=#~wf_step_process#
+        >Завершение обработки документа
+        <br>
+        <input type="radio" name="f_step_type" value="#~wf_step_information#" 
+        checked  ??step_type=#~wf_step_information#
+        >Информирование
+        <br>
+        <input type="radio" name="f_step_type" value="#~wf_step_preparation#" 
+        checked  ??step_type=#~wf_step_preparation#
+        >Подготовка документа
+    </td></tr>
+
+    <tr><td class=label>Критерий завершения шага:</td><td>
+        <input type="radio" name=f_criteria value="100" 
+        checked  ??criteria=100|!criteria
+        >Согласуют все перечисленные в списке
+        <br>
+        <input type="radio" name=f_criteria value="1" 
+        checked  ??criteria=1
+        >Согласует только один (любой) из списка
+    </td></tr>
+
+    <tr><td class=label>Cпецифические критерии включения шага <br> в зависимости от данных документа:</td><td> 
+        <input size=40 name="f_custom_criteria" value="#custom_criteria#">
+    </td></tr>
+
+    <tr><td class=label>Действие с номером документа:</td><td>
+        <input type="radio" name=f_set_number value="0" 
+        checked  ??set_number=0|!set_number
+        >Ничего
+        <br>
+        <input type="radio" name=f_set_number value="1" 
+        checked  ??set_number=1
+        >Установить при старте шага
+        <br>
+        <input type="radio" name=f_set_number value="2" 
+        checked  ??set_number=2
+        >Показать кнопку "Зарегистрировать"
+        <br>
+        <input type="radio" name=f_set_number value="3" 
+        checked  ??set_number=3
+        >Ввести номер вручную
+    </td></tr>
+
+    <tr><td class=label>Послать док в шлюз по завершении шага:</td><td>
+        <input type="radio" name=f_post_doc value="0" 
+        checked  ??post_doc=0|!post_doc
+        >Нет
+        <input type="radio" name=f_post_doc value="1" 
+        checked  ??post_doc=1
+        >Да
+    </td></tr>
+
+    <tr><td class=label>активный:</td><td>
+        <input type="checkbox" name="is_active" value="1"
+            checked  ??is_active=1
+        >
+    </td></tr>
+
+    <tr><td class=label>старт-финиш:</td><td>
+        <input name=started size=12 value="#started#"> - <input name=finished size=12 value="#finished#"  >
+    </td></tr>
+    <tr><td class=label>результат:<br><br>комментарий:</td><td>
+        <input size=3 name=result_code value="#result_code#">
+        <input size=40 name=result value="#result#"><br>
+        <textarea cols=50 rows=3 name=comment>#comment#</textarea>
+    </td></tr>
+
+[end]
+
+
+
+
+
+[process]
+$GET_DATA [start transaction]
+$GET_DATA [update step] ??cop=update
+$GET_DATA [commit]
+
+<script>
+    AjaxCall("doc_wf", "c=wf/show_wf_for_doc&doc_id=#doc_id#");  HideDialog();  ??!ERROR
+    alert(" Ошибка при изменении шага шаблона!"); ??ERROR
+</script>
+[end]
+
+
+***************************** Шаблон SQL запроса ***************************
+
+[getStepInfo]
+select wf.wf_id
+
+    , wf.step
+    , wf.is_active
+    , wf.step_type
+    , wf.criteria
+    , wf.custom_criteria
+    , wf.set_number
+    , wf.post_doc
+    , wf.role_id as "ROLE_ID", r.name as "ROLE_NAME"
+    , wf.role_target_type_id as "TARGET_TYPE_ID", tt.type as "TARGET_TYPE"
+    , wf.user_id as "SELECTED_USER_ID", iof(u.F, u.I, u.O) as "USER_IOF"
+    , DATE_FORMAT(wf.started,  '#dateTimeFormat#') as "started"
+    , DATE_FORMAT(wf.finished, '#dateTimeFormat#') as "finished"
+    , wf.result_code, wf.result, wf.comment
+    ,i.name as "INFO_NAME", i.id as "INFO_ID"
+from wf
+    left join a_roles r on r.id=wf.role_id
+    left join a_target_types tt on tt.id=wf.role_target_type_id
+    left join #table_users_full# u on u.id=wf.user_id
+    left join i_infos i on i.id = tt.info_id
+where wf.id = #step_id#
+;
+select doc_id from wf_list where id=#wf_id#
+[end]
+
+
+
+[start transaction]
+    START TRANSACTION
+[end]
+
+[commit]
+    COMMIT;   ??!ERROR
+    ROLLBACK; ??ERROR
+[end]
+
+
+
+[update step] ******* Обновляет свойства шага
+update wf set
+    step=#step#
+    , is_active=
+       1 ??is_active
+       0 ??!is_active
+    , user_id = '#USER_for_wf_id#' ??USER_for_wf_id
+    , user_id = NULL ??!USER_for_wf_id
+
+    , role_id = '#ROLE_for_wf_id#' ??ROLE_for_wf_id
+    , role_id = NULL ??!ROLE_for_wf_id
+
+    , role_target_type_id = '#TARGET_TYPE_for_wf_id#' ??TARGET_TYPE_for_wf_id
+    , role_target_type_id = NULL ??!TARGET_TYPE_for_wf_id
+
+    , step_type = '#f_step_type#'
+    , criteria = '#f_criteria#'
+    , custom_criteria = '#f_custom_criteria#'
+    , set_number = '#f_set_number#'
+    , post_doc = '#f_post_doc#'
+    , modified = now()
+    , modifier_id = #USER_ID#  ??
+    , started=null      ??!started
+    , finished=null     ??!finished|!started
+    , result_code=null, result=null  ??!started|!finished
+    , started=STR_TO_DATE('#started#','#dateTimeFormat#')      ??started&USER_ID=2309
+    , finished=STR_TO_DATE('#finished#','#dateTimeFormat#')    ??finished&started&USER_ID=2309
+    , result_code=#result_code#, result='#result#'  ??started&finished&USER_ID=2309
+    , comment='#comment#'
+where Id = #step_id#
+[end]
+
+
+

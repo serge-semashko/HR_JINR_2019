@@ -1,0 +1,20 @@
+JINR/colors.dat
+
+Установка цвета заголовка документа и таблиц в зависимости от типа документа
+
+[set colors]
+    $SET_PARAMETERS DOC_TITLE_COLOR=E3FFC2; ??DOC_TYPE_ID=1
+    $SET_PARAMETERS DOC_TITLE_COLOR=C9EBF5; ??DOC_TYPE_ID={{^8$|^9$|^10$|^11$|^12$}} 
+    $SET_PARAMETERS DOC_TITLE_COLOR=80DBFF; ??DOC_TYPE_ID=20
+    $SET_PARAMETERS DOC_TITLE_COLOR=F0C080; ??DOC_TYPE_ID=23|DOC_TYPE_ID=25
+    $SET_PARAMETERS DOC_TITLE_COLOR=D080FF; ??DOC_TYPE_ID=24
+DOC_TITLE_COLOR=#DOC_TITLE_COLOR#; ??
+<style type="text/css">
+table.object_table th, table.tgreen th {
+    background-color: ##1F697D; ??DOC_TYPE_ID={{^8$|^9$|^10$|^11$|^12$}} 
+    background-color: ##0080DD; ??DOC_TYPE_ID=20
+    background-color: ##A06000; ??DOC_TYPE_ID=23|DOC_TYPE_ID=25
+    background-color: ##8040A0; ??DOC_TYPE_ID=24
+}
+</style>
+[end]

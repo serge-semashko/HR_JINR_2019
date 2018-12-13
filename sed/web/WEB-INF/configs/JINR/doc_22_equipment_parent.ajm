@@ -1,0 +1,65 @@
+JINR/doc_22_equipment_parent.ajm
+
+[comments]
+descr=Модуль формирования поля "Компьютерная конфигурация" 
+input=EQUIPMENT_ID - ID элемента справочника "Компьютерная конфигурация" (из таблицы i_jinr_comp_configuration)
+output=Полное имя (включая имена всех предков) элемента справочника "Компьютерная конфигурация"
+parents=JINR/doc_22_fields.dat
+childs=
+author=Куняев, Яковлев
+[end]
+
+[parameters]
+request_name=U:Компьютерная конфигурация
+KeepLog=true
+ClearLog=false
+[end]
+
+
+[report]
+    $SET_PARAMETERS EQUIPMENT_PARENT_NAME=;
+    $SET_PARAMETERS EQUIPMENT_PARENT_ID=;
+    $SET_PARAMETERS CYCLE_ITEM_ID=;
+
+    $GET_DATA JINR/doc_22_equipment_parent.ajm[getParentIdInfo]
+
+    $SET_PARAMETERS ITEM_NAME=;
+    $INCLUDE JINR/doc_22_equipment_parent.ajm[process equipment parent name]  ??CYCLE_ITEM_ID
+    $SET_PARAMETERS EQUIPMENT_PARENT_NAME=#ITEM_NAME#
+
+
+<script>
+    if("#EQUIPMENT_PARENT_NAME#" != '' ) 
+        {
+            pasteText("#requesterId#_text", "#EQUIPMENT_PARENT_NAME#/" + $("###requesterId#_text").val() );
+            restoreInfoList("#requesterId#");
+        }
+</script>
+[end]
+
+
+[process equipment parent name]
+    $SET_PARAMETERS CURR_ITEM_NAME=#ITEM_NAME#;
+    $SET_PARAMETERS CURR_ITEM_ID=;
+    $GET_DATA JINR/doc_22_equipment_parent.ajm[getEquipmentParentNameInfo]
+    $SET_PARAMETERS CYCLE_ITEM_ID=#CURR_ITEM_ID# ??CURR_ITEM_ID
+    $INCLUDE JINR/doc_22_equipment_parent.ajm[process equipment parent name] ??CURR_ITEM_ID
+[end]
+
+
+[getParentIdInfo]
+    try: select i_conf.ID
+        , i_conf.pid AS CYCLE_ITEM_ID
+    from i_jinr_comp_configuration i_conf
+    where i_conf.Id=#EQUIPMENT_ID#
+[end]
+
+
+[getEquipmentParentNameInfo]
+    try: select i_conf.ID
+        , i_conf.pid AS CURR_ITEM_ID
+        , i_conf.name AS ITEM_NAME  ??!CURR_ITEM_NAME
+        , concat(i_conf.name, '/' , '#CURR_ITEM_NAME#') AS ITEM_NAME ??CURR_ITEM_NAME
+    from i_jinr_comp_configuration i_conf
+    where i_conf.Id=#CYCLE_ITEM_ID#
+[end]

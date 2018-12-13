@@ -1,0 +1,161 @@
+JINR/info/tree_panel.ajm
+
+[comments]
+descr=Модуль вывода данных древовидного справочника и выбора пункта.
+input=requesterId - ID элемента для результата, info_id - ID стравочника; view - № представления
+output=Pop-up окно с данными справочника с фильтром и с выбором записи
+parents=svs/info_show
+childs=нет
+author=Устенко, Яковлев
+[end]
+
+
+[parameters]
+service=jinr.sed.ServiceTreeInfoData
+request_name=S:просмотр данных справочника
+KeepLog=true
+ClearLog=false
+SYS_FIELDS=id as "RECORD_ID", pid as "PARENT_RECORD_ID"  ??!info_id=1017
+SYS_FIELDS=is_folder as "IS_FOLDER", selectable as "SELECTABLE", begin_date as "BEGIN_DATE", end_date as "END_DATE", id as "RECORD_ID", pid as "PARENT_RECORD_ID"  ??info_id=1017
+CRITERIA=where IS_DELETED=0 and view#view#=1  ??
+CRITERIA=where view#view#=1
+DATA_SEPARATOR=<br>
+orderByField=sort, name
+INFO_TREE_MODE=edit
+[end]
+
+[report header]
+$SET_PARAMETERS tree_mode=editor;
+
+$INCLUDE [set init value]  ??init_id_value
+$INCLUDE [set root]
+
+$INCLUDE svs/info_show_tree.cfg[report header]
+[end]
+
+[set init value]
+<script type="text/javascript">
+    pasteText("#requesterId#_id", '#init_id_value#'); 
+</script>
+[end]
+
+[set root]
+<script type="text/javascript">
+    if(!$('###requesterId#_id').val()){AjaxCall('info_item_panel', 'c=JINR/info/tree_item_panel&info_id=#info_id#&view=#view#&requesterId=#requesterId#');}
+</script>
+[end]
+
+
+[footer script]
+
+$INCLUDE svs/info_show_tree.cfg[footer script]  ??
+
+]
+, "check_callback" : true
+, "animation" : 0
+, "multiple" : false
+}
+
+    ,'types' : {
+        "default" : {
+            "icon" : 'jstree-folder'
+        },
+        "00" : {
+            "icon" : 'jstree-file'
+        },
+        "01" : {
+            "icon" : 'jstree-file'
+        },
+        "fol0sel1bd0" : {
+            "icon" : "fa fa-file-o clr-red"
+        },
+        "fol0sel1bd1" : {
+            "icon" : "fa fa-fighter-jet"
+        },
+        "10" : {
+            "icon" : 'jstree-folder'  ??
+            "icon" : "fa fa-folder-open clr-sandybrown"
+        },
+        "11" : {
+            "icon" : 'jstree-folder'
+        }
+    
+    }
+
+,'plugins' : [ "search",  "types" ]
+
+ });
+      
+    $(jst).on('ready.jstree', function (event, data) { 
+            //если нечего селектить и корень один, раскрываем корень
+            if(!$('###requesterId#_id').val()){
+               jsonContent = $(jst).jstree(true).get_json();
+               if(jsonContent.length===1){
+               for (i = 0; i < jsonContent.length; i++) {
+                    log(3, jsonContent[i].id);
+                    $(jst).jstree(true).open_node(jsonContent[i].id);
+                }
+                }
+            }else{
+                //селектим то, что стоит в инпуте id на форме
+                $(jst).jstree(true).select_node("#requesterId#"+$('###requesterId#_id').val());
+            }
+       });
+       $(jst).on('changed.jstree', function (e, data) {
+        // пока ничего
+
+        var selText = $(jst).jstree().get_selected(true)[0].text;
+        var selId = $(jst).jstree().get_selected(true)[0].id.replace("#requesterId#","");
+        changedJsTree("#requesterId#", selId, selText);
+       });
+        $(jst).bind("select_node.jstree", function (e, data) {
+            // раскрытие нод по клику на тексте
+            return data.instance.toggle_node(data.node);
+        });
+// это для поиска по дереву
+ var to = false;
+  $(sf).keyup(function () {
+    if(to) { clearTimeout(to); }
+    to = setTimeout(function () {
+      var v = $(sf).val();
+      $(jst).jstree(true).search(v);
+    }, 250);
+  });
+});
+
+var changedJsTree = function(requesterId, id, text) {
+    pasteText(requesterId + "_id", id); 
+    pasteText(requesterId, text);
+    AjaxCall('info_item_panel', 'c=JINR/info/tree_item_panel&info_id=#info_id#&view=#view#&requesterId=' + requesterId + '&record_id=' + id);
+}
+
+</script>
+[end]
+
+[report footer]
+$INCLUDE svs/info_show_tree.cfg[report footer]  ??
+[end]
+
+[item]
+$INCLUDE svs/info_show_tree.cfg[item]
+[end]
+
+[preSQLs]
+try: select i.ID
+, i.name as INFO_NAME, i.IS_EXTERNAL
+, ed.SRC_TYPE, ed.CONN_ID, ed.REQUEST
+, ec.DB_TYPE, ec.CONN_NAME, ec.DB as DB_SCHEMA
+, i.IS_TREE, i.IS_ACTIVE
+, ec.SERVER, ec.PORT, ec.PARAM, ec.USR as CONN_USR, ec.PW as CONN_PW
+, i.TABLE_NAME, i.CUSTOM_MODULE, i.CUSTOM_UPDATER
+, i.do_favorites, i.rpp as "irpp"
+, data_updated 
+from i_infos i
+left join i_external_data ed on ed.info_id=i.id
+left join i_ext_connections ec on ec.id=ed.conn_id
+where i.Id=#info_id#
+;
+
+$INCLUDE svs/info_show_tree.cfg[preSQLs]
+[end]
+

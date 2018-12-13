@@ -1,0 +1,1 @@
+select * from user_rights ur where ur.person_id=:pers_id;

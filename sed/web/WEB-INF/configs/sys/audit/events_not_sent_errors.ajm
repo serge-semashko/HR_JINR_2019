@@ -1,0 +1,86 @@
+sys/audit/events_not_sent_errors.ajm
+
+mail_send_errors.cfg
+
+
+[comments]
+Не обработанные события
+[end]
+
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+LOG=ON
+tableCfg=table_no
+$INCLUDE dat/common.dat[rowLinks]
+[end]
+
+
+[report header]
+    $SET_PARAMETERS RWACC=Y;  
+    $INCLUDE [OK report header]
+    ??RWACC
+[end]
+
+
+[OK report header]
+    $SET_PARAMETERS srn=1; rpp=50;
+    $GET_DATA [delete event]  ??cop=delete&event_id
+
+    <b>Не обработанные события:</b>
+    <table class="tlist tblue" style="border:solid 1px ##004060;" cellspacing=0>
+    <tr>
+        <th>ID</th>
+        <th>Документ</th>
+        <th>Дата события</th>
+        <th>user id</th>
+        <th>Ошибка</th>
+        <th>.</th>
+    </tr>
+[end]
+
+
+[item]
+    <tr>
+        <td>#EVENT_ID#</td>
+        <td>
+            <a href="#ServletPath#?c=docs/view_doc&doc_id=#doc_id#&mode=ext" target="_blank">#doc_id#</a>
+        </td>
+        <td>#event_date#</td>
+        <td>#notify_user_id#</td>
+        <td>#err_msg#</td>
+        <td class="center pt delcross bottom_dotted" onclick = "deleteEvent(#EVENT_ID#);">X</td> 
+    </tr>
+[end]
+
+[report footer]
+    <tr><td colspan=5 style="text-align:right;">
+        Нет необработанных событий   ??NumTableRows=0
+        &nbsp; <a href="#ServletPath#?c=sys/audit/start_nonstarted_steps" target="_blank">запустить обработку >></a>  ??USER_ID=2309
+    </td></tr>
+</TABLE>  
+[end]
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+
+
+[SQL]
+    select e.id as "EVENT_ID", e.doc_id
+        , DATE_FORMAT(e.event_date,'#dateTimeFormat#') as "event_date"
+        , e.event_type
+        , e.notify_user_id
+        , n.err_msg
+    from 
+    wf_events e
+        left join wf_events_notifications n on n.event_id=e.id
+    where e.processed is null
+    order by e.event_date desc
+[end]
+
+
+[delete event]
+    delete from wf_events where id=#event_id#
+[end]

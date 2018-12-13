@@ -1,0 +1,419 @@
+JINR/doc_22_fields.dat
+
+[comments]
+descr=S: Поля для заявки на закупку персональных компьютеров (doc_type=21)
+input=поля для заявки на закупку персональных компьютеров 
+output=
+parents=docs/edit_doc.cfg
+childs=
+author=Куняев, Яковлев
+[end]
+
+
+
+
+
+=================== 1023 - Обоснование необходимости приобретения Техники =======================
+[justification_of_necessity_head]
+    $SET_PARAMETERS JUSTIFICATION_VALUE=; JUSTIFICATION_VALUE_other=;
+    $SET_PARAMETERS JUSTIFICATION_VALUE_1=Оборудование нового рабочего места;
+    $SET_PARAMETERS JUSTIFICATION_VALUE_2=Замена морально-устаревшей Техники;
+    $SET_PARAMETERS JUSTIFICATION_VALUE_3=Замена не поддающейся ремонту Техники;
+    $SET_PARAMETERS JUSTIFICATION_VALUE_4=Приобретение комплектующих;
+    $SET_PARAMETERS JUSTIFICATION_VALUE_5=Приобретение сопутствующих товаров и расходных материалов;
+    $SET_PARAMETERS JUSTIFICATION_VALUE_6=Другое:;
+
+    $GET_DATA JINR/doc_22_fields.dat[getJustificationOfNecessityInfo]
+
+<style>
+    table.doc tr td {padding:3px;}
+</style>
+[end]
+
+
+[justification_of_necessity_read]
+    $INCLUDE JINR/doc_22_fields.dat[justification_of_necessity_head]
+
+    #JUSTIFICATION_VALUE_1#  ??JUSTIFICATION_VALUE=1
+    #JUSTIFICATION_VALUE_2#  ??JUSTIFICATION_VALUE=2
+    #JUSTIFICATION_VALUE_3#  ??JUSTIFICATION_VALUE=3
+    #JUSTIFICATION_VALUE_4#  ??JUSTIFICATION_VALUE=4
+    #JUSTIFICATION_VALUE_5#  ??JUSTIFICATION_VALUE=5
+    #JUSTIFICATION_VALUE_6# #JUSTIFICATION_VALUE_other#  ??JUSTIFICATION_VALUE=6
+[end]
+
+
+[justification_of_necessity_write]
+    $INCLUDE JINR/doc_22_fields.dat[justification_of_necessity_head]
+
+    <style>
+        table.doc tr td {padding:3px;}
+    </style>
+
+    <table>
+        <tr><td class='label' style='padding:3px;'>
+            <input type=radio name="#FIELD_DB_NAME#" mand="#mand#" value=1
+            checked ??#FIELD_DB_NAME#=1
+            >
+        </td><td colspan='2' style='padding:3px;'>
+            #JUSTIFICATION_VALUE_1#
+        </td><td style='padding:3px;'></td></tr>
+        <tr><td class='label' style='padding:3px;'>
+            <input type=radio name="#FIELD_DB_NAME#" value=2
+            checked ??#FIELD_DB_NAME#=2
+            >
+        </td><td colspan='2' style='padding:3px;'>
+            #JUSTIFICATION_VALUE_2#
+        </td><td style='padding:3px;'></td></tr>
+        <tr><td class='label' style='padding:3px;'>
+            <input type=radio name="#FIELD_DB_NAME#" value=3
+            checked ??#FIELD_DB_NAME#=3
+            >
+        </td><td colspan='2' style='padding:3px;'>
+            #JUSTIFICATION_VALUE_3#
+        </td><td style='padding:3px;'></td></tr>
+        <tr><td class='label' style='padding:3px;'>
+            <input type=radio name="#FIELD_DB_NAME#" value=4
+            checked ??#FIELD_DB_NAME#=4
+            >
+        </td><td colspan='2' style='padding:3px;'>
+            #JUSTIFICATION_VALUE_4#
+        </td><td style='padding:3px;'></td></tr>
+        <tr><td class='label' style='padding:3px;'>
+            <input type=radio name="#FIELD_DB_NAME#" value=5 
+            checked ??#FIELD_DB_NAME#=5
+            >
+        </td><td colspan='2' style='padding:3px;'>
+            #JUSTIFICATION_VALUE_5#
+        </td><td style='padding:3px;'></td></tr>
+        <tr><td class='label' style='padding:3px;'>
+            <input type=radio name="#FIELD_DB_NAME#" value=6
+            checked ??#FIELD_DB_NAME#=6
+            >
+        </td><td width='20' style='padding:3px;'>
+            #JUSTIFICATION_VALUE_6#
+        </td><td style='padding:3px;'>
+            <textarea id="#FIELD_DB_NAME#_other" name="#FIELD_DB_NAME#_other" rows=3 style="width:300pt; height:30pt;" 
+
+            >#JUSTIFICATION_VALUE_other#</textarea>
+        </td></tr>
+    </table>
+[end]
+
+
+[justification_of_necessity_save]
+    $SET_PARAMETERS save_just_VALUE = ^#CUSTOM_FIELD_DB_NAME#;
+    $SET_PARAMETERS save_OTHER = #CUSTOM_FIELD_DB_NAME#_other;
+    $GET_DATA JINR/doc_22_fields.dat[updateJustificationOfNecessity]
+[end]
+
+
+[getJustificationOfNecessityInfo]
+    SELECT
+        #FIELD_DB_NAME# as "JUSTIFICATION_VALUE"
+        , #FIELD_DB_NAME#_other as "JUSTIFICATION_VALUE_other"
+    FROM d_data_#DOC_TYPE_ID# 
+    WHERE doc_id = #doc_id#
+[end]
+
+
+[updateJustificationOfNecessity]
+    UPDATE d_data_#DOC_TYPE_ID# SET 
+        #CUSTOM_FIELD_DB_NAME#_other = '^#save_OTHER#'  ??save_just_VALUE=6
+        #CUSTOM_FIELD_DB_NAME#_other = ''  ??!save_just_VALUE=6
+    WHERE doc_id = #doc_id#
+[end]
+
+
+
+=============== 1024 - Справочник конфигураций оргтехники с возможностью добавления =======================
+[office_equipment_read]
+    $SET_PARAMETERS item_id_param=#FIELD_DB_NAME#_id
+    $SET_PARAMETERS text_val=^#FIELD_DB_NAME#; val_id=^#item_id_param#;
+
+<div id="#FIELD_DB_NAME#_read_div">^#FIELD_DB_NAME#</div>  ??val_id&text_val
+<div id="#FIELD_DB_NAME#_read_div" class="bg_light_red" >^#FIELD_DB_NAME#</div>  ??!val_id&text_val
+
+[end]
+
+====== убран флаг про срок в 10 недель
+$SET_PARAMETERS DELIVERY_TIME=;  ??
+$GET_DATA JINR/doc_22_fields.dat[getEequipmentDeliveryTimeInfo]  ??
+<br><br>Согласен на увеличение срока поставки до 10 недель??!val_id&text_val&DELIVERY_TIME=1
+<br><br>Не согласен на увеличение срока поставки до 10 недель??!val_id&text_val&!DELIVERY_TIME
+
+
+
+[office_equipment_write]
+    $SET_PARAMETERS INFO_CONFIG=Выбрана типовая конфигурация;
+    $SET_PARAMETERS MAN_CONFIG=Нетиповая конфигурация;
+
+    $SET_PARAMETERS DELIVERY_TIME=;  ??
+    $GET_DATA JINR/doc_22_fields.dat[getEequipmentDeliveryTimeInfo]  ??
+
+    $SET_PARAMETERS item_id_param=#FIELD_DB_NAME#_id
+    $SET_PARAMETERS text_val=^#FIELD_DB_NAME#; val_id=^#item_id_param#;
+
+<table>
+<tr><td>
+    <input type=hidden id="#FIELD_DB_NAME#_id" name="#FIELD_DB_NAME#_id" size=4 value="#val_id#" >
+    <input type=hidden id="#FIELD_DB_NAME#_text" name="#FIELD_DB_NAME#" mand="#mand#" value="#text_val#" >
+    <input type=hidden id="#FIELD_DB_NAME#_delivery_time" name="#FIELD_DB_NAME#_delivery_time" value="#DELIVERY_TIME#" >  ??
+
+
+    $INCLUDE svs/info_show_plain_script.dat[script]
+
+    <span id="#FIELD_DB_NAME#_info_input_block">
+        <div style="font-size:9pt; padding:0 0 10px 0;">#INFO_CONFIG#:</div>  ??equipment
+
+        <span id="#FIELD_DB_NAME#_list"></span>
+        <br><br>
+        <span class="info_input" id="#FIELD_DB_NAME#" info_id="#INFO_ID#" info_view="#INFO_VIEW#" style="width:100px; height:22px;"
+            searchFor='none' ??!val_id
+            searchFor='#val_id#'  ??val_id
+        >выбрать типовую конфигурацию </span>
+    
+    </span> 
+</td></tr> <tr><td>
+    <button type="button" class="butt1 pt" id="#FIELD_DB_NAME#_man_btn" style="margin:25px; width:280px;"  onclick="setManInput();" >Задать нетиповую конфигурацию</button> 
+    <button type="button" class="butt1 pt" id="#FIELD_DB_NAME#_info_btn" style="margin:25px; width:280px; display:none;" onclick="setInfoInput();">Выбрать типовую конфигурацию</button>
+</td></tr> <tr><td>
+
+    <span id="#FIELD_DB_NAME#_man_input" style="display:none;" >
+        <div style="font-size:9pt; color:red"><b>#MAN_CONFIG#:</b> &nbsp; (до 100 символов) </div>
+        <textarea id="#FIELD_DB_NAME#_man_text" name="#FIELD_DB_NAME#_man_text" rows=2 cols=100 onChange="officeEquipmentChanged(event);"></textarea>
+        <br>
+
+        <input type=hidden size=#SIZE# class="#RO#" #RO# name="#FIELD_DB_NAME#" id="#FIELD_DB_NAME#" value="^#FIELD_DB_NAME#">  ??
+        <input type=checkbox name="#FIELD_DB_NAME#_delivery_time_chbx" id="#FIELD_DB_NAME#_delivery_time_chbx" onclick = "setChBxValue('#FIELD_DB_NAME#');"  ??
+        > Согласен на увеличение срока поставки до 10 недель  ??
+
+    </span>
+
+</td></tr>
+</table>
+
+<div id="#FIELD_DB_NAME#_work_div"></div>
+
+<script type="text/javascript">
+
+    var setInfoValue = function() 
+    {
+        $("###FIELD_DB_NAME#_info_input_block").show();
+        restoreInfoList("#FIELD_DB_NAME#");
+
+        $("###FIELD_DB_NAME#_man_input").hide();
+        $("###FIELD_DB_NAME#_man_btn").show();
+        $("###FIELD_DB_NAME#_info_btn").hide();
+    }
+
+    var setManValue = function() 
+    {
+        $("###FIELD_DB_NAME#_info_input_block").hide();
+
+        var f_bd_name_value = $("###FIELD_DB_NAME#_text").val();
+        $("###FIELD_DB_NAME#_man_text").val(f_bd_name_value.replace('<br>', ' '));
+
+//        if ($("###FIELD_DB_NAME#_delivery_time").val() == '1') {
+//            $("###FIELD_DB_NAME#_delivery_time_chbx").attr('checked', true);
+//        }
+
+        $("###FIELD_DB_NAME#_man_input").show();
+        $("###FIELD_DB_NAME#_man_btn").hide();
+        $("###FIELD_DB_NAME#_info_btn").show();
+    }
+
+    var officeEquipmentChanged = function(event) 
+    {
+        $("###FIELD_DB_NAME#_man_btn").hide();
+        $("###FIELD_DB_NAME#_id").val('');
+
+        var man_text_without_quotes = $("###FIELD_DB_NAME#_man_text").val().replace('"', '\'\'');
+        $("###FIELD_DB_NAME#_text").val(man_text_without_quotes.substring(0, 100));
+
+        $("###FIELD_DB_NAME#_list").html('');
+        log(2,"officeEquipmentChanged done!");
+    }
+
+    var setManInput = function() 
+    {
+        var f_bd_name_value = $("###FIELD_DB_NAME#_text").val();
+        $("###FIELD_DB_NAME#_man_text").val(f_bd_name_value.replace('<br>', ' '));
+
+        if($("###FIELD_DB_NAME#_text").val() != '' ) {
+            $("###FIELD_DB_NAME#_man_text").val($("###FIELD_DB_NAME#_text").val().replace('<br>', ' '));
+        }
+
+//        $("###FIELD_DB_NAME#_delivery_time").val('1');
+//        $("###FIELD_DB_NAME#_delivery_time_chbx").attr('checked', true);
+
+        $("###FIELD_DB_NAME#_info_input_block").hide();
+        $("###FIELD_DB_NAME#_man_btn").hide();
+        $("###FIELD_DB_NAME#_info_btn").show();
+        $("###FIELD_DB_NAME#_man_input").show();
+    }
+
+    var setInfoInput = function() 
+    {
+        $("###FIELD_DB_NAME#_delivery_time").val('');
+        $("###FIELD_DB_NAME#_man_input").hide();
+        $("###FIELD_DB_NAME#_info_input_block").show();
+        $("###FIELD_DB_NAME#_info_btn").hide();        
+        $("###FIELD_DB_NAME#_man_btn").show();
+        $("###FIELD_DB_NAME#").click();
+    }
+
+    var setChBxValue = function(infoField)
+    {
+        if ($("##" + infoField + "_delivery_time_chbx").prop('checked')) {
+            $("##" + infoField + "_delivery_time").val('1');
+        }
+        else {
+            $("##" + infoField + "_delivery_time").val('');
+        }
+    }
+ 
+    var pasteInfoTreeResult = function(requesterId, id, text) 
+    {      
+        pasteText(requesterId + "_id", id);
+        pasteText(requesterId + "_text", text); 
+        restoreInfoList(requesterId);
+
+        $("##" + requesterId + "_man_text").val('');
+        $("##" + requesterId + "_man_input").hide();
+        $("##" + requesterId + "_man_btn").show();
+
+        $('##dd_info').hide(); //убираем drop-down окно 
+        $('##d_tooltip').hide(); //убираем tooltip окно 
+     
+        if(id != '' ) 
+        {
+            AjaxCall(requesterId + "_work_div", "c=JINR/doc_22_equipment_parent&EQUIPMENT_ID=" + id + "&requesterId=" + requesterId, true);
+        }
+    }
+
+</script>
+
+    <script type="text/javascript">setInfoValue();</script>  ??val_id&text_val
+    <script type="text/javascript">setManValue();</script>  ??!val_id&text_val
+
+[end]
+
+
+
+[office_equipment_save]
+    $SET_PARAMETERS save_DELIVERY_TIME = #CUSTOM_FIELD_DB_NAME#_delivery_time;
+    $SET_PARAMETERS save_DELIVERY_TIME_value = ^#save_DELIVERY_TIME#;
+    $GET_DATA JINR/doc_22_fields.dat[updateOfficeEquipment]
+[end]
+
+
+[getEequipmentDeliveryTimeInfo]
+    SELECT
+        #FIELD_DB_NAME#_delivery_time as "DELIVERY_TIME"
+    FROM d_data_#DOC_TYPE_ID# 
+    WHERE doc_id = #doc_id#
+[end]
+
+[updateOfficeEquipment]
+    UPDATE d_data_#DOC_TYPE_ID# SET 
+        #CUSTOM_FIELD_DB_NAME#_delivery_time = '^#save_DELIVERY_TIME#'  ??save_DELIVERY_TIME_value
+        #CUSTOM_FIELD_DB_NAME#_delivery_time = null  ??!save_DELIVERY_TIME_value
+    WHERE doc_id = #doc_id#
+[end]
+
+
+
+
+=============== 1027 - Экстренность закупки оргтехники =======================
+[urgency_equipment_read]
+
+    $SET_PARAMETERS URGENCY_REASON=;
+    $GET_DATA JINR/doc_22_fields.dat[getUrgencyReasonInfo]
+
+    $SET_PARAMETERS text_val=^#FIELD_DB_NAME#;
+
+<div id="#FIELD_DB_NAME#_read_div">Нет</div>  ??!text_val=1
+
+<div id="#FIELD_DB_NAME#_read_div" class="bg_red" >Экстренная закупка  ??text_val=1
+<br><br>#URGENCY_REASON# ??text_val=1
+</div>  ??text_val=1
+
+[end]
+
+
+[urgency_equipment_write]
+    $SET_PARAMETERS URGENCY_REASON=;
+    $SET_PARAMETERS URGENCY_REASON_TEXT_NAME=Обоснование срочности закупки;
+    $GET_DATA JINR/doc_22_fields.dat[getUrgencyReasonInfo]
+    $SET_PARAMETERS MANDATORY=#URGENCY_REASON_TEXT_NAME#;
+
+<table>
+<tr><td>
+    <input type="checkbox" onclick="urgencyChanged(event);" name="#FIELD_DB_NAME#" id="#FIELD_DB_NAME#" value = "^#FIELD_DB_NAME#" 
+    > Экстренная закупка
+</td></tr>
+<tr><td>
+    <span id="#FIELD_DB_NAME#_reason_div" style="display:none;"
+>
+        <div>#URGENCY_REASON_TEXT_NAME#:</div>
+        <textarea id="#FIELD_DB_NAME#_reason" name="#FIELD_DB_NAME#_reason" mand="#mand#" rows=2 cols=100">#URGENCY_REASON#</textarea>
+
+    </span>
+</td></tr>
+</table>
+
+<script type="text/javascript">
+
+    var setUrgencyChecked = function() 
+    {
+        if ($("###FIELD_DB_NAME#").val() == '1') {
+            $("###FIELD_DB_NAME#").attr('checked', true);
+            $("###FIELD_DB_NAME#_reason").attr('mand', '#MANDATORY#');
+            $("###FIELD_DB_NAME#_reason_div").show();
+        }
+    }
+
+
+    var urgencyChanged = function(event)
+    {
+        if ($("###FIELD_DB_NAME#").prop('checked')) {
+            $("###FIELD_DB_NAME#").val('1');
+            $("###FIELD_DB_NAME#_reason").attr('mand', '#MANDATORY#');
+            $("###FIELD_DB_NAME#_reason_div").show();
+        }
+        else {
+            $("###FIELD_DB_NAME#").val('');
+            $("###FIELD_DB_NAME#_reason").val('');
+            $("###FIELD_DB_NAME#_reason").attr('mand', '');
+            $("###FIELD_DB_NAME#_reason_div").hide();
+        }
+    }
+
+
+</script>
+
+    <script type="text/javascript">setUrgencyChecked();</script>
+
+[end]
+
+[urgency_equipment_save]
+    $SET_PARAMETERS save_URGENCY_REASON = #CUSTOM_FIELD_DB_NAME#_reason;
+    $SET_PARAMETERS save_URGENCY_REASON_value = ^#save_URGENCY_REASON#;
+    $GET_DATA JINR/doc_22_fields.dat[updateUrgencyEquipment]
+[end]
+
+[getUrgencyReasonInfo]
+    SELECT
+        #FIELD_DB_NAME#_reason as "URGENCY_REASON"
+    FROM d_data_#DOC_TYPE_ID# 
+    WHERE doc_id = #doc_id#
+[end]
+
+[updateUrgencyEquipment]
+    UPDATE d_data_#DOC_TYPE_ID# SET 
+        #CUSTOM_FIELD_DB_NAME#_reason = '^#save_URGENCY_REASON#'  ??save_URGENCY_REASON_value
+        #CUSTOM_FIELD_DB_NAME#_reason = null  ??!save_URGENCY_REASON_value
+    WHERE doc_id = #doc_id#
+[end]
+

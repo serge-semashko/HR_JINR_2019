@@ -1,0 +1,105 @@
+cron.cfg
+
+sys/audit/convert_err.cfg
+
+
+[comments]
+descr=S: Вывод лога конвертирования файлов-приложений
+
+parents=sys/audit/tab_audit.cfg
+author=Куняев
+[end]
+
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=U:Таблица всех документов
+LOG=ON 
+tableCfg=table_no
+$INCLUDE dat/common.dat[rowLinks]
+[end]
+
+
+[report header]
+$INCLUDE dat/common.dat[check login]
+$INCLUDE [OK report header]
+    ??USER_ID=4918|USER_ID=2309|USER_ID=3663
+[end]
+
+
+[OK report header]
+    $SET_PARAMETERS srn=1; rpp=50; ??!srn
+    $SET_PARAMETERS rpp=50; ??!rpp
+    $SET_PARAMETERS f_nodoc=on; ??!call=CRON
+    <input type=checkbox name="f_err" onClick="goToRow(1);" 
+        checked  ??f_err=on
+    > Только ошибки
+    <input type=checkbox name="f_nodoc" onClick="goToRow(1);" 
+        checked  ??f_nodoc
+    > Кроме прав на доки
+    <input type="hidden" name="call" value="CRON">
+    ++++++++++++++++++ Шапка таблицы документов +++++++++++++++++++++ ??
+    <table class="tlist tblue" cellspacing=0>
+    <tr>
+        <th class="srh" sr="id" style="max-width:200px;">Задание</th>
+        <th class="srh" sr="comment">Действие</th>
+        <th class="srh" sr="nextCall">Назначено</th> 
+        <th class="srh" sr="module">Модуль</th> 
+        <th class="srh" sr="param" style="max-width:200px;">Параметры</th> 
+        <th class="srh" sr="lastCall" >Запущено</th>
+        <th class="srh" sr="lastResult"  style="max-width:400px;">Результат</th>
+        <th class="srh" sr="time">мс</th>
+    </tr>
+[end]
+
+
+[item]  *******
+    <tr 
+        class="oddRow" ??oddRow=1
+    >
+        <td>#id# / #active#</td>
+        <td>#comment#</td>
+        <td>#NEXT_CALL#</td>
+        <td>#module#</td>
+        <td>#param#</td>
+
+        <td>#LAST_CALL#</td>
+        <td><div style="max-width:400px;">#lastResult#</div></td>
+        <td>#time#</td>
+    </tr>
+[end]
+
+
+[report footer]
+        <tr>
+            <td colspan=7 class="pager last">
+                $INCLUDE dat/common.dat[rpp]  ??!NumTableRows=0
+                <input type=hidden name="rpp" value="#rpp#"> ??NumTableRows=0
+            </td>
+        </tr>
+    </table>
+    <script>
+        showSrt("#srt#","sup"); ??!desc
+        showSrt("#srt#","sdown"); ??desc
+    </script>
+[end]
+
+***************************** Шаблон SQL запроса ***************************
+
+[SQL]
+    select id
+        , DATE_FORMAT(nextCall,'#dateTimeFormat#') as NEXT_CALL
+        , module, param, comment
+        , DATE_FORMAT(lastCall,'#dateTimeFormat#') as LAST_CALL
+        , lastResult, active, time 
+    from schedule 
+    where 1=1
+        and lastResult like '%ERROR%'  ??f_err=on
+        and not module='sys/ar/set_doc_permits' ??f_nodoc
+    order by #srt# #desc#, ??srt
+    limit 100  ??
+[end]
+
+nextCall desc 
+
+

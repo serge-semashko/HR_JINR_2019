@@ -1,0 +1,60 @@
+files/file_list.ajm
+
+[comments]
+descr=U: Список файлов, загруженных в документ
+author=Устенко, Куняев
+input=doc_id = id документа из таблицы заголовков, [field_id] - поле документа, к которому прикреплен стек файлов, can_control - указание, показывать ли эл-ты управления списком. "y" - показывать
+output=таблица-список с метаданными файлов,сылками на скачку и, опционально, элементами управления списка (удаление и изменения порядка)
+parents=docs/doc_files_list.cfg
+childs=docs/doc_files_oper.cfg
+[end]
+
+[description]
+[end]
+
+[parameters]
+tableCfg=table_no
+LOG=ON
+[end]
+
+[report]
+    $CALL_SERVICE c=sys/getARUD; ??!AR_R=Y
+    $SET_PARAMETERS can_control=; bold=; file_list=list; NO_FILE_COMMENT=; info_id=; form_field_type=;
+    $GET_DATA [get files count]
+    $CALL_SERVICE c=files/file_list_full;   ??!APP_VERSION=MOBILE
+    $CALL_SERVICE c=files/file_list_mob;    ??APP_VERSION=MOBILE
+[end]
+
+
+[SQL_]
+    select f.id as "FILE_ID", f.norder, f.file_name, f.file_content_type, f.field_id
+        , f.uploader_id, f.downloaded, TIMESTAMPDIFF(MINUTE,f.upload_date,now()) as "FILE_AGE"
+        , case when lower(f.file_ext) in ('rar', 'zip', '7z', 'mp3', 'mp4', 'lnk') then 'Y' else '' end as "FILE_IS_ZIP" 
+        , f.comment as "file_comment"
+        , date_format(f.upload_date,'%d.%m.%y %H:%i') as upload_date_fmtd
+        , format_filesize(f.file_size) as human_bytes 
+        , iof(u.F,u.I,u.O) as FIO
+        , m.mkp_nr
+    from doc_files f
+        left join #table_users_full# u on u.id = f.uploader_id
+        left join (select file_id, count(id) as mkp_nr from doc_data_markups group by file_id) m on m.file_id=f.id
+    where 
+        f.doc_id = #doc_id#
+        and f.is_deleted=0
+        and f.field_id is null order by f.norder ??!field_id
+        and f.field_id='#field_id#' order by f.upload_date desc ??field_id
+[end]
+
+
+
+[get files count]
+    select count(Id) as "NumTableRows" 
+    from doc_files 
+    where doc_id = #doc_id#
+        and is_deleted=0
+        and field_id is null  ??!field_id
+        and field_id='#field_id#'  ??field_id
+    ;
+    select form_field_type, info_id from d_fields where type_id=#DOC_TYPE_ID# and field_db_name='#field_id#'  ??field_id
+[end]
+

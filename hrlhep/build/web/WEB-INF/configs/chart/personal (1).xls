@@ -1,0 +1,1559 @@
+<HTML>
+<HEAD><TITLE></TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<style>
+td {vertical-align:top;}
+</style>
+</head><body>
+<table border=1 cellpadding=5 cellspacing=0>
+</br><tr><td class="label">
+Количество человек:</td>
+<td>1</td>
+</tr>
+</table>
+</br>
+<table class="tlist tgreen" cellspacing=0" border=1>
+<th class="srh" sr="sotr.tab_n">Таб.№</th>
+<th class="srh" sr="sotr.FIO">ФИО</th>
+<th class="srh" sr="sotr.otdel">Отделение</th>
+<th>Отдел/сектор</th>
+<th class="srh" sr="sotr.post">Должность</th>
+<th class="srh"  sr="sotr.category">Категория</th>
+<th class="srh"  sr="sotr.stepen">Степень</th>
+<th class="srh"  sr="sotr.usl_truda">Условия труда</th>
+<th class="srh" sr="sotr.usl_rab">Условия работы</th>
+<th class="srh" sr="sotr.history_cont">История контракта</th>
+<th class="srh" sr="sotr.dr">Дата рождения</th>
+<th>Возраст</th>
+<th class="srh" sr="sotr.grazhdan">Гражданство</th>
+<th class="srh"  sr="sotr.nachalo_rab">Начало работы</th>
+<th class="srh" sr="sotr.okonch_rab">Окончание работы</th>
+<th class="srh"  sr="sotr.shtat_direct">Штат дирекции</th>
+<th class="srh" sr="sotr.sovmeshenie">Совместительство</th>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3091', true);" >
+<td style="border-right: none">3091</td>
+<td style="border-left: none;border-right: none">Бийский Станислав Михайлович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">старший инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">04.09.1939</td>
+<td style="border-left: none">78</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">10.04.1972</td>
+<td style="border-right: none;border-left: none">27.01.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3206', true);" >
+<td style="border-right: none">3206</td>
+<td style="border-left: none;border-right: none">Демидова Александра Степановна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">техник</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">28.04.1945</td>
+<td style="border-left: none">72</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">06.03.1972</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3227', true);" >
+<td style="border-right: none">3227</td>
+<td style="border-left: none;border-right: none">Голубева Лидия Валентиновна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">молодые специалисты по путевкам  Министерства</td>
+<td style="border-right: none">18.07.1944</td>
+<td style="border-left: none">73</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">05.04.1971</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=6760', true);" >
+<td style="border-right: none">6760</td>
+<td style="border-left: none;border-right: none">Кокин Виктор Иванович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">демобилизованные из Российской Армии</td>
+<td style="border-right: none">28.08.1946</td>
+<td style="border-left: none">71</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">01.08.1968</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7737', true);" >
+<td style="border-right: none">7737</td>
+<td style="border-left: none;border-right: none">Карташова Татьяна Николаевна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">23.12.1947</td>
+<td style="border-left: none">70</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">07.10.1974</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7747', true);" >
+<td style="border-right: none">7747</td>
+<td style="border-left: none;border-right: none">Каретник Александр Михайлович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">начальник группы</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">27.06.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">19.01.1976</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7749', true);" >
+<td style="border-right: none">7749</td>
+<td style="border-left: none;border-right: none">Кузнецова Галина Григорьевна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">15.06.1950</td>
+<td style="border-left: none">67</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">09.02.1971</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7781', true);" >
+<td style="border-right: none">7781</td>
+<td style="border-left: none;border-right: none">Туманов Александр Михайлович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">20.02.1947</td>
+<td style="border-left: none">70</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">20.02.1969</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7809', true);" >
+<td style="border-right: none">7809</td>
+<td style="border-left: none;border-right: none">Смирнов Анатолий Алексеевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">слесарь по ремонту и обслуживанию систем вентиляции и кондиционирования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">04.04.1935</td>
+<td style="border-left: none">82</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">06.02.1958</td>
+<td style="border-right: none;border-left: none">05.09.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7810', true);" >
+<td style="border-right: none">7810</td>
+<td style="border-left: none;border-right: none">Смирнов Владимир Николаевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">24.10.1954</td>
+<td style="border-left: none">63</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">14.01.1975</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=10610', true);" >
+<td style="border-right: none">10610</td>
+<td style="border-left: none;border-right: none">Галанкин Леонид Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">26.02.1961</td>
+<td style="border-left: none">56</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">05.03.1981</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=40102', true);" >
+<td style="border-right: none">40102</td>
+<td style="border-left: none;border-right: none">Шлепкин Иван Викторович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">мастер</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">перевод из др. предприятий, строек и организаций</td>
+<td style="border-right: none">16.01.1949</td>
+<td style="border-left: none">68</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">17.01.1984</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=45204', true);" >
+<td style="border-right: none">45204</td>
+<td style="border-left: none;border-right: none">Кутафин Валентин Петрович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">23.05.1938</td>
+<td style="border-left: none">79</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">24.01.1994</td>
+<td style="border-right: none;border-left: none">02.09.2017</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=48393', true);" >
+<td style="border-right: none">48393</td>
+<td style="border-left: none;border-right: none">Морозов Дмитрий Борисович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">03.06.1965</td>
+<td style="border-left: none">52</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">24.10.1994</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=66080', true);" >
+<td style="border-right: none">66080</td>
+<td style="border-left: none;border-right: none">Ставинская Елена Викторовна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">23.09.1962</td>
+<td style="border-left: none">55</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">29.03.1996</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=66502', true);" >
+<td style="border-right: none">66502</td>
+<td style="border-left: none;border-right: none">Шлепкин Евгений Иванович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">02.12.1973</td>
+<td style="border-left: none">44</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">13.05.1996</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=67991', true);" >
+<td style="border-right: none">67991</td>
+<td style="border-left: none;border-right: none">Иванова Лариса Владимировна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">02.05.1964</td>
+<td style="border-left: none">53</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">06.09.1996</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=68467', true);" >
+<td style="border-right: none">68467</td>
+<td style="border-left: none;border-right: none">Дубовик Леонид Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">ведущий инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">02.01.1944</td>
+<td style="border-left: none">73</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">28.10.1996</td>
+<td style="border-right: none;border-left: none">30.10.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=102237', true);" >
+<td style="border-right: none">102237</td>
+<td style="border-left: none;border-right: none">Васильев Владимир Николаевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">10.03.1960</td>
+<td style="border-left: none">57</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">11.06.2010</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=131944', true);" >
+<td style="border-right: none">131944</td>
+<td style="border-left: none;border-right: none">Федоров Валерий Николаевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">17.12.1960</td>
+<td style="border-left: none">57</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">27.05.2013</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=133322', true);" >
+<td style="border-right: none">133322</td>
+<td style="border-left: none;border-right: none">Серочкина Елена Владимировна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">26.04.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">20.08.2013</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=134661', true);" >
+<td style="border-right: none">134661</td>
+<td style="border-left: none;border-right: none">Осыкин Владимир Григорьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">17.04.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">13.11.2013</td>
+<td style="border-right: none;border-left: none">12.11.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=141867', true);" >
+<td style="border-right: none">141867</td>
+<td style="border-left: none;border-right: none">Куфтин Артем Алексеевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">23.09.1969</td>
+<td style="border-left: none">48</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">14.05.2014</td>
+<td style="border-right: none;border-left: none">13.05.2020</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=145122', true);" >
+<td style="border-right: none">145122</td>
+<td style="border-left: none;border-right: none">Носков Александр Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">04.09.1969</td>
+<td style="border-left: none">48</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">30.10.2014</td>
+<td style="border-right: none;border-left: none">29.10.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=151685', true);" >
+<td style="border-right: none">151685</td>
+<td style="border-left: none;border-right: none">Григорьев Сергей Геннадьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">ведущий инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по совместительству (из других организаций)</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">28.06.1980</td>
+<td style="border-left: none">37</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">29.04.2015</td>
+<td style="border-right: none;border-left: none">28.03.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=153789', true);" >
+<td style="border-right: none">153789</td>
+<td style="border-left: none;border-right: none">Гуров Владимир Анатольевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">15.10.1970</td>
+<td style="border-left: none">47</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">02.09.2015</td>
+<td style="border-right: none;border-left: none">01.09.2020</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=200436', true);" >
+<td style="border-right: none">200436</td>
+<td style="border-left: none;border-right: none">Белов Сергей Николаевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">18.03.1962</td>
+<td style="border-left: none">55</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">03.02.2000</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=201813', true);" >
+<td style="border-right: none">201813</td>
+<td style="border-left: none;border-right: none">Котляров Андрей Александрович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">07.02.1962</td>
+<td style="border-left: none">55</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">05.06.2000</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=223772', true);" >
+<td style="border-right: none">223772</td>
+<td style="border-left: none;border-right: none">Коптелов Андрей Васильевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">31.05.1961</td>
+<td style="border-left: none">56</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">19.08.2002</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=264147', true);" >
+<td style="border-right: none">264147</td>
+<td style="border-left: none;border-right: none">Васильев Сергей Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">тракторист</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">по совместительству (сотрудник ОИЯИ)</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">22.04.1976</td>
+<td style="border-left: none">41</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">01.12.2006</td>
+<td style="border-right: none;border-left: none">02.12.2019</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=291513', true);" >
+<td style="border-right: none">291513</td>
+<td style="border-left: none;border-right: none">Ковалев Александр Сергеевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">электрогазосварщик</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">допустимые</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">30.07.1958</td>
+<td style="border-left: none">59</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">04.05.2009</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3217', true);" >
+<td style="border-right: none">3217</td>
+<td style="border-left: none;border-right: none">Ребизин Сергей Степанович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №4 электротехническая - высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">22.04.1946</td>
+<td style="border-left: none">71</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">23.12.1968</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3219', true);" >
+<td style="border-right: none">3219</td>
+<td style="border-left: none;border-right: none">Степанов Владимир Михайлович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none;border-left: none">заместитель начальника отдела</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">демобилизованные из Российской Армии</td>
+<td style="border-right: none">19.09.1949</td>
+<td style="border-left: none">68</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">17.01.1975</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3221', true);" >
+<td style="border-right: none">3221</td>
+<td style="border-left: none;border-right: none">Щукина Татьяна Степановна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">молодые специалисты по путевкам  Министерства</td>
+<td style="border-right: none">19.12.1953</td>
+<td style="border-left: none">64</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">01.04.1974</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=3222', true);" >
+<td style="border-right: none">3222</td>
+<td style="border-left: none;border-right: none">Храбров Александр Григорьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">15.12.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">22.02.1976</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=6414', true);" >
+<td style="border-right: none">6414</td>
+<td style="border-left: none;border-right: none">Шилов Виктор Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №4 электротехническая - высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">ведущий инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">16.03.1952</td>
+<td style="border-left: none">65</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">21.12.1972</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7785', true);" >
+<td style="border-right: none">7785</td>
+<td style="border-left: none;border-right: none">Чистов Алексей Семенович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">старший мастер</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">22.03.1954</td>
+<td style="border-left: none">63</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">02.11.1978</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7805', true);" >
+<td style="border-right: none">7805</td>
+<td style="border-left: none;border-right: none">Свинцицкий Юрий Дмитриевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">10.03.1954</td>
+<td style="border-left: none">63</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">07.04.1980</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=7819', true);" >
+<td style="border-right: none">7819</td>
+<td style="border-left: none;border-right: none">Шилов Валерий Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">14.02.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">04.01.1976</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=20879', true);" >
+<td style="border-right: none">20879</td>
+<td style="border-left: none;border-right: none">Черняев Владимир Петрович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">начальник группы</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">демобилизованные из Российской Армии</td>
+<td style="border-right: none">06.10.1960</td>
+<td style="border-left: none">57</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">14.06.1982</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=25286', true);" >
+<td style="border-right: none">25286</td>
+<td style="border-left: none;border-right: none">Лабазин Андрей Викторович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">слесарь механосборочных работ</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">16.04.1973</td>
+<td style="border-left: none">44</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">31.01.1992</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=30646', true);" >
+<td style="border-right: none">30646</td>
+<td style="border-left: none;border-right: none">Сотников Александр Николаевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №4 электротехническая - высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">начальник группы</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">молодые специалисты по путевкам  Министерства</td>
+<td style="border-right: none">27.08.1960</td>
+<td style="border-left: none">57</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">01.04.1983</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=31386', true);" >
+<td style="border-right: none">31386</td>
+<td style="border-left: none;border-right: none">Купцов Александр Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №4 электротехническая - высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">28.11.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">25.07.1983</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=41584', true);" >
+<td style="border-right: none">41584</td>
+<td style="border-left: none;border-right: none">Сергеева Ольга Ивановна</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">старший инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">30.11.1961</td>
+<td style="border-left: none">56</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">11.10.1984</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=56245', true);" >
+<td style="border-right: none">56245</td>
+<td style="border-left: none;border-right: none">Маслов Александр Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">слесарь по ремонту и обслуживанию систем вентиляции и кондиционирования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">17.04.1964</td>
+<td style="border-left: none">53</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">10.04.1995</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=77948', true);" >
+<td style="border-right: none">77948</td>
+<td style="border-left: none;border-right: none">Лукьянов Сергей Александрович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">слесарь аварийно-восстановительных работ</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">13.06.1977</td>
+<td style="border-left: none">40</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">22.09.1997</td>
+<td style="border-right: none;border-left: none">23.09.2020</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=78331', true);" >
+<td style="border-right: none">78331</td>
+<td style="border-left: none;border-right: none">Куранов Александр Михайлович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">14.01.1953</td>
+<td style="border-left: none">64</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">03.11.1997</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=100400', true);" >
+<td style="border-right: none">100400</td>
+<td style="border-left: none;border-right: none">Морозов Александр Васильевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">31.08.1954</td>
+<td style="border-left: none">63</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">05.02.2010</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=100637', true);" >
+<td style="border-right: none">100637</td>
+<td style="border-left: none;border-right: none">Галанкин Анатолий Борисович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">10.07.1961</td>
+<td style="border-left: none">56</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">24.02.2010</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=110413', true);" >
+<td style="border-right: none">110413</td>
+<td style="border-left: none;border-right: none">Елишев Андрей Анатольевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">28.06.1970</td>
+<td style="border-left: none">47</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">08.02.2011</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=113066', true);" >
+<td style="border-right: none">113066</td>
+<td style="border-left: none;border-right: none">Шимкус Сергей Ионасович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">03.09.1963</td>
+<td style="border-left: none">54</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">19.07.2011</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=114819', true);" >
+<td style="border-right: none">114819</td>
+<td style="border-left: none;border-right: none">Коробков Алексей Иванович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">начальник группы</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">01.04.1965</td>
+<td style="border-left: none">52</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">17.11.2011</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=115533', true);" >
+<td style="border-right: none">115533</td>
+<td style="border-left: none;border-right: none">Счетчиков Александр Константинович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">03.01.1957</td>
+<td style="border-left: none">60</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">26.12.2011</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=125170', true);" >
+<td style="border-right: none">125170</td>
+<td style="border-left: none;border-right: none">Хрипунков Игорь Алексеевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">электрогазосварщик</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">13.11.1961</td>
+<td style="border-left: none">56</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">04.12.2012</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=141060', true);" >
+<td style="border-right: none">141060</td>
+<td style="border-left: none;border-right: none">Корнилов Михаил Алексеевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">09.09.1995</td>
+<td style="border-left: none">22</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">31.03.2014</td>
+<td style="border-right: none;border-left: none">30.03.2020</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=142372', true);" >
+<td style="border-right: none">142372</td>
+<td style="border-left: none;border-right: none">Петровский Георгий Александрович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">12.09.1984</td>
+<td style="border-left: none">33</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">10.06.2014</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=143236', true);" >
+<td style="border-right: none">143236</td>
+<td style="border-left: none;border-right: none">Ячный Александр Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">17.06.1976</td>
+<td style="border-left: none">41</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">29.07.2014</td>
+<td style="border-right: none;border-left: none">28.07.2019</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=150856', true);" >
+<td style="border-right: none">150856</td>
+<td style="border-left: none;border-right: none">Иванов Андрей Валерьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">30.11.1976</td>
+<td style="border-left: none">41</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">16.03.2015</td>
+<td style="border-right: none;border-left: none">15.03.2021</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=155218', true);" >
+<td style="border-right: none">155218</td>
+<td style="border-left: none;border-right: none">Зданович Тимур Васильевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">19.03.1971</td>
+<td style="border-left: none">46</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">01.12.2015</td>
+<td style="border-right: none;border-left: none">28.02.2020</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=160442', true);" >
+<td style="border-right: none">160442</td>
+<td style="border-left: none;border-right: none">Яковлев Виктор Валентинович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №1 высоковольтного оборудования</td>
+<td style="border-right: none;border-left: none">ведущий инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">22.08.1967</td>
+<td style="border-left: none">50</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">04.02.2016</td>
+<td style="border-right: none;border-left: none">03.02.2022</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=164296', true);" >
+<td style="border-right: none">164296</td>
+<td style="border-left: none;border-right: none">Бабаков Виктор Иванович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">04.03.1966</td>
+<td style="border-left: none">51</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">08.09.2016</td>
+<td style="border-right: none;border-left: none">07.09.2022</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=213475', true);" >
+<td style="border-right: none">213475</td>
+<td style="border-left: none;border-right: none">Васильев Сергей Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">мастер</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">22.04.1976</td>
+<td style="border-left: none">41</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">17.09.2001</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=283220', true);" >
+<td style="border-right: none">283220</td>
+<td style="border-left: none;border-right: none">Киров Валерий Сергеевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">электромонтер по ремонту и обслуживанию электрооборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">17.02.1955</td>
+<td style="border-left: none">62</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">07.07.2008</td>
+<td style="border-right: none;border-left: none">30.09.2018</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=283448', true);" >
+<td style="border-right: none">283448</td>
+<td style="border-left: none;border-right: none">Журин Виталий Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">инженер</td>
+<td style="border-right: none;border-left: none">Специалисты</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">10.04.1982</td>
+<td style="border-left: none">35</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">16.07.2008</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=283984', true);" >
+<td style="border-right: none">283984</td>
+<td style="border-left: none;border-right: none">Иванов Владимир Васильевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">слесарь по ремонту и обслуживанию систем вентиляции и кондиционирования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">05.05.1958</td>
+<td style="border-left: none">59</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">01.09.2008</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=290279', true);" >
+<td style="border-right: none">290279</td>
+<td style="border-left: none;border-right: none">Мигулин Михаил Иванович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №2 низковольтного оборудования</td>
+<td style="border-right: none;border-left: none">мастер</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">02.06.1954</td>
+<td style="border-left: none">63</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">29.01.2009</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=290414', true);" >
+<td style="border-right: none">290414</td>
+<td style="border-left: none;border-right: none">Свинцицкий Артем Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">23.06.1980</td>
+<td style="border-left: none">37</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">10.02.2009</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=290812', true);" >
+<td style="border-right: none">290812</td>
+<td style="border-left: none;border-right: none">Свинцицкий Сергей Юрьевич</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">монтажник санитарно-технических систем и оборудования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">14.04.1985</td>
+<td style="border-left: none">32</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">16.03.2009</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=293263', true);" >
+<td style="border-right: none">293263</td>
+<td style="border-left: none;border-right: none">Иванов Юрий Владимирович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">слесарь по ремонту и обслуживанию систем вентиляции и кондиционирования</td>
+<td style="border-right: none;border-left: none">Рабочие</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">постоянно, на неопределенный срок</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">26.10.1983</td>
+<td style="border-left: none">34</td>
+<td style="border-left: none;border-right: none">РОССИЯ</td>
+<td style="border-right: none">24.08.2009</td>
+<td style="border-right: none;border-left: none"></td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr class="pt
+oddRow
+"
+onClick="ShowDialog(true); AjaxCall('popupCont', 'c=edit/personal&tab_n=166545', true);" >
+<td style="border-right: none">166545</td>
+<td style="border-left: none;border-right: none">Салапин Виктор Иванович</td>
+<td style="border-right: none">Инженерный энерготехнологический отдел</td>
+<td style="border-right: none;border-left: none">Группа №3 тепловодоснабжения и вентиляции</td>
+<td style="border-right: none;border-left: none">мастер</td>
+<td style="border-right: none;border-left: none">Руководители</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">вредные, подкласс 3.1</td>
+<td style="border-right: none;border-left: none">по сроч.труд. договору, на опр срок. Ст.58 п.2 ТК</td>
+<td style="border-right: none;border-left: none">по свободному найму</td>
+<td style="border-right: none">22.08.1959</td>
+<td style="border-left: none">58</td>
+<td style="border-left: none;border-right: none"></td>
+<td style="border-right: none">28.12.2016</td>
+<td style="border-right: none;border-left: none">27.12.2022</td>
+<td style="border-right: none"></td>
+<td style="border-right: none"></td>
+</tr>
+<tr><td colspan=15 class="pager last">
+Строк на странице:
+<SELECT NAME="rpp" class=small onChange="; goToRow(1);">
+<OPTION value="20"
+>20
+<OPTION value="50"
+>50 <OPTION value="100"
+>100<OPTION VALUE="9999"
+selected
+> не огр.
+</SELECT> &nbsp; &nbsp; &nbsp; Строки: |<span class=actPage>1-70</span> |
+</td></tr>
+</table>
+<script type="text/javascript">
+showSrt("sotr.usl_truda","sdown");
+function Add() {
+ShowDialog(true);
+AjaxCall('popupCont', 'c=edit/personal', true);
+}
+</script>
+</body></html>

@@ -1,0 +1,221 @@
+admin/doctypes/copy_doctype.ajm
+
+[comments]
+descr=A: Создание нового типа документа на основе существующего. 
+input=type_id - ID типа документа - образца (из таблицы d_types);
+
+output=HTML форма создания нового типа документа на основе существующего, 
+parents=admin/doctypes/list_of_types.ajm, admin/doctypes/attr.ajm
+childs=admin/doctypes/copy_doctype_property.ajm
+test_URL=?c=admin/doctypes/copy_doctype&type_id=1
+author=Яковлев, Куняев
+[end]
+
+
+[description]
+Мастер для создания нового типа документа на основе существующего типа.<br>
+<br>
+Предлагает выбрать тип документа - образец, на основе которого будет создан новый.<br>
+Также предлагает задать различные свойства нового типа (название, группа и т.п.).<br>
+Затем заносит данные в таблицу d_types, копирует поля документа в таблицу d_fields и 
+создает клон таблицы-хранилища документа (d_data_ ..)
+[end]
+
+
+[parameters]
+request_name=A: Создание нового типа документа на основе существующего
+LOG=ON
+[end]
+
+
+[report]
+    $INCLUDE [report_]  ??AR_SYS_ADMIN=1
+[end]
+
+
+[report_]
+    $INCLUDE [process]  ??cop=add
+    $INCLUDE [form]  ??!cop|ERROR
+[end]
+
+
+[form]
+<center>
+<form name="popupForm">
+
+    $GET_DATA [getDoctypeInfo]  ??type_id
+
+
+    <input type=hidden name="type_id" value="#type_id#">
+    <input type=hidden name="c" value="#c#">
+
+    <table cellpadding=5>
+
+    <tr><td class=label>Тип документа - образца:</td><td> 
+        $INCLUDE svs/doc_types_dd.mod[filter]
+    </td></tr>
+    </table>
+
+    <br>
+    <div style="border: 1px solid black;">
+        <div id="doctype_property"></div>
+    </div>
+
+    <br>  ??
+    <div style="border: 1px solid black;">  ??
+        <div id="doctype_fields"></div>  ??
+    </div>  ??
+
+    <br>
+    <input type="button" class="butt1 pt" style="width:100;" value="Отмена" onClick="HideDialog();" >
+    <input type="button" class="butt1 pt" style="width:200; display:none;" id="copy_type_btn" value="Создать новый тип" onClick="AjaxCall('popupCont', 'c=#c#&cop=add', true, 'popupCont');"> 
+
+    <br>#ERROR#  ??ERROR
+</form>
+
+
+<script>
+        var pasteDocType=function(id,text){
+//            log(2,"pasteDocType: " + id + " / " + text); 
+            $("##f_doc_type_id").val(id);
+            $("##f_doc_type").html(text);
+            $("##type_id").val(id);
+
+            AjaxCall('doctype_property', 'c=admin/doctypes/copy_doctype_property&type_id=' + id);
+//            AjaxCall('doctype_fields', 'c=admin/doctypes/copy_doctype_fields&type_id=' + id);  
+
+            if(id != '' ) {
+                $("##copy_type_btn").show();
+            }
+            if(id == '' ) {
+                $("##copy_type_btn").hide();
+            }
+
+        }
+
+
+    ShowDialog(true);
+    showMsg("##dialog_title", "Создание нового типа документа на основе существующего");
+    pasteDocType(#type_id#, '#doc_type_short_name#');  ??type_id
+    AjaxCall('doctype_property', 'c=admin/doctypes/copy_doctype_property');  ??!type_id
+    AjaxCall('doctype_fields', 'c=admin/doctypes/copy_doctype_fields');  ??
+  ??!type_id
+    centerDialog();
+</script>
+
+[end]
+
+[process]
+$GET_DATA [add new type]
+$GET_DATA [change new table]
+
+<script>
+    HideDialog();  ??!ERROR
+    alert(' Ошибка при создании типа!' + '#ERROR#'); ??ERROR
+</script>
+[end]
+
+
+***************************** Шаблон SQL запроса ***************************
+[getDoctypeInfo]
+    select dtp.name as "doc_type"
+        , dtp.short_name as "doc_type_short_name" 
+    from d_types dtp
+    where dtp.ID = #type_id#
+[end]
+
+
+[add new type]
+
+    insert into d_types (name, short_name, group_id, custom_final_decision
+        , modul_table  ??f_modul_table
+        , monitor_table  ??f_monitor_table
+        , number_type
+        
+    ) 
+    values(
+    '#f_name#'
+    , '#f_short_name#'
+    , '#f_group_id#'
+    , '#f_custom_final_decision#' ??f_custom_final_decision
+    , NULL ??!f_custom_final_decision
+    , '#f_modul_table#' ??f_modul_table
+    , '#f_monitor_table#' ??f_monitor_table
+    , '#f_number_type#'
+    )
+    ;
+    select last_insert_id() as "new_type_id"
+    ;
+
+    INSERT INTO d_fields(type_id, field_category, nr, name, type, form_field_type, is_visible, rw_4_roles, field_db_name
+        , size, nulls, mand, info_id, info_view_nr, lx, maxWidth, ly, autoResize, creator_id, modifier_id)
+            SELECT #new_type_id#, field_category, nr, name, type, form_field_type, is_visible, rw_4_roles, field_db_name
+                , size, nulls, mand, info_id, info_view_nr, lx, maxWidth, ly, autoResize, #USER_ID#, #USER_ID#
+              FROM d_fields
+             WHERE type_id = #type_id#
+    ;
+
+    CREATE TABLE d_data_#new_type_id# SELECT * FROM d_data_#type_id# limit 1
+    ;
+
+    ALTER TABLE d_data_#new_type_id# ADD PRIMARY KEY (Id)
+    ;
+    
+    ALTER TABLE d_data_#new_type_id# CHANGE Id Id int(11) NOT NULL AUTO_INCREMENT
+    ;
+
+    UPDATE d_fields SET is_active = 1
+        WHERE type_id = #new_type_id#
+    ;
+
+[end]
+
+[change new table]
+
+    delete from d_data_#new_type_id#
+    ;
+
+    ALTER TABLE d_data_#new_type_id#
+    ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='Таблица документов типа: #f_name# '
+    ;
+
+[end]
+
+
+
+[add new type old version with selected fields]
+
+    insert into d_types (name, short_name, group_id, custom_final_decision
+        , modul_table  ??f_modul_table
+        , monitor_table  ??f_monitor_table
+        , number_type
+        
+    ) 
+    values(
+    '#f_name#'
+    , '#f_short_name#'
+    , '#f_group_id#'
+    , '#f_custom_final_decision#' ??f_custom_final_decision
+    , NULL ??!f_custom_final_decision
+    , '#f_modul_table#' ??f_modul_table
+    , '#f_monitor_table#' ??f_monitor_table
+    , '#f_number_type#'
+    )
+    ;
+    select last_insert_id() as "new_type_id"
+    ;
+
+    INSERT INTO d_fields(type_id, field_category, nr, name, type, form_field_type, is_visible, rw_4_roles, field_db_name
+        , size, nulls, mand, info_id, info_view_nr, lx, maxWidth, ly, autoResize, creator_id, modifier_id)
+            SELECT #new_type_id#, field_category, nr, name, type, form_field_type, is_visible, rw_4_roles, field_db_name
+                , size, nulls, mand, info_id, info_view_nr, lx, maxWidth, ly, autoResize, #USER_ID#, #USER_ID#
+              FROM d_fields
+             WHERE type_id = #type_id#
+             AND id in(#selected_field_ids#)
+    ;
+
+    call modify_doc_table(#new_type_id#)
+    ;
+
+[end]
+

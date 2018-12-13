@@ -1,0 +1,167 @@
+JINR/doc_27_fields.dat
+
+[comments]
+descr=S: Поля для Договора оказания услуг Институтом (doc_type=27)
+input=поля для Договора оказания услуг Институтом 
+output=
+parents=docs/edit_doc.cfg
+childs=
+author=Куняев, Яковлев
+[end]
+
+
+=================== 1026 - Набор услуг по договору оказания услуг Институтом =======================
+[set_of_services_head]
+    $SET_PARAMETERS SET_OF_SERVICES_ID=;
+    $SET_PARAMETERS SET_OF_SERVICES_VALUE_1=обеспечение участника информационными материалами;
+    $SET_PARAMETERS SET_OF_SERVICES_VALUE_2=проживание в гостинице «Дубна»;
+    $SET_PARAMETERS SET_OF_SERVICES_VALUE_3=проживание в гостинице;
+    $SET_PARAMETERS SET_OF_SERVICES_VALUE_4=трансфер участника;
+    $SET_PARAMETERS SET_OF_SERVICES_VALUE_5=печать трудов Мероприятия;
+
+<style>
+    table.doc tr td {padding:3px;}
+</style>
+[end]
+
+
+
+[set_of_services_read]
+    ^#FIELD_DB_NAME#
+[end]
+
+[set_of_services_write]
+    $INCLUDE JINR/doc_27_fields.dat[set_of_services_head]
+    $GET_DATA JINR/doc_27_fields.dat[getSetOfServicesInfo]
+
+    <input type=hidden name="#FIELD_DB_NAME#" id="#FIELD_DB_NAME#" value="^#FIELD_DB_NAME#">
+    <input type=hidden name="#FIELD_DB_NAME#_id" id="#FIELD_DB_NAME#_id" value="#SET_OF_SERVICES_ID#">
+
+    <input type=hidden name="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_1" id="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_1" value='#SET_OF_SERVICES_VALUE_1#'>
+    <input type=hidden name="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_2" id="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_2" value='#SET_OF_SERVICES_VALUE_2#'>
+    <input type=hidden name="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_3" id="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_3" value='#SET_OF_SERVICES_VALUE_3#'>
+    <input type=hidden name="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_4" id="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_4" value='#SET_OF_SERVICES_VALUE_4#'>
+    <input type=hidden name="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_5" id="#FIELD_DB_NAME#_SET_OF_SERVICES_VALUE_5" value='#SET_OF_SERVICES_VALUE_5#'>
+
+    <table>
+        <tr><td class='label' style='padding:3px;'>
+            <input type="checkbox"
+            onclick="setServicesValue('#FIELD_DB_NAME#');"
+            name="#FIELD_DB_NAME#_chbx_1" id="#FIELD_DB_NAME#_chbx_1">
+            
+        </td><td style='padding:3px;'>
+            #SET_OF_SERVICES_VALUE_1#
+        </td></tr>
+
+        <tr><td class='label' style='padding:3px;'>
+            <input type="checkbox"
+            onclick="setServicesValue('#FIELD_DB_NAME#');"
+            name="#FIELD_DB_NAME#_chbx_2" id="#FIELD_DB_NAME#_chbx_2">
+            
+        </td><td style='padding:3px;'>
+            #SET_OF_SERVICES_VALUE_2#
+        </td></tr>
+
+        <tr><td class='label' style='padding:3px;'>
+            <input type="checkbox"
+            onclick="setServicesValue('#FIELD_DB_NAME#');"
+            name="#FIELD_DB_NAME#_chbx_3" id="#FIELD_DB_NAME#_chbx_3">
+            
+        </td><td style='padding:3px;'>
+            #SET_OF_SERVICES_VALUE_3#
+        </td></tr>
+
+        <tr><td class='label' style='padding:3px;'>
+            <input type="checkbox"
+            onclick="setServicesValue('#FIELD_DB_NAME#');"
+            name="#FIELD_DB_NAME#_chbx_4" id="#FIELD_DB_NAME#_chbx_4">
+            
+        </td><td style='padding:3px;'>
+            #SET_OF_SERVICES_VALUE_4#
+        </td></tr>
+
+        <tr><td class='label' style='padding:3px;'>
+            <input type="checkbox"
+            onclick="setServicesValue('#FIELD_DB_NAME#');"
+            name="#FIELD_DB_NAME#_chbx_5" id="#FIELD_DB_NAME#_chbx_5">
+            
+        </td><td style='padding:3px;'>
+            #SET_OF_SERVICES_VALUE_5#
+        </td></tr>
+
+
+    </table>
+
+
+<script type="text/javascript">
+
+    function setServicesStartedValue(infoFieldId){
+        var idfieldid = infoFieldId+"_id";
+
+        if($("##" + idfieldid).val().length > 0 ){
+            var sel_ids = $("##" + idfieldid).val().split(",");
+
+            for(i = 0 ; i < sel_ids.length; i++){
+                curr_id = sel_ids[i];
+
+                $("##" + infoFieldId + "_chbx_" + curr_id).prop('checked', true);
+
+            }
+
+        }
+    }
+
+
+    function setServicesValue(infoFieldId){
+        var idfieldid = infoFieldId+"_id";
+        
+        var formatted_field_srt = '';
+        var formatted_field_id_srt = '';
+        var curr_field_srt = '';
+        var curr_field_id_srt = '';
+
+        for(i = 0 ; i < 5; i++){
+            var curr_id = i+1;
+            if ($("##" + infoFieldId + "_chbx_" + curr_id).prop('checked')){
+                curr_field_srt += $("##" + infoFieldId + "_SET_OF_SERVICES_VALUE_" + curr_id).val() + "<BR>";
+                curr_field_id_srt += curr_id + ",";
+            }
+        }
+
+        if((curr_field_srt.length > 0 ) && (curr_field_id_srt.length > 0 ) ){
+            formatted_field_srt = curr_field_srt.substring(0, curr_field_srt.length-4);
+            formatted_field_id_srt = curr_field_id_srt.substring(0, curr_field_id_srt.length-1);
+        }
+
+        $("##" + infoFieldId).val(formatted_field_srt);
+        $("##" + infoFieldId + "_id").val(formatted_field_id_srt);
+
+    }
+
+    setServicesStartedValue('#FIELD_DB_NAME#');
+
+</script>  
+
+[end]
+
+[set_of_services_save]
+    $SET_PARAMETERS save_set_id = #CUSTOM_FIELD_DB_NAME#_id;
+    $GET_DATA JINR/doc_27_fields.dat[updateSetOfServices]
+[end]
+
+
+[getSetOfServicesInfo]
+    SELECT
+        #FIELD_DB_NAME#
+        , #FIELD_DB_NAME#_id as "SET_OF_SERVICES_ID"
+    FROM d_data_#DOC_TYPE_ID# 
+    WHERE doc_id = #doc_id#
+[end]
+
+
+[updateSetOfServices]
+    UPDATE d_data_#DOC_TYPE_ID# SET 
+        #CUSTOM_FIELD_DB_NAME#_id = '^#save_set_id#'
+    WHERE doc_id = #doc_id#
+[end]
+

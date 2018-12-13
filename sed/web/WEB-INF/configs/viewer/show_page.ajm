@@ -1,0 +1,161 @@
+viewer/show_page.ajm
+
+[comments]
+descr=U: Просмотр заданной страницы файла
+input=active_page_id - id страницы из таблицы doc_file_pages, [file_id] - ID файла. Используется, если файл не конвертирован
+parents=viewer/show_file.cfg
+children=viewer/page_image.cfg
+testURL=?c=viewer/show_page&active_page_id=1
+author=Куняев
+[end]
+
+[description]
+<ul>
+<li>Выводит активную страницу в середине окна</li>
+<li>Вызывает viewer/show_markup_icons.cfg - отображение иконок маркапов на активной странице (AJAX)</li>
+<li>Вызывает viewer/show_markup_list - отображение списка маркапов справа (AJAX)</li>
+<li>Проверяет, есть ли активная страница в thumbnails и обновляет thumbnails, если ее там нет (checkThmbList(#page_nr#);)</li>
+</ul>
+[end]
+
+[parameters]
+request_name=U:Просмотр страницы файла
+LOG=ON
+[end]
+
+
+[report] *** Блок картинки активной страницы
+    $GET_DATA [get file info] ??active_page_id>0
+    $CALL_SERVICE c=sys/getARUD; doc_id=#doc_id#; ??doc_id>0&!file_id=23267
+    $SET_PARAMETERS AR_R=Y; ??doc_id=0
+    $SET_PARAMETERS AR_R=Y;  ??file_id=23267
+
+    $SET_PARAMETERS ERROR=Нет прав для просмотра файла!; ??!AR_R=Y&doc_id>0
+    $SET_PARAMETERS ERROR=страница не найдена! ??!page_nr
+<style>
+
+##main_page.a90 {
+    -moz-transform: rotate(90deg); /* Для Firefox */
+    -ms-transform: rotate(90deg); /* Для IE */
+    -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(90deg); /* Для Opera */
+    transform: rotate(90deg);
+    box-shadow: 5px -2px 4px 0 rgba(0, 0, 0, 0.6)
+   }
+##main_page.a180 {
+    -moz-transform: rotate(180deg); /* Для Firefox */
+    -ms-transform: rotate(180deg); /* Для IE */
+    -webkit-transform: rotate(180deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(180deg); /* Для Opera */
+    transform: rotate(180deg);
+    box-shadow: -2px -5px 4px 0 rgba(0, 0, 0, 0.6)
+   }
+##main_page.a-90 {
+    -moz-transform: rotate(-90deg); /* Для Firefox */
+    -ms-transform: rotate(-90deg); /* Для IE */
+    -webkit-transform: rotate(-90deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(-90deg); /* Для Opera */
+    transform: rotate(-90deg);
+    box-shadow: -5px 2px 4px 0 rgba(0, 0, 0, 0.6)
+   }
+    .disabled {color:##a0a0a0;}
+</style>
+
+    <input type="hidden" name="active_page_id" value="#active_page_id#">
+
+    ======= Перечень страниц сверху ======= ??
+    <div style="margin:0 30px 8px 0; border:none 1px red;"> 
+        <div style="float:right; display:inline-block; border:none 1px green; color:##000080; z-index=1;">
+
+            <i id="zoom_out" class="fa fa-search-minus pt disabled large" onClick="scale(-1);"></i> 
+            <i id="zoom_in" class="fa fa-search-plus pt blue large"  onClick="scale(1);"></i> 
+            &nbsp;
+            <i class="fa fa-undo pt blue large" aria-hidden="true" onClick="rotate(-1);"></i>
+            <i class="fa fa-repeat pt blue large" aria-hidden="true" onClick="rotate(1);"></i>
+        </div>
+            <b>Стр. #page_nr# </b>(из #NUM_PAGES#) &nbsp;#PAGE_LIST#
+        <div style="clear:both;"></div>
+    </div> 
+
+    ======= Контейнер для иконок маркапов ======= ??
+    <div id="main_page_mkps" class="mkp_container"></div> 
+
+    ======= Контейнер для изображения страницы ======= ??
+    <div id="main_page" class="page main_page" ><img src="#imgPath#loading.gif" style="margin:200px 500px 1100px 500px; width:32px;"></center></div>      ??!ERROR  
+style="width:##px;" ??
+    ======= Перечень страниц внизу ======= ??
+    <div style="padding:15px 0 0 0;"><b>Стр. #page_nr# </b>(из #NUM_PAGES#) &nbsp; #PAGE_LIST#</div>     ??!ERROR  
+
+    $INCLUDE [err msg]   ??ERROR
+
+    <script type="text/javascript">
+        active_page_id=#active_page_id#;
+        $("##page_content").unbind();
+
+        ===== Загрузка изображения страницы и вызов модуля отрисовки иконок маркапов ======= ??
+        http://www.helloworld.ru/texts/comp/lang/jscript/jscript/part8/part8.htm ??
+        var img = new Image(widths[zoom]);  // IMG страницы
+        img.onload = function(){
+            log(2, "Page #page_nr#(#active_page_id#) image loaded");
+            setPageCSS();
+            $("##main_page").html(img); 
+            showMarkupIcons("#active_page_id#", "N");
+
+            if(zoom == 0) {
+            ===== Первоначальный вызов модуля вывода списка маркапов ======= ??
+              AjaxCall("page_comments", "c=viewer/show_markup_list", true, "commonForm");      ??page_nr=1
+
+            ===== Первоначальный вызов модуля вывода thumbnails ---   ??
+              AjaxCall("thumbnails", "c=viewer/show_thumbnails&active_page_id=#active_page_id#");     ??page_nr=1
+            }
+            ===== Проверка, есть ли выбранная страница среди thumbnails и обновление thumbnails при необходимости ======= ??
+            try {checkThmbList(#page_nr#);} catch (e) {;}       ??page_nr>1
+            if(angle != 0)
+                rotate(0,angle);
+        }
+
+        var prev_zoom=-1;
+        var setPageImgSrc = function(){
+            if(prev_zoom<zoom) {
+                if(zoom>0) {
+                    log(1, "zoom" + zoom + "; w=" + widths[zoom]);
+                    img.src = "#ServletPath#?c=viewer/page_image&file_id=#file_id#&page_nr=#page_nr#&width=" +  widths[2];; 
+                }
+                else {
+                    log(1, "zoom=0!");
+                    img.src = "#ServletPath#?c=viewer/page_image&page_id=#active_page_id#"; 
+                }
+            }
+            prev_zoom=zoom;
+          showMarkupIcons("#active_page_id#", "N");
+        }
+        setPageImgSrc();
+        setZoomButtons();
+        setAddCommentMode(false); 
+    </script>
+[end]
+
+[err msg]
+    <div class="bg_white page" style="text-align:center; font-weight:bold; margin:30px;">Ошибка: #ERROR#</div>
+[end]
+
+================================================================================
+
+[get file info]  *** информация о файле, странице
+    SELECT /* номер страницы и ID документа для проверки прав доступа */
+        p.file_id, p.page_nr, p.width, f.doc_id, f.file_name
+    from doc_file_pages p join doc_files f on f.id=p.file_id
+    where p.id=#active_page_id#
+    ;
+    select /* общее кол-во страниц у файла */ 
+        count(*) as "NUM_PAGES"
+    from doc_file_pages 
+    where file_id=#file_id# and width=#width#
+    ;
+    select /* формирование списка страниц */
+        concat('<span class="pt pg', case when id=#active_page_id# then ' active_page' else '' end
+        ,'" onClick="showPage(', cast(id as char), ');">', page_nr,'</span> ') as "PAGE_LIST"
+    from doc_file_pages 
+    where file_id= #file_id# and width=#width#
+    order by page_nr
+[end]

@@ -1,0 +1,112 @@
+files/show_children_files.ajm
+
+
+[comments]
+descr=U: Показывает список файлов документов, порожденных от данного.
+input=doc_id - ID документа; mode - режимы отображения (если no_popup, открывается
+по месту вызова, а не во всплывающем окне) - введен для файлов родительского документа
+parents= viewer/common_blocks.dat
+author=Куняев
+[end]
+
+
+[parameters]
+request_name=U: Список файлов порожденных документов
+service=dubna.walt.service.TableServiceSpecial
+tableCfg=table_no
+LOG=ON
+[end]
+
+
+[report header]
+        $INCLUDE [top] ??!recurse
+        <div style="margin:5px 0 0 30px;">  ??recurse       
+[end]
+
+[top]
+    $SET_PARAMETERS ROOT_ID=#doc_id#; 
+        <div style="border:none 1px black; background-color:##efefef; margin:5px -7px -10px -5px; padding:5px;">
+    $INCLUDE [root doc]  ??exclude
+[end]
+
+[root doc]
+    $GET_DATA [get root doc info] 
+    $CALL_SERVICE c=files/show_doc_files;  ??TYPE_ID>1
+    <br>   ??TYPE_ID>1
+[end]
+
+
+[item]
+    $SET_PARAMETERS doc_id=#ID#;
+    <div style="margin:0 0 10px 0; ">
+        $CALL_SERVICE c=files/show_doc_files;  ??!exclude=#ID#
+
+        $GET_DATA [count item childs]
+        $INCLUDE [recurse]  ??NUM_ITEM_CHILDS>0
+    </div>
+[end]
+
+
+[recurse]
+    $STORE_PARAMETERS
+    $SET_PARAMETERS recurse=1; doc_id=#ID#; 
+    $CALL_SERVICE c=files/show_children_files
+    $RESTORE_PARAMETERS
+[end]
+
+
+[report footer]
+    </div>
+[end]
+
+[get root doc info]
+   select
+        dh.ID, dh.TYPE_ID, dh.status, dtp.NAME AS DOC_TYPE
+        , dh.NUMBER, dh.TITLE
+        , DATE_FORMAT(dh.doc_date,'%d.%m.%Y') as DOC_DATE
+        , DATE_FORMAT(dh.created,'%d.%m.%Y') as CREATED
+        , concat(ucr.F, ' ', left(IFNULL(ucr.I,''),1), '.', left(IFNULL(ucr.O,''),1),'.') as CREATOR
+        , dh.status AS "STATUS"
+        , dh.is_deleted
+    from d_list dh
+        left join d_types dtp on dtp.Id = dh.type_id
+        left join a_users_jinr ucr on ucr.id=dh.creator_id
+    where
+        dh.id=#doc_id#  
+[end]
+
+[count item childs]
+    select count(dh.id) as NUM_ITEM_CHILDS 
+    from d_list dh 
+        join d_types dt on dt.id=dh.type_id and dt.group_id<98 
+    where dh.pid=#ID#
+[end]
+
+[preSQLs]
+[end]
+
+    select count(dh.id) as NUM_CHILDS 
+    from d_list dh 
+        join d_types dt on dt.id=dh.type_id and dt.group_id<98 
+    where dh.pid=#doc_id#;
+
+
+[SQL]
+    select
+        dh.ID, dh.TYPE_ID, dh.status, dtp.NAME AS DOC_TYPE
+        , dh.NUMBER, dh.TITLE
+        , DATE_FORMAT(dh.doc_date,'%d.%m.%Y') as DOC_DATE
+        , DATE_FORMAT(dh.created,'%d.%m.%Y') as CREATED
+        , concat(ucr.F, ' ', left(IFNULL(ucr.I,''),1), '.', left(IFNULL(ucr.O,''),1),'.') as CREATOR
+        , dh.status AS "STATUS"
+        , dh.is_deleted
+    from d_list dh
+        left join d_types dtp on dtp.Id = dh.type_id
+        left join a_users_jinr ucr on ucr.id=dh.creator_id
+    where
+        dh.pid=#doc_id#  
+        and dh.is_deleted=0
+        and dtp.group_id<98
+    order by dh.created 
+limit 1 ??
+[end]

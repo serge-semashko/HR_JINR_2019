@@ -1,0 +1,109 @@
+admin/tab_monitor.ajm
+
+[comments]
+descr=A: Таб "Мониторинг" - вывод списка документов (вывод фильтров и вызов вывода самой таблицы)
+
+input=none
+output=HTML документов
+parents=admin.cfg
+childs=
+testURL=?c=admin/monitor/docs_list
+author=Куняев, Яковлев
+[end]
+
+[parameters]
+request_name=A:Монитор
+LOG=ON
+[end]
+
+
+[report]
+$INCLUDE dat/common.dat[check login] 
+$INCLUDE [report_]  ??AR_ADMIN=1|AR_LAB_SECR=1
+[end]
+
+
+[report_]
+    $GET_DATA [getInitiators]  ??
+<style>
+.monTab {font-size: 11pt; padding: 3px 7px;
+        border: solid 1px ##808080;
+        background-color: ##efefef;
+        border-radius: 8px;
+        cursor:pointer;
+    }
+    .monTabAct {
+        background-color: ##ffffff;
+    }
+    .monTab:hover{background-color: ##ffff80;}
+</style>
+
+    <div style="padding:10px 0 0 50px;">
+        <span id="st_all_docs" class="monTab monTabAct" onClick="callReport('all_docs');"> Все документы</span>
+        <span id="st_monitor" class="monTab" onClick="callReport('monitor');"> Заявки+договоры</span>
+    </div>
+
+    <div id="all_docs"></div>
+
+    <script type="text/javascript">
+
+        var callReport=function(module){
+            $(".monTab").removeClass("monTabAct");
+            $("##st_" + module).addClass("monTabAct");
+            setModule("admin/monitor/" + module);
+            resetSort();
+            submitForm(true);
+            AjaxCall("all_docs","c=admin/monitor/" + module +  ??
+                "&f_doc_type_id=#f_doc_type_id#&f_mon_status=#f_mon_status#&f_year=#CURR_YEAR#", false, '', true); ??
+        }
+
+        var submitForm=function(reset) {
+            log(1,"admin/tab_monitor.ajm.submitForm(); reset=" + reset);
+            if(reset) {
+                document.theForm.srn.value=1; 
+            }
+            AjaxCall("all_docs", "c=" + module + "&f_doc_type_id=#f_doc_type_id#&f_mon_status=#f_mon_status#&f_year=#CURR_YEAR#", false, '', true); ??
+            AjaxCall("all_docs", "c=" +module, true, "filters_div", true); 
+        }
+
+        var resetSort=function(){
+            if(module == "admin/monitor/monitor") {
+                document.theForm.srt.value="dh.started"; ??
+                document.theForm.desc.value="";
+                document.theForm.srt.value="-ifnull(dh.doc_date, dh.created)"; ??
+                document.theForm.srt.value="(case when (not dhc.started is null and dh.status=3) then dhc.started else dh.started end)";
+            }   
+            else {
+                document.theForm.srt.value="ifnull(dh.doc_date, dh.created)"; 
+                document.theForm.desc.value="desc";
+            }
+            document.theForm.srn.value=1; 
+        }
+
+        AjaxCall("all_docs","c=admin/monitor/all_docs&f_doc_type_id=#f_doc_type_id#&f_mon_status=#f_mon_status#&f_year=#CURR_YEAR#", false, '', true);
+
+        setModule("admin/monitor/all_docs");
+        showPageTop(true);
+    </script>
+[end]
+
+
+
+[ZZZ getDocTypes]
+    select concat('<option value=', cast(id as char), '>', name, '</option>') as DOC_TYPES
+    from d_types 
+    where is_active = 1 
+    order by name
+;
+[end]
+
+[ZZZ getInitiators]
+    select distinct concat('<option value=', cast(h.creator_id as char), '>', u.fio, '</option>') as INITIATORS
+        , u.fio
+    from d_list h
+        left join #table_users_full# u on u.id=h.creator_id
+    where 
+        h.status in(1,2)  ??!f_stat
+        h.status in(#f_stat#) ??f_stat
+    order by u.fio
+[end]

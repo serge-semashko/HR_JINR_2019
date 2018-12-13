@@ -1,0 +1,100 @@
+JINR/info/tree_item_panel.ajm
+
+[comments]
+descr=A: Редактор полей формы документа из списка типов документа
+
+input=type_id - ID типа документа (из таблицы d_types)
+output=HTML форма редактирования формы документа, 
+parents=admin/doctypes/doctype_panel.cfg
+childs=admin/doctypes/doctype_field_property.cfg, admin/doctypes/doctype_form.cfg
+test_URL=?c=admin/doctypes/doctype_form_editor&type_id=1
+author=Яковлев, Куняев
+[end]
+
+
+[parameters]
+request_name=A: Редактирование полей формы документа (Тип документа)
+tableCfg=table_no
+KeepLog=false
+ClearLog=true
+divider=<tr><td colspan=2 class="bg_white" style="height:10px; border-top:solid 1px gray;"></td></tr>
+[end]
+
+
+[report]
+
+<small>#c#</small> ??debug=on
+<input type=hidden name=info_id value='#info_id#'>
+<input type=hidden name=record_id value='#record_id#'>
+<input type=hidden name=view value='#view#'>
+
+
+$INCLUDE JINR/info/tree_item_panel.ajm[set item header]
+
+<table>
+<tr><td>
+<b>#ITEM_HEADER#</b>
+</td></tr>
+</table>
+
+$INCLUDE JINR/info/tree_item_panel.ajm[root create button]  ??!record_id
+
+<div id="info_tree_item_div"></div>
+
+    <script type="text/javascript">AjaxCall("info_tree_item_div", "c=JINR/info/tree_item_view&info_id=#info_id#&view=#view#&requesterId=#requesterId#&record_id=#record_id#", true);</script>  ??record_id
+
+
+[end]
+
+[set item header]
+$SET_PARAMETERS ITEM_HEADER=Справочник "#INFO_NAME#"  ??!record_id
+$INCLUDE JINR/info/tree_item_panel.ajm[make header]  ??record_id
+[end]
+
+[make header]
+$SET_PARAMETERS CYCLE_ITEM_ID=#record_id#;
+$SET_PARAMETERS ITEM_NAME=;
+$INCLUDE JINR/info/tree_item_panel.ajm[process header]  ??CYCLE_ITEM_ID
+$SET_PARAMETERS ITEM_HEADER=#ITEM_NAME# #CURR_ITEM_ID#
+[end]
+
+[process header]
+$SET_PARAMETERS CURR_ITEM_NAME=#ITEM_NAME#;
+$SET_PARAMETERS CURR_ITEM_ID=;
+$GET_DATA [getHeaderItemInfo]
+$SET_PARAMETERS CYCLE_ITEM_ID=#CURR_ITEM_ID# ??CURR_ITEM_ID
+$INCLUDE JINR/info/tree_item_panel.ajm[process header] ??CURR_ITEM_ID
+[end]
+
+
+[root create button]
+<table>
+<tr> <td class="middle">
+<div class="pt bg_white" style="position:relative;
+ top:12px; ??
+border:dotted 1px grey; border-radius:25px;" 
+onClick="AjaxCall('info_tree_item_div', 'c=JINR/info/tree_item_edit&info_id=#info_id#&view=#view#&requesterId=#requesterId#&cop=add');"> 
+&nbsp; <i class="fa fa-plus clr-green" aria-hidden="true"></i> создать подкаталог &nbsp;</div>
+</td> </tr>
+</table>
+[end]
+
+[preSQLs]
+select i.ID as "INFO_ID"
+, i.name as INFO_NAME, i.IS_EXTERNAL
+, i.IS_TREE, i.IS_ACTIVE
+, i.TABLE_NAME
+, data_updated 
+from i_infos i
+where i.Id=#info_id#
+[end]
+
+[getHeaderItemInfo]
+select i.ID
+, i.pid AS CURR_ITEM_ID
+, i.name AS ITEM_NAME  ??!CURR_ITEM_NAME
+, concat(i.name, '/' , '#CURR_ITEM_NAME#') AS ITEM_NAME ??CURR_ITEM_NAME
+from #TABLE_NAME# i
+where i.Id=#CYCLE_ITEM_ID#
+[end]
+

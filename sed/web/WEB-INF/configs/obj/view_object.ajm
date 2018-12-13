@@ -1,0 +1,105 @@
+
+obj/view_object.cfg
+
+[comments]
+descr=U: Просмотр объекта. Редактирование через pop-up
+
+input=doc_id - ID документа (из таблицы d_list)
+output=HTML форма просмотра документа, 
+parents=docs/view_doc.cfg
+childs=
+test_URL=
+author=Куняев
+[end]
+
+
+[parameters]
+request_name=U:Просмотр объекта
+service=jinr.sed.ServiceViewDoc
+tableCfg=table_no
+LOG=OFF
+SYS_FIELDS=DOC_ID
+SYS_FIELDS_TYPES=int
+[end]
+
+
+[report header]
+$SET_PARAMETERS NO_DELETE=Y;  ??NUM_COLLECTION_OBJECTS=1&DOC_TYPE_ID=7|DOC_TYPE_ID=22
+    <tr> ??view=list&!editable=Y
+    <tr id="view_object_#doc_id#_row" onClick="AjaxCall('popupCont', 'c=obj/edit_object&doc_id=#doc_id#&title_section=#title_section#&total_row_section=#total_row_section#', true);" ??view=list&editable=Y
+            class="pt" onmouseover="showToolTip(event, $(this));" tt_text="Изменить данные" tt_width="400" shiftX="100" onmouseout="hideToolTip();">  ??view=list&editable=Y
+[end]
+
+INLINE EDIT:
+        onClick="if(saveAllObjects()) AjaxCall('edit_object_#doc_id#_form', 'c=obj/edit_object&doc_id=#doc_id#&title_section=#title_section#&total_row_section=#total_row_section#', true);" 
+
+
+============== Вывод одного поля  ======= ??
+[item]
+    $LOG5 ITEM: #FIELD_SRC_FILE#[#FIELD_SECTION#] view=#view#;<br>
+    $INCLUDE [item cell] ??view=list
+    $INCLUDE [item row] ??!view=list
+[end]
+
+
+============== Вывод полей в строку ======= ??
+[item cell]
+    <td class="bg_white top_dotted">
+        <div class_="ellipsis" style="max-width:#maxWidth#px"> ??maxWidth&maxWidth>10
+            $INCLUDE #FIELD_SRC_FILE#[#FIELD_SECTION#]
+        </div> ??maxWidth&maxWidth>10
+    </td>
+[end]
+
+============== Вывод полей в столбец ======= ??
+[item row]
+    <tr>
+        <td class="label top_dotted"
+            width="35%" nowrap ??!APP_VERSION=MOBILE
+        >#NAME#:</td> 
+        <td width="65%" class="bg_white top_dotted">
+            #FIELD_SRC_FILE#[#FIELD_SECTION#] ??
+            $INCLUDE #FIELD_SRC_FILE#[#FIELD_SECTION#]
+        </td>
+    </tr>
+[end]
+
+
+[report footer]
+    $LOG NO_DOC_COMMENTS=#NO_DOC_COMMENTS#;<br>
+
+            <td class="bg_white top_dotted">#INITIATOR_COMMENT#</td>   ??view=list&!NO_DOC_COMMENTS
+            $INCLUDE [delete button]  ??view=list&editable=Y&!NO_DELETE=Y
+        </tr>  ??view=list
+        ------- контейнер для формы редактирования объекта ------- ??
+        <tr><td id='edit_object_#doc_id#_form' colspan=18 class="object_edit_form" style="display:none;"></td></tr> ??
+
+        <tr><td class="label">Комментарий:</td><td class="big bg_white">#INITIATOR_COMMENT#</td></tr> ??INITIATOR_COMMENT&!view=list
+    </table>  ??!collection=Y
+[end]
+
+[delete button]
+    <td class="big  top_dotted"
+        onclick = "event.preventDefault(); event.stopPropagation(); 
+        if(confirm('Удалить строку')) 
+            AjaxCall('edit_new_object_form_#PARENT_DOC_ID#_#DOC_TYPE_ID#', 'c=obj/edit_object&cop=delete&doc_id=#doc_id#&title_section=#title_section#&total_row_section=#total_row_section#', true);"
+        onmouseover="event.preventDefault(); event.stopPropagation(); showToolTip(event, $(this));" 
+        tt_text="Удалить эту строку"
+        tt_width="200" shiftX="-100"
+        onmouseout="hideToolTip();"
+    >
+        <button type="button" class="butt1 clr-red" style="color:red; font-weight:bold;">X</button>
+    </td> 
+[end]
+
+
+==============================================================================
+***************************** Шаблоны SQL запросов ***************************
+==============================================================================
+
+
+[SQL]
+    $INCLUDE docs/view_doc[SQL_] 
+[end]
+
+

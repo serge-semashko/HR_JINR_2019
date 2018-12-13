@@ -1,0 +1,92 @@
+viewer/show_all_files.ajm
+
+[comments]
+descr=U: Показывает список всех файлов документа
+input=doc_id - ID документа; mode - режимы отображения (если no_popup, открывается
+по месту вызова, а не во всплывающем окне) - введен для файлов родительского документа
+parents= viewer/common_blocks.dat
+author=Куняев
+[end]
+
+[description]
+<ul>
+    <li></li>
+</ul>
+[end]
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+tableCfg=table_no
+LOG=ON
+[end]
+
+
+[report header]
+
+$CALL_SERVICE c=viewer/check_AR ??markup_id
+$INCLUDE viewer/show_all_files.ajm[report header script]  ??!mode=no_popup
+
+[end]
+
+[report header script]
+    <script>
+        $("##dialog").show(300);
+        $("##dialog").draggable({handle: "##dialog_handler"}); 
+    </script>   
+[end]
+
+
+[item]
+    $SET_PARAMETERS field_id=;   ??field_id=null
+    $GET_DATA  [get field descr] ??field_id
+    $SET_PARAMETERS FIELD_DESCR=Приложения; file_list=; ??!field_id
+<div style="border-top: dotted 1px ##808080; margin:10px 0 0 0; background-color:white;">
+    #FIELD_DESCR#:
+</div>
+    $CALL_SERVICE c=files/file_list; RO=Y;
+[end]
+
+[report footer]
+    $INCLUDE viewer/show_all_files.ajm[report footer div]  ??!mode=no_popup
+
+    <script>
+        $("##dialog").css({"left": 100, "top": 100, "width" : 1000});  ??!mode=no_popup
+        $("##dialog_title").html("Список всех файлов документа:");  ??!mode=no_popup
+
+        viewFile=function(file_id){
+            log(3,"viewer/show_all_files.ajm.viewFile(); mode=#mode#");
+            AjaxCall("content", "c=viewer/show_file_body&file_id=" + file_id);  ??!mode=no_popup
+            window.open("#ServletPath#?c=viewer/show_file&id=" + file_id, "view" + file_id);  ??mode=no_popup
+        }
+    </script>
+[end]
+
+[report footer div]
+    <div style="padding-top:8px; text-align:center;"> 
+        <input type="button" class="butt1 pt" value="Закрыть" onClick="cancelButtonClick();">
+    </div>
+[end]
+
+================================================================================
+============================= шаблоны запросов в БД ============================
+================================================================================
+
+
+[SQL]
+    SELECT distinct field_id 
+    from doc_files
+    where doc_id=#doc_id#
+    order by field_id desc
+[end]
+
+[get field descr]
+    select type_id
+    from d_list
+    where id=#doc_id#
+    ;
+    select replace(name,'<br>', ' ') as "FIELD_DESCR"
+        , 'stack' as file_list
+    from d_fields
+    where type_id=#type_id#
+        and field_db_name='#field_id#'
+[end]

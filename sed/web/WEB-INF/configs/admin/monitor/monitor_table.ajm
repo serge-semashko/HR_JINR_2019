@@ -1,0 +1,330 @@
+admin/monitor/monitor_table.ajm
+
+[comments]
+descr=U: Модуль выбора модуля вывода списка документов по типу документа во вкладке Мониторинг (вывод самой таблицы) 
+
+input=
+output=HTML таблица документов
+parents=admin/monitor/monitor
+childs=admin/monitor/view_doc
+testURL=?c=admin/monitor/monitor_table
+author=Куняев, Яковлев
+[end]
+
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=U:Таблица заявок и договоров
+LOG=ON
+tableCfg=table_no
+$INCLUDE dat/common.dat[rowLinks]
+[end]
+
+
+[report header]
+$LOG <b>+++++++++++++CRITERIA_=#CRITERIA_#;</b><br>
+    $GET_DATA main.cfg[checkAdmin]  ??!f_kurator
+    $INCLUDE [OK report header]  ??f_kurator|AR_ADMIN=1|AR_LAB_SECR=1
+    $CALL_SERVICE c=sys/log_doc_access; doc_id=0; access_type=10; rejected=1;   ??!AR_ADMIN=1&!AR_LAB_SECR=1&!f_kurator
+[end]
+
+
+[OK report header]
+    $SET_PARAMETERS rpp=3;  ??
+    $SET_PARAMETERS srn_sav=#srn#;  ??pid
+    $SET_PARAMETERS f_type_id=8,9,11; srn=1; ??pid
+    $INCLUDE [table start] ??!pid
+[end]
+
+[table start]
+    $SET_PARAMETERS f_type_id=1;
+    ++++++++++++++++++ Шапка таблицы документов +++++++++++++++++++++ ??
+    <table class="tlist tblue" cellspacing="0">
+    <tr>
+        <th 
+            class="srh" sr="dh.ID"  ??USER_ID=2309
+        >
+        id  ??USER_ID=2309
+        </th>  
+        <th class="srh" sr="dh.NUMBER">Документ</th>
+        <th class="srh" sr="dh.started">Отправлен<br>на&nbsp;согласование</th> 
+        <th class="srh" sr="dh.TITLE">Содержание</th>
+        <th class="srh" sr="dh.DIVS">Подразд.</th>  ??!f_div_id
+        <th class="srh pl" sr="d.manufacturer">Контрагент</th>
+        <th class="srh pl" sr="-dh.started">Общий<br>срок</th>
+        <th class="srh pl" sr="(case when (not dhc.started is null and dh.status=3) then dhc.started else dh.started end)" >История</th>
+        <th class="srh pl" sr="-dh.created">Место нахождения</th>
+        <th class="srh pl" sr="case when dh.status=3 then dh.modified else now() end">Дата<br>завершения</th>
+        <th class="srh" sr="d.kurator">Диспетчер<br>закупки</th>
+        <th class="srh pl" sr="dm.monitor_comment">Комментарии</th>
+        <th><i class="fa fa-envelope-o clr-red" aria-hidden="false"></i></th>
+    </tr>
+[end]
+
+[item]
+    $SET_PARAMETERS ODD=; ??TYPE_ID=1
+    $SET_PARAMETERS ODD=oddRow; ??oddRow=1&TYPE_ID=1
+    $GET_DATA [get waiting]  ??wf_id
+    <tr class="#ODD#" 
+        onClick="openWindow('c=docs/view_doc&doc_id=#ID#&mode=ext', 'doc_#ID#', 1000,800);" 
+        onClick="AjaxCall('doc_content', 'c=docs/view_doc&doc_id=#ID#&mode=popup', true,'',true);" ??
+    >
+        <td class=small>
+            #ID#  ??USER_ID=2309
+        </td>
+        <td class="pt nowrap" onClick="showDocDetails(event, #doc_id#);" >
+            $INCLUDE reports/all_docs_table.cfg[mark]  ??MARKED=1
+            Заявка  ??TYPE_ID=1
+            Договор  ??!TYPE_ID=1
+            №#NUMBER#  ??STATUS>0
+        </td>
+        <td class="pt nowrap" nowrap>
+            $SET_PARAMETERS TITLE=;  manufacturer=;  ??STATUS=0
+            <i>черновик</i> ??STATUS=0
+            #STARTED#
+            STATUS=#STATUS# ??
+        </td>
+
+        $SET_PARAMETERS TITLE=- " -;  ??TITLE=#old_title#
+        <td class="tt pt" tt_text='#TITLE#'><div class="ellipsis"  style="max-width:300px;">#TITLE#</div></td>
+        <td class="pt">#DIVS#</td>   ??!f_div_id
+        <td class="tt pt" tt_text='#manufacturer#'><div class="ellipsis" style="max-width:200px;">#manufacturer#</div></td>
+
+        $SET_PARAMETERS WAITING_LEVEL=#WAITING_LEVEL_FINISHED#; ??STATUS=3
+        $SET_PARAMETERS WAITING_LEVEL=;    ??STATUS=3&child_status>0
+        <td class="center"
+            class="bg_red" ??WAITING_LEVEL=20_ZZZ
+            style="background-color:##ff8040;" ??WAITING_LEVEL=20
+            style="background-color:##ffcc88;" ??WAITING_LEVEL=5
+            style="background-color:##fff040;" ??WAITING_LEVEL=2
+        >
+            #TOTAL_TIME#  ??STATUS<3
+            #TOTAL_TIME_FINISHED#  ??STATUS=3
+        </td>
+
+        <td class="pt" style="font-style:italic; font-size:8pt; white-space:nowrap; text-align:center; padding:5px;"
+            id="wfstatus_#ID#" class="nowrap pl"  ??
+            onClick="showHistory(event, #doc_id#);"> ??wf_id
+            $CALL_SERVICE c=wf/show_wf_status_cache; show_persons=Y; ??
+            см.>>  ??wf_id
+        </td>
+
+        <td>#NOW_WAITING# #W_USERS_ID# </td>
+        <td>
+            #MODIFIED#     ??STATUS=3
+            STATUS=#STATUS#; c_st=#child_status#;      ??!STATUS=3&USER_ID=2309&ZZZ
+            pid=#pid#; ??
+            oddRow=#oddRow#;        currentRow=#currentRow#; ??
+            #WORK_DAYS# / #WAITING_LEVEL#  ??
+            c_status=#child_status#; ??
+        </td>
+
+        <td class="tt" tt_text='#kurator#'>
+<div class="ellipsis" style="max-width:90px; white-space:nowrap;">#kurator#</div>   ??TYPE_ID=1_ZZZ
+#kurator#
+   ??TYPE_ID=1
+</td> 
+
+$GET_DATA [get doc monitor comment]
+        <td class="tt" tt_text='#MONITOR_COMMENT#'><div class="ellipsis" style="max-width:150px;">#MONITOR_COMMENT#</div></td>  ??MONITOR_COMMENT
+        <td></td>  ??!MONITOR_COMMENT
+        <td class="tt" tt_text='#monitor_comment#'><div class="ellipsis" style="max-width:150px;">#monitor_comment#</div></td>  ??
+        <td>#CRITERIA#</td>  ??USER_ID=2309_ZZZ
+MONITOR=#MONITOR#; C_MONITOR=#C_MONITOR#; ??
+        <td class="pt" onClick="sendExtraMail(event, #ID#);"><i class="fa fa-envelope-o clr-red" aria-hidden="true"></i></td>
+
+    </tr>
+
+    $SET_PARAMETERS NOW_WAITING=; manufacturer=; MONITOR_COMMENT=;
+    $SET_PARAMETERS CRITERIA_=#CRITERIA#; ??TYPE_ID=1
+    $SET_PARAMETERS old_title=#TITLE#;  ??!TITLE=- " -
+
+    $CALL_SERVICE c=admin/monitor/monitor_table;  ??pid&TYPE_ID=1
+[end]
+
+
+[report footer]
+        $SET_PARAMETERS NumTableCols=13;
+        <tr class="#ODD#"><td></td><td colspan="12">Договор: <i>нет</i></td></tr> ??pid&NumTableRows=0
+        <tr><td colspan="#NumTableCols#" style="border-bottom:solid 1px ##1F697D; height:1px; padding:0;"></td></tr> ??pid
+    </table> ??!pid
+    $SET_PARAMETERS srn=#srn_sav#;  ??pid
+    $SET_PARAMETERS pid=; 
+[end]
+
+
+***************************** SQLs ***************************
+
+[get waiting]
+    select group_concat(DISTINCT d.short_name
+        , ' / ', fio(uw.F, uw.I, uw.O) ??
+        , ', ', getWaiting(getWorkHours(wf.started, now()))
+        SEPARATOR '<br>') as "NOW_WAITING"
+    from wf 
+        left join #table_users_full# uw on uw.id=wf.user_id 
+        left join info_10 d on d.id=uw.div_code
+    where wf_id=#wf_id#
+        and not wf.started is null and wf.finished is null 
+        and wf.step_type<3 
+        and wf.is_active=1
+
+[end]
+
+[get doc monitor comment]
+    select GROUP_CONCAT(dma.monitor_comment, ', <i>'
+        , iof(uma.F, uma.I, uma.O), ', '
+        , ifnull(DATE_FORMAT(dma.comment_date,'#dateTimeFormat#'),'')
+        , '</i>'
+        ORDER BY dma.comment_date
+        SEPARATOR '<hr>'
+    ) as "MONITOR_COMMENT"
+    from 
+        d_marked dma
+        left join #table_users_full# uma on uma.Id = dma.user_id 
+    where
+        dma.doc_id=#doc_id#
+[end]
+
+[SQL]
+$INCLUDE [SQL_] ??AR_ADMIN=1|AR_LAB_SECR=1|f_kurator
+[end]
+
+
+[SQL_]
+select distinct
+    dh.ID, dh.ID as "doc_id"
+    , dh.id as "pid"  ??f_type_id=1
+    , dh.TYPE_ID
+    , dh.DIVS
+    , dh.is_deleted
+    , dh.NUMBER
+
+    , DATE_FORMAT(ifnull(dh.doc_date, dh.created),'#dateFormat#') as DOC_DATE ??
+    , DATE_FORMAT(dh.started,'#dateTimeFormat#') as STARTED
+    , dh.TITLE
+    , d.manufacturer 
+    , getWaiting(getWorkHours(dh.started, now())) AS TOTAL_TIME 
+    , getWaiting(getWorkHours(dh.started, dh.modified )) AS TOTAL_TIME_FINISHED
+
+    , DATE_FORMAT(dh.MODIFIED,'#dateFormat#') as MODIFIED 
+    , fio(uw.F, uw.I, uw.O) as NOW_WAITING  ??
+    , getWaiting(getWorkHours(dh.created, now())) AS WAITING ??
+
+     , getWorkDays(dh.started, now()) as "WORK_DAYS"
+    , case 
+        when getWorkDays(dh.started, now()) > 20 then '20'
+        when getWorkDays(dh.started, now()) > 5 then '5'
+        when getWorkDays(dh.started, now()) > 2 then '2'
+        else '0'
+    end
+    AS WAITING_LEVEL 
+
+    , case 
+        when getWorkDays(dh.started, dh.modified) > 20 then '20'
+        when getWorkDays(dh.started, dh.modified) > 5 then '5'
+        when getWorkDays(dh.started, dh.modified) > 2 then '2'
+        else '0'
+    end
+    AS WAITING_LEVEL_FINISHED
+
+    , wl.id as "wf_id"
+    , dh.status as "STATUS"
+    , dh.wf_status
+    , dh.doc_date, dh.created, dh.modified,dh.started  
+    , dhc.status as "child_status"    ??f_type_id=1
+, dhc.id as "cid"   ??f_type_id=1_ZZZ
+, dhc.started    ??f_type_id=1
+    , fio(k.F, k.I, k.O) as kurator    ??f_type_id=1
+
+,wf.user_id ??
+, '#CRITERIA_#' as "CRITERIA_" ??
+    , DATE_FORMAT(case when (not dhc.started is null and dh.status=3) then dhc.started else dh.started end, '#dateFormat#') as "CRITERIA"      ??f_type_id=1_ZZZ
+    , getWorkDays(case when dhc.id is null then dh.started when dh.status=3 then dhc.started else dh.started end, now()) as "CRITERIA"      ??f_type_id=1_ZZZ
+    , dm.mark as "MARKED", dm.monitor_comment
+    , dm.NO_MONITOR, dmc.no_monitor as "C_MONITOR"  ??f_type_id=1&ZZZZZ
+from d_list dh
+
+$INCLUDE admin/monitor/monitor_table.ajm[criteria]
+
+order by #srt# #desc#       ??f_type_id=1_ZZ
+order by (case when (not dhc.started is null and dh.status=3) then dhc.started else dh.started end)     ??f_type_id=1
+order by dh.id     ??f_type_id>1
+
+[end]
+
+
+[criteria]
+    left join d_list dhc on (dhc.pid=dh.id and dhc.TYPE_ID in(8,9,11) and dhc.is_deleted=0)   ??f_type_id=1_ZZZ
+    $INCLUDE admin/monitor/monitor_table.ajm[child dog view]  ??f_type_id=1
+    left join 
+        d_data_1 d  ??f_type_id=1
+        $INCLUDE admin/monitor/monitor_table.ajm[kontrag-view]  ??!f_type_id=1
+        on d.doc_id= dh.id       
+    left join wf_list wl on wl.doc_id=dh.id
+    left join d_marked dm on (dm.doc_id=dh.id and dm.user_id=#USER_ID#)
+    left join d_marked dmc on (dmc.doc_id=dhc.id and dmc.user_id=#USER_ID#)  ??f_type_id=1
+    left join a_users_jinr k on k.id=d.kurator_id   ??f_type_id=1
+
+    where dh.ID>0 
+        and dh.is_deleted=0 
+        $INCLUDE admin/monitor/monitor_table.ajm[request filters] ??f_type_id=1&!f_doc_id
+        and dh.TYPE_ID in(#f_type_id#)  ??!f_doc_id
+        and dh.ID=#f_doc_id#  ??f_doc_id
+        and dh.PID=#pid#    ??pid
+        and dh.IS_CONFIDENTIAL=0
+        and dh.id in(select doc_id from d_divs where div_id in(#f_div_id#)) ??f_div_id&!f_doc_id
+[end]
+
+[child dog view]
+    left join (
+        select pid, min(id) as "id", max(status) as "status", min(started) as "started"
+        from d_list
+        where TYPE_ID in(8,9,11) 
+            and is_deleted=0
+        group by pid
+    ) dhc on dhc.pid=dh.id
+[end]
+
+[request filters] ****** фильтры включаются только для заявок (f_type_id=1)
+    and dh.status>0 
+    and d.paper_dog=0   
+    and extract(year from dh.started) in(#f_year#) ??f_year&!f_year=ALL
+
+    and d.kurator_id=#f_kurator# ??f_kurator&!f_kurator=ANY&!f_kurator=NONE
+    and (not d.kurator_id is null) ??f_kurator=ANY
+    and (d.kurator_id is null) ??f_kurator=NONE
+
+    and (dm.mark=1 or dmc.mark=1)   ??f_marked
+    and (dm.no_monitor=1 or dmc.no_monitor=1) ??f_monitor
+    and (dm.no_monitor is null or dm.no_monitor=0) and (dmc.no_monitor is null or dmc.no_monitor=0) ??!f_monitor
+
+    and (dhc.status is null or dhc.status<3) and (dhc.id is null or dhc.id not in(select doc_id from doc_paper_processing where stage>2)) 
+
+    and (dh.NUMBER like '#f_doc_number#%' or dh.NUMBER like '%-#f_doc_number#') ??f_doc_number
+
+    $INCLUDE admin/monitor/all_docs[access_filter] ??!FULL_READ_ACCESS=Y&f_type_id=1?!f_kurator
+[end]
+
+
+[kontrag-view]
+    (select doc_id, kontragent_text as "manufacturer" from d_data_8
+    union select doc_id, kontragent_text as "manufacturer" from d_data_9
+    union select doc_id, kontragent_text as "manufacturer" from d_data_11
+    ) d
+[end]
+
+    left join #table_users_full# ucr on ucr.id=dh.creator_id ??
+    left join #table_users_full# um on um.id=dh.modifier_id ??
+
+     , getWaiting(getWorkHours(ifnull(dh.doc_date, dh.created), now())) AS TOTAL_TIME 
+    , getWaiting(getWorkHours(ifnull(dh.doc_date, dh.created), dh.modified )) AS TOTAL_TIME_FINISHED
+
+
+    and dh.status in(999#f_mon_status_0##f_mon_status_1##f_mon_status_2##f_mon_status_3#) ??!f_doc_id&f_type_id=1&ZZZ
+
+    and dh.is_deleted=1 ??f_deleted
+    and dh.id in(select doc_id from d_index where context like '%#f_search#%') ??f_search&!f_doc_id
+    and dh.creator_id=#f_initiator_id# ??f_initiator_id&!f_doc_id
+
+    and dh.ID=#f_doc_id# ??f_doc_id
+

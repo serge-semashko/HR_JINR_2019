@@ -1,0 +1,77 @@
+JINR/doc_13_protocol_ZK_invited.ajm
+
+[comments]
+descr=Печать списка приглашенных на заседание закупочной комиссии.
+input=invited_id_list - списой ID пользователей, приглашенных на заседание закупочной комиссии.
+output=строки HTML-таблицы с данными приглашенных на заседание закупочной комиссии.
+parents=JINR/doc_13_protocol_ZK.mod
+childs=
+testURL=?c=JINR/doc_13_protocol_ZK_invited&invited_id_list=
+author=Яковлев, Куняев
+[end]
+
+[description]
+Модуль вывода списка приглашенных на заседание закупочной комиссии.
+[end]
+
+
+[parameters]
+request_name=U:Печать списка приглашенных на заседание закупочной комиссии.
+service=jinr.sed.ServiceViewDoc  ??
+service=dubna.walt.service.TableServiceSpecial
+tableCfg=table_no
+LOG=ON
+t_start=<table class="item"><tr><td class="label">
+t_mid=</td><td class="cont">
+t_lab=</td><td class="label">
+t_end=</td></tr></table>
+SYS_FIELDS=DOC_ID
+SYS_FIELDS_TYPES=int
+[end]
+
+
+[report header]
+$SET_PARAMETERS SQL_mode = #mode#;  ??
+$SET_PARAMETERS CNT_INV = 0;
+[end]
+
+
+[report footer]
+[end]
+
+
+[item]
+$GET_DATA [getMoreInfo]  ??INV_ID
+
+<tr><td width = '155'>
+Приглашенные  ??CNT_INV=1
+</td><td width = '170'>#INV_FIO#</td><td width = '290'>#INV_POST#</td></tr>
+[end]
+
+[SQL]
+    $INCLUDE [SQL_]  ??invited_id_list
+[end]
+
+[SQL_]
+    select DISTINCT u.person_id AS "INV_ID"
+    from info_11 u 
+    where u.person_id in(#invited_id_list#)
+    and is_deleted = 0    
+[end]
+
+[getMoreInfo]
+    SET @row_num = #CNT_INV#;    
+    
+    SELECT DISTINCT fio(u.F, u.I, u.O) as "INV_FIO"
+    , (@row_num + 1) AS CNT_INV
+    from info_11 u 
+    where u.person_id = #INV_ID#
+    and is_deleted = 0
+;
+    SELECT CONCAT(post, ', ') as "INV_POST"
+    from info_11 u 
+    where u.person_id = #INV_ID#
+    and is_deleted = 0
+;
+    select (case when RIGHT('#INV_POST#', 1) = ',' then SUBSTRING('#INV_POST#',1, CHARACTER_LENGTH('#INV_POST#')-1) end) as INV_POST;
+[end]

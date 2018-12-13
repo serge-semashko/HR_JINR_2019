@@ -1,0 +1,71 @@
+[comments]
+АДМИН: Редактирование пользователя.
+Вывод в форму редактирования пользователя списка активных ролей пользователя для редактирования.
+Для вывода каждой роли вызывает admin/users/user_edit_role.cfg
+Вызывается из admin/users/edit_user.cfg
+
+input=ID - ID выбранного пользователя
+output=HTML форма редактирования ролей и добавления новой роли
+parents=admin/users/edit_user.cfg
+childs=admin/users/user_edit_role.cfg
+testURL=?c=admin/users/user_edit_roles&ID=1
+[end]
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=Admin:Редактирование ролей пользователя
+tableCfg=table_no
+thsnDelimiter=none
+LOG=ON
+[end]
+
+[report header]
+$GET_DATA [get user divs] ??!AR_SYS_ADMIN=1
+<table border=0 clas_s=table_small cellpadding=3 cellspacing=0>
+<tr>
+<td>Роль</td><td>Цель</td><td>Код&nbsp;цели&nbsp;</td><td>Приоритет&nbsp;</td>  ??AR_SYS_ADMIN=Y
+<td>Удалить</td> ??
+</tr>
+[end]
+
+
+[item]
+------- вывод очередной роли ??
+$CALL_SERVICE c=admin/users/user_edit_role
+[end]
+
+[report footer]
+------- вывод пустой роли для добавления роли ??
+$SET_PARAMETERS CURRENT_ROLE_ID=0; ROLE_ID=; RW=Y;
+$CALL_SERVICE c=admin/users/user_edit_role
+</table>
+AR_SYS_ADMIN=#AR_SYS_ADMIN# ??
+$SET_PARAMETERS ROLE_NAME=; TARGET=;
+[end]
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+
+[get user divs]
+select group_concat(target_code) as "f_div_id"
+from a_user_role
+where role_id=14 and user_id=#USER_ID# and active=1
+[end]
+
+[SQL]
+------- выбираем ID активных ролей пользователя ??
+select ur.ID as CURRENT_ROLE_ID
+, 'Y' as RW     ??AR_SYS_ADMIN=1
+, case when (r.target_Type_Id=1 and ur.TARGET_CODE in(#f_div_id#)) then 'Y' else '' end as RW ??!AR_SYS_ADMIN=1
+from a_user_role ur 
+left join a_roles r on r.id=ur.role_id
+where 
+ur.old_user_id=#OLD_ID# ??!ID
+ur.user_id=#ID#  ??ID
+and ur.active=1
+order by r.sort
+[end]
+
+and r.target_Type_Id=1 ??!AR_SYS_ADMIN=1

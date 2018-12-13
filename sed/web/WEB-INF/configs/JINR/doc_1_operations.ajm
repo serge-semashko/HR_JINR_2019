@@ -1,0 +1,20 @@
+JINR/doc_1_operations.ajm
+
+[parameters]
+request_name=U:
+LOG=ON
+[end]
+
+[report]
+    $GET_DATA [set_kurator] ??cop=set_kurator&DOC_DATA_RECORD_ID&kurator_id
+[end]
+
+
+[set_kurator]
+    update d_data_1
+    set 
+        #FIELD_DB_NAME#_id=#kurator_id#
+        , #FIELD_DB_NAME#=(select FIO from a_users_jinr where id=#kurator_id#) ??!kurator_id=null
+        , #FIELD_DB_NAME#='' ??kurator_id=null
+    where id=#DOC_DATA_RECORD_ID#
+[end]

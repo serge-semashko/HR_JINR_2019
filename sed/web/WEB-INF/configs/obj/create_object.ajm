@@ -1,0 +1,43 @@
+obj/create_object.ajm
+
+[comments]
+descr=U: Создание объекта
+
+input=doc_id - ID документа, COLLECTION_DOC_TYPE - тип дочернего объекта, [container] - контейнер формы редактирования pop-up окне (def.=popupCont)
+output=создает дочерний объект и вызывает edit_object
+parents=
+childs=
+test_URL=
+author=Куняев
+[end]
+
+
+[parameters]
+request_name=U:Создание объекта
+[end]
+
+
+[report]
+    $LOG ======= create_object ====== queryString=#queryString#;<br>
+    $GET_DATA [create SQL] 
+    $SET_PARAMETERS container=popupCont;  ??!container
+    <script type="text/javascript">
+        AjaxCall(
+            '#container#'
+            , 'c=obj/edit_object&doc_id=#CHILD_OBJECT_ID#&container=#container#&title_section=#title_section#&total_row_section=#total_row_section#&NEW=Y'
+edit_new_object_form_#doc_id#_#COLLECTION_DOC_TYPE# ??
+            , true);
+    </script>
+[end]
+
+INLINE EDIT:
+AjaxCall('edit_new_object_form_#doc_id#_#COLLECTION_DOC_TYPE#', 'c=obj/edit_object&doc_id=#CHILD_OBJECT_ID#&container=edit_new_object_form_#doc_id#_#COLLECTION_DOC_TYPE#&title_section=#title_section#&total_row_section=#total_row_section#', true);
+
+[create SQL]
+    insert into d_list (pid, type_id, is_deleted, created, creator_id)
+    values (#doc_id#, #COLLECTION_DOC_TYPE#, 1, now(), #USER_ID#)
+    ;
+    select LAST_INSERT_ID() as "CHILD_OBJECT_ID", 'd_data_#COLLECTION_DOC_TYPE#' as CHILD_TABLE_NAME
+    ; 
+    insert into #CHILD_TABLE_NAME# (doc_id) values (#CHILD_OBJECT_ID#);
+[end]

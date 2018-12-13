@@ -1,0 +1,200 @@
+[comments]
+descr=А: Ручное редактирование записи справочника.
+
+input=info_id - ID выбранного справочника, record_id - ID записи в справочнике
+output=HTML форма редактирования записи справочника, 
+parents=admin/infos/info_viewData.cfg
+childs=
+test_URL=?c=admin/infos/info_editRecord&info_id=10&record_id=2000
+[end]
+
+[parameters]
+request_name=A:редактир. данных справочника
+service=jinr.sed.ServiceEditInfoData
+tableCfg=table_no
+KeepLog=false
+ClearLog=true
+SYS_FIELDS=IS_DELETED, IS_MANUAL, DATE_FORMAT(changed,'#dateTimeFormat#') as MODIFIED, VIEW1, VIEW2, VIEW3, SORT, MODIFIER_ID
+SYS_FIELDS_UPDATE=IS_DELETED, IS_MANUAL, CHANGED, VIEW1, VIEW2, VIEW3, SORT  ??
+SYS_FIELDS_TYPES=boolean,boolean,sysdate,int,int,int,int  ??
+[end]
+
+
+[report header]
+$GET_DATA [getInfo]
++++++++ временно - открыто всем. Потом - проверить R и RW права пользователя +++ ??
+$SET_PARAMETERS RWACC=Y; RACC=Y;
+
+$INCLUDE [OK report header]  ??RACC&!cop=save
+
+[end]
+
+
+[OK report header]
+--------------------------------------------- ??
+------------ возвращаемые результаты --------- ??
+--------------------------------------------- ??
+
+<table>
+<tr>
+
+$INCLUDE [subdirectory create button]  ??IS_FOLDER=1
+
+<td class="middle" >
+<div class="pt bg_white" style="position:relative;
+ top:12px; ??
+border:dotted 1px grey; border-radius:25px;" 
+onClick="AjaxCall('info_tree_item_div', 'c=JINR/info/tree_item_edit&info_id=#info_id#&view=#view#&requesterId=#requesterId#&record_id=#record_id#&cop=edit');"> 
+&nbsp; <i class="fa fa-pencil-square-o" aria-hidden="true"></i> изменить
+дату окончания  ??IS_FINAL=1
+&nbsp;</span>
+</td>
+
+</tr>
+</table>
+
+<div id="result">
+<small>#c#</small> ??debug=on
+<input type=hidden name="c" value="#c#">
+<input type=hidden name="info_id" value="#info_id#">
+<input type=hidden name=view value='#view#'>
+
+
+<input type=hidden name="cop" value="">
+<input type=hidden name=record_id value='#record_id#'> <center>
+++++++++++++++++++ Шапка таблицы  +++++++++++++++++++++ ??
+<table border=0 class="tlist" cellpadding=0 cellspacing=0>
+<tr><td style="width:35%">Поле:</td>
+<td style="width:65%">Значение:</td></tr>
+$SET_PARAMETERS RO=readonly;
+[end]
+
+
+[subdirectory create button]
+<td class="middle">
+<div class="pt bg_white" style="position:relative;
+ top:12px; ??
+border:dotted 1px grey; border-radius:25px;" 
+onClick="AjaxCall('info_tree_item_div', 'c=JINR/info/tree_item_edit&info_id=#info_id#&view=#view#&requesterId=#requesterId#&parent_id=#record_id#&cop=add');"> 
+&nbsp; <i class="fa fa-plus clr-green" aria-hidden="true"></i> создать подкаталог &nbsp;</div>
+</td>
+[end]
+
+
+
+
+============== Вывод одного поля для редактирования ======= ??
+[item]
+$INCLUDE [hidden field]  ??!IS_VISIBLE=1
+$INCLUDE [visible field]  ??IS_VISIBLE=1
+[end]
+
+[hidden field]
+#FIELD_DB_NAME# = ^#FIELD_DB_NAME#  ??USER_ID=4790
+[end]
+
+[visible field]
+<tr><td class=label>
+#NAME#  ??
+#COMMENT# ??COMMENT
+: </td>
+<td>
+$INCLUDE JINR/info/tree_item_view[text] ??TYPE=int|TYPE=varchar
+$INCLUDE JINR/info/tree_item_view[date field] ??TYPE=date
+$INCLUDE JINR/info/tree_item_view[cb_read] ??TYPE=boolean
+</td>
+</tr>
+[end]
+
+[text]
+^#FIELD_DB_NAME#
+[end]
+
+[date field]
+$INCLUDE dat/doc_fields.dat[date field r]
+[end]
+
+
+[cb_read]
+$SET_PARAMETERS val= ^#FIELD_DB_NAME#;
+Да  ??val=1
+Нет  ??!val=1
+[end]
+
+
+[report footer]
+
+++++++++++++ Конец формы редактирования записи ++++++++++ ??
+
+<tr><td></td><td style='color:red'>
+<b>Запись помечена на удаление</b>  ??IS_DELETED=1
+</td></tr>
+
+<tr><td class=label style='color:red'><b>Запись финализирована :</b></td><td style='color:red'><b>Редактирование полей невозможно</b></td></tr>  ??IS_FINAL=1
+
+$GET_DATA [getModifierFIOInfo]
+
+<tr><td colspan=2 class="right small">Запись обновлена: #MODIFIER# #MODIFIED#</td></tr>
+</table>
+
++++++++++ Скрипт отображения pop-up окна ++++ ??
+<script>
+window.parent.showMsg("##dialog_title", "Просмотр данных справочника #INFO_NAME#");
+</script>
+[end]
+
+
+
+
+
+***************************** Шаблоны SQL запросов ***************************
+
+[preSQLs]
+select i.ID as "INFO_ID"
+, i.name as INFO_NAME, i.IS_EXTERNAL
+, i.IS_TREE, i.IS_ACTIVE
+, i.TABLE_NAME
+, data_updated 
+from i_infos i
+where i.Id=#info_id#
+;
+select concat(field_db_name, ',') as FIELDS
+ , concat(name, ',') as FIELDS_NAMES ??
+ , concat(type, ',') as FIELDS_TYPES
+from i_fields
+where info_id=#info_id#
+order by nr
+;
+select count(field_db_name) as NUM_FIELDS, count(field_db_name)+ 1 as NUM_COLUMNS
+from i_fields where info_id=#info_id#
+;
+[end]
+
+
+[SQL]
+select NR, NAME, TYPE, SIZE, COMMENT, FIELD_DB_NAME, IS_VISIBLE
+from i_fields i
+where info_id=#info_id#
+order by nr
+[end]
+
+[update views]
+[end]
+
+[getModifierFIOInfo]
+select
+concat(umr.F, ' ', left(IFNULL(umr.I,''),1), '.', left(IFNULL(umr.O,''),1),'.') as MODIFIER
+from #table_users_full# umr 
+where umr.id=#MODIFIER_ID# 
+[end]
+
+
+[getInfo]
+select
+IS_FOLDER, SELECTABLE, IS_FINAL
+from #TABLE_NAME# 
+where id=#record_id#
+[end]
+
+
+

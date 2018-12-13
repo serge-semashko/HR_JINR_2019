@@ -1,0 +1,119 @@
+obj/show_collection.ajm
+
+[comments]
+descr=
+input=
+output=
+parents=
+childs=
+author=Куняев
+[end]
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=
+tableCfg=table_no
+LOG=ON
+[end]
+
+
+[report header]
+    $STORE_PARAMETERS
+    $SET_PARAMETERS doc_mode=object; view=list; show_header=Y; collection=Y; COLLECTION_DOC_TYPE=#TYPE#; PARENT_DOC_ID=#doc_id#; INITIATOR_COMMENT=;
+    $CALL_SERVICE c=sys/getARUD; ??!AR_R=Y&USER_ID
+    
+    $SET_PARAMETERS view=;  ??APP_VERSION=MOBILE
+    view=#view#; editable=#editable#; ??
+    <table border=0 class="tlist object_table" style="margin:5px 0 10px 0; border-bottom: solid 1px ##909090;" cellpadding="0" cellspacing="0"> 
+        $GET_DATA [get tab head] ??view=list&show_header=Y
+        $INCLUDE [table headers] ??NUM_COLLECTION_OBJECTS>0&view=list&show_header=Y
+[end]
+
+[table headers]
+    $LOG obj/show_collection.ajm: NO_DOC_COMMENTS=#NO_DOC_COMMENTS#;<br>
+    $SET_PARAMETERS comment_label=Комментарий;  ??!comment_label
+    <tr>#thead#
+        <th>#comment_label#</th>  ??!NO_DOC_COMMENTS
+        <th>Удалить</th>     ??editable=Y
+    </tr>
+[end]
+
+[item]
+    $CALL_SERVICE c=docs/view_doc; doc_id=#CHILD_OBJECT_ID#; 
+    $SET_PARAMETERS show_header=; INITIATOR_COMMENT=;
+[end]
+
+
+
+[report footer]
+------- контейнер для формы редактирования нового объекта ------- ??
+    $LOG doc_mode=#doc_mode#; view=#view#; show_header=#show_header#; collection=#collection#; <br>
+    $LOG obj/show_collection.ajm[report footer]: COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#; PARENT_DOC_ID=#PARENT_DOC_ID#;
+
+        <tr><td id='edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#' colspan=18 class="object_edit_form" style="display:none;">new item #COLLECTION_DOC_TYPE#</td></tr> ??editable=Y
+style="display:none;" ??
+            $INCLUDE #title_section#   ??title_section
+            $INCLUDE #total_row_section# ??total_row_section&NUM_COLLECTION_OBJECTS>1
+            $INCLUDE [add button] ??editable=Y
+    </table>
+    $RESTORE_PARAMETERS
+[end]
+<center><a href="#ServletPath#?c=tmp/fix_zajavka_usd&doc_id=#doc_id#" target="recalc">пересчет</a> &nbsp; #summa_rub# р. &nbsp; <b>#summa_usd# USD</b> &nbsp; #summa_eur# EUR</center> ??USER_ID=2309_ZZZ
+
+
+[add button]
+<tr><td colspan=#NUM_COLLECTION_COLS#> </td> </tr> ??
+<tr><td class="center" colspan=#NUM_COLLECTION_COLS# style="border-top: none;">
+    <i style="margin-left:30px;">Кликните в строку, чтобы изменить её</i>  ??NUM_COLLECTION_OBJECTS>0
+    
+    <input 
+        id="add_#FIELD_DB_NAME#" 
+        id="add_coll_element_but" ?? 
+        class="butt1 pt" type="button" style="width:110pt; margin-left:100px;"
+        value="Добавить источник" ??
+        value="Добавить строку"
+        onClick="AjaxCall(
+            'popupCont'
+           , 'c=obj/create_object&doc_id=#PARENT_DOC_ID#&COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#&title_section=#title_section#&total_row_section=#total_row_section#', true);
+            $('##add_#FIELD_DB_NAME#').hide(); 
+        "
+        onmouseover="showToolTip(event, $(this));" tt_text="Добавить новую строку" tt_width="400" shiftX="100"
+        onmouseout="hideToolTip();"
+    >
+</td></tr>
+[end]
+
+INLINE РЕДАКТИРОВАНИЕ:
+            event.preventDefault(); event.stopPropagation(); $('.edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#').show(); $('.object_edit_form').html(''); 
+            AjaxCall('edit_new_object_form_#PARENT_DOC_ID#_#COLLECTION_DOC_TYPE#', 'c=obj/create_object&doc_id=#PARENT_DOC_ID#&COLLECTION_DOC_TYPE=#COLLECTION_DOC_TYPE#&title_section=#title_section#&total_row_section=#total_row_section#', true);
+            $('##add_#FIELD_DB_NAME#').hide(); 
+
+==============================================================
+==============================================================
+==============================================================
+
+
+
+[get tab head]
+    SELECT concat('<th>',name,'</th>') as thead 
+    from d_fields df
+    where df.type_id = #COLLECTION_DOC_TYPE# 
+        and df.is_visible in(1,3) ??!APP_VERSION=MOBILE
+        and df.is_visible in(2,3) ??APP_VERSION=MOBILE
+    order by nr
+    ;
+    SELECT count(id) as "NUM_COLLECTION_COLS"
+    from d_fields df
+    where df.type_id = #COLLECTION_DOC_TYPE# 
+        and is_visible in(1,3) ??!APP_VERSION=MOBILE
+        and is_visible in(2,3) ??APP_VERSION=MOBILE
+    ;
+    SELECT count(id) as "NUM_COLLECTION_OBJECTS"
+    from d_list
+    where pid=#doc_id# and type_id=#TYPE# and is_deleted=0
+[end]
+
+[SQL]
+select id as CHILD_OBJECT_ID from d_list where pid=#doc_id# and type_id=#TYPE# and is_deleted=0  ??AR_R=Y&USER_ID
+[end]
+

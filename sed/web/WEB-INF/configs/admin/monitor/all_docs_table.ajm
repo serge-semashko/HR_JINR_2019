@@ -1,0 +1,165 @@
+admin/monitor/all_docs_table.ajm
+
+[comments]
+descr=U: Модуль выбора модуля вывода списка документов по типу документа во вкладке Мониторинг (вывод самой таблицы) Вызывается из tab_monitor (Submit)
+
+input=
+output=HTML таблица документов
+parents=admin/monitor/all_docs
+childs=admin/monitor/view_doc
+testURL=?c=admin/monitor/all_docs_table
+author=Куняев, Яковлев
+[end]
+
+
+[parameters]
+service=dubna.walt.service.TableServiceSpecial
+request_name=U:Таблица всех документов
+LOG=ON
+tableCfg=table_no
+$INCLUDE dat/common.dat[rowLinks]
+[end]
+
+
+[report header]
+$SET_PARAMETERS_SESSION f_mon_status=#f_mon_status#;
+$GET_DATA main.cfg[checkAdmin]
+$INCLUDE [OK report header]  ??AR_ADMIN=1|AR_LAB_SECR=1
+$CALL_SERVICE c=sys/log_doc_access; doc_id=0; access_type=10; rejected=1;   ??!AR_ADMIN=1&!AR_LAB_SECR=1
+[end]
+
+
+[OK report header]
+    $INCLUDE admin/monitor/all_docs[filters table start]
+    $INCLUDE admin/monitor/all_docs[filters table end]
+
+    ++++++++++++++++++ Шапка таблицы документов +++++++++++++++++++++ ??
+    <table class="tlist tblue" cellspacing="0">
+    <tr>
+        <th 
+            class="srh" sr="dh.ID"  ??USER_ID=2309
+        >
+        id  ??USER_ID=2309
+        </th>  
+        <th class="srh" sr="ifnull(dh.doc_date, dh.created)">Документ</th>
+        <th class="srh" sr="dh.STATUS">Статус</th> 
+        <th class="srh" sr="dh.TITLE"
+        style="width:100px;" ??
+        >Содержание</th>
+        <th class="srh" sr="dh.DIVS">Подразд.</th>
+        <th class="srh pl" sr="dh.created">Создан</th>
+        <th class="srh pl" sr="dh.modified">Последнее действие</th> ??
+        <th class="srh" sr="-dh.modified">Ожидает(раб.дни)</th>
+        <th>Согласование</th>
+        <th >ст.</th> ??
+    </tr>
+[end]
+
+[item]
+++++++++++++++++++ Строка таблицы - 1 документ +++++++++++++++++++++ ??
+<tr class="pt
+    oddRow ??oddRow=1
+    " onClick="AjaxCall('doc_content', 'c=docs/view_doc&doc_id=#ID#&mode=popup', true,'',true);">
+    <td class=small>
+        #ID#  ??USER_ID=2309
+        <img src="#imgPath#info_16.png" width=16 height=16> ??cnt>0&!hist_cnt>0
+    </td>
+    <td class="nowrap" nowrap><div class="ellipsis" style="max-width:220px;">#DOC_TYPE#</div>
+        <br>  ??TYPE_ID=21
+        №#NUMBER#  ??NUMBER
+        от #DOC_DATE#  ??DOC_DATE
+    </td>
+    $INCLUDE [status]  
+    <td> ??
+    <div style="white-space_: nowrap; width:250px; max-height:30pt; overflow: hidden; text-overflow: ellipsis; border:solid 1px red;"> ??
+    #TITLE# ??
+    </div> ??
+    <td class="tt" tt_text='#TITLE#'><div class="ellipsis" style="max-width:250px;">#TITLE#</div></td>
+    <td class="tt" tt_text='#POSTAV#' ><div class="ellipsis">#POSTAV#</div></td> ??
+
+    </td>
+    <td>#DIVS#</td>
+    <td>#CREATED#, #CREATOR#</td>
+    <td class="pl">#MODIFIED#, #MODIFIER#</td> ??
+    $CALL_SERVICE c=wf/show_wf_status; doc_id=#ID#; show_persons=Y;   ??
+
+    <td id="wfstatus_#ID#" tt_text='#W_USERS#' class="nowrap pl tt
+        bg_red ??WAITING_LEVEL=LONG
+    ">
+#W_USERS#    </td><td> ??
+        $CALL_SERVICE c=wf/show_wf_status_cache; show_persons=Y; 
+    </td>
+<script>AjaxCall("wfstatus_#ID#", "c=wf/show_wf_status_cache&show_persons=Y&doc_id=#ID#");</script> ??
+</tr>
+[end]
+
+
+
+[status]
+$INCLUDE admin/monitor/all_docs_table.ajm[status_]   ??!of=xl
+$INCLUDE admin/monitor/all_docs_table.ajm[status_XL]   ??of=xl
+[end]
+
+
+
+[status_]
+<td
+    class="bg_light_red" ??is_deleted=1
+    style="text-align:center;"><img src="#imgPath#st_#STATUS#.png" width=32 height=10>
+</td> 
+[end]
+
+[status_XL]
+<td>
+    Черновик    ??STATUS=0
+    В процессе согласования ??STATUS=1
+    На этапе завершения ??STATUS=2
+    Завершен ??STATUS=3
+    (УДАЛЕН)  ??is_deleted=1
+</td>
+[end]
+
+[report footer]
+$SET_PARAMETERS NumTableCols=9;
+[end]
+
+
+***************************** Шаблон SQL запроса ***************************
+[SQL]
+$INCLUDE [SQL_] ??AR_ADMIN=1|AR_LAB_SECR=1
+[end]
+
+
+[SQL_]
+select distinct
+    dh.ID, dh.ID as "doc_id", dh.TYPE_ID
+    , left_dots(dtp.SHORT_NAME, 48) AS DOC_TYPE ??!f_doc_type_id
+    , dh.DIVS
+    , dh.is_deleted
+    , dh.NUMBER, dh.TITLE
+    , DATE_FORMAT(dh.doc_date,'#dateFormat#') as DOC_DATE 
+    , DATE_FORMAT(dh.created,'#dateTimeFormat#') as CREATED 
+    , DATE_FORMAT(dh.MODIFIED,'#dateTimeFormat#') as MODIFIED
+    , dh.creator_id
+    , fio(ucr.F, ucr.I, ucr.O) as CREATOR
+    , fio(um.F, um.I, um.O) as MODIFIER ??
+    , TIMESTAMPDIFF(hour, dh.modified, now()) AS WAITING ??
+      , getWaiting(getWorkHours(dh.modified, now())) AS WAITING 
+    , ww.W_USERS
+
+    , concat(FORMAT(TIMESTAMPDIFF(day, dh.modified, now()), 0), 'д' ??
+       , FORMAT(TIMESTAMPDIFF(hour, dh.modified, now())-TIMESTAMPDIFF(day, dh.modified, now())*24,0)) AS WAITING  ??
+    , case when TIMESTAMPDIFF(day, dh.modified, now()) > 1 then 'LONG' ??
+    , case when getWorkHours(dh.modified, now()) > 48 then 'LONG'
+        else 'SHORT'
+    end
+    AS WAITING_LEVEL 
+    , dh.status as "STATUS"
+    , dh.wf_status
+    , dh.doc_date, dh.created, dh.modified    
+,wf.user_id ??
+from d_list dh
+$INCLUDE admin/monitor/all_docs[criteria]
+
+order by #srt# #desc#
+[end]
