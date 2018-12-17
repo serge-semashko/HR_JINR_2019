@@ -74,7 +74,7 @@ public class DBUtil {
      *
      */
     public Hashtable stmnts = null;
-    public Statement curr_stmt = null;
+//    public Statement curr_stmt = null;
 
 //private DBUtil childDB = null;
     /**
@@ -216,9 +216,9 @@ public class DBUtil {
             m_conn.setAutoCommit(true);  //***** 01.04.06
             try //***** 01.04.06
             {
-                curr_stmt = m_conn.createStatement();
-                int res = curr_stmt.executeUpdate("ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' ");
-                curr_stmt.close();
+                Statement stmt = m_conn.createStatement();
+                int res = stmt.executeUpdate("ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' ");
+                stmt.close();
             } catch (Exception e) /**/ {
                 /* we don't care - this is valid for ORACLE only */ }
         }
@@ -318,9 +318,12 @@ public class DBUtil {
         try { // System.out.println(stmnts.size() + ": removing " + r);
             Statement stmt = (Statement) stmnts.get(r);
             stmnts.remove(r);
-            if (stmt != null) {
+//            if(stmt == null)
+//                System.out.println("   db: " + myName + " CLS " + r + " / " + stmt + "; stmnts.size=" + stmnts.size());
+            r.close();
+//            if (stmt != null) {
                 stmt.close();
-            }
+//            }
 //    System.out.println(stmnts.size() + ": removed... ");
         } catch (Exception e) {
             System.out.println("+++++++ " + myName + "; stmnts =" + stmnts + "; r=" + r);
@@ -365,18 +368,18 @@ public class DBUtil {
             return null;
         }
 
-//  if (stmnts.size() > 4)
-//    System.out.println("========== " + myName + ": total number of statements is " + stmnts.size() + ";");
-        if (stmnts.size() > 8) {
-            System.out.println("========== " + myName + ": total number of statements is " + stmnts.size() + "; CLOSING ALL OF THEM ...");
-//    closeAllStatements();
+        if (stmnts.size() > 2)
+            System.out.println("   db: " + myName + ": # of statements=" + stmnts.size() + ";");
+        if (stmnts.size() > 10) {
+            System.out.println("========== ERROR: Exception: " + myName + ": total number of statements is " + stmnts.size() + "; CLOSING ALL OF THEM ...");
+            closeAllStatements();
         }
 
         try {
             numQueries++;
 //    System.out.println(queryLabel+ " - executing " + numQueries + "...");
             Statement stmt = m_conn.createStatement();
-            curr_stmt = stmt;
+//            curr_stmt = stmt;
             t0 = System.currentTimeMillis();
 // System.out.println(queryLabel+ ": " + sql + ";");
             ResultSet r = stmt.executeQuery(sql);
@@ -386,8 +389,9 @@ public class DBUtil {
 //    timeSQL  += "<br>  SQL " + numQueries + " processed in " +timeSpent+"ms.";
             try {
                 stmnts.put(r, stmt);
-//    System.out.println("========== " + myName + ": total number of statements is " + stmnts.size() + ";");
+            //    System.out.println("   db: " + myName + " ADD " + r + " / "  + stmt + "; # of statements=" + stmnts.size() + ";");
             } catch (Exception exx) {
+                exx.printStackTrace();
 //			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
 //      System.out.println("stmnts:" + stmnts + ";\n\r curr_stmt: "+ stmt + ";\n\r r:" + r);
 //      System.out.println(exx.toString());
@@ -398,7 +402,9 @@ public class DBUtil {
 //    curr_stmt = null;
 //    if (stmnts.size() > 5)
 //      System.out.println("~~~~~~~ " + myName + ": - there are " + stmnts.size() + " opened statements!!!");
+//            stmt.close();
             return r;
+            
         } catch (Exception ex) {
             if (terminated) {
                 return null;
@@ -407,12 +413,14 @@ public class DBUtil {
             if(ex.getMessage().contains("Communications link failure")) {
                 try {         
                     if(cp == null) {
+                        closeAllStatements();
                         m_conn.close();
                         m_conn = null;
                         System.out.println("   Connecting: '" + connStr + "' (" + usr + "/*****)" ); 
                         connect();
                     }
                     else {
+                        closeAllStatements();
                         cp.closeConnection(m_conn); // Закрыть и удалить отвалившуюся коннекцию в CP
                     }
                 }
@@ -434,16 +442,16 @@ public class DBUtil {
         terminated = true;
         try {
 //		System.out.println( myName + "/terminate()");
-            if (curr_stmt != null) {
-                curr_stmt.cancel();
-                curr_stmt.close();
-            }
+//            if (curr_stmt != null) {
+//                curr_stmt.cancel();
+//                curr_stmt.close();
+//            curr_stmt = null;
+//            }
         } catch (Exception ex) {
 //		System.out.println("++++++++ " + myName);
 //    ex.printStackTrace(System.out);
         } finally {
             closeAllStatements();
-            curr_stmt = null;
         }
     }
 
@@ -452,14 +460,8 @@ public class DBUtil {
      */
     public void close() //throws Exception
     {
-        if (m_conn != null) {
-//            System.out.println("  dbu: " + myName + ".close()");
-            try {
-//                System.out.println(" ... closeAllStatements(): m_conn.isClosed=" + m_conn.isClosed() + "; ");
-                closeAllStatements();
-            } catch (Exception ex) {
-            }
-        }
+        closeAllStatements();
+
         if (m_conn != null) {
             if(cp == null){
                 System.out.println("  dbu: " + myName + ".close()");
@@ -504,9 +506,9 @@ public class DBUtil {
 // System.out.println(" ======== " + myName + " - 'UPDATE' ... db=" + db);
             numQueries++;
             t0 = System.currentTimeMillis();
-            curr_stmt = m_conn.createStatement();
-            int res = curr_stmt.executeUpdate(sql);
-            curr_stmt.close();
+            Statement stmt = m_conn.createStatement();
+            int res = stmt.executeUpdate(sql);
+            stmt.close();
             t0 = System.currentTimeMillis() - t0;
 //    System.out.println(" === Done in " + t0 + " ms.");
             timeSpent = StrUtil.formatDouble(t0, 0, " ");

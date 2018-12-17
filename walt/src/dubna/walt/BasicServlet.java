@@ -34,14 +34,7 @@ public class BasicServlet extends HttpServlet {
                 + ",doc/getBcInfo"  //ADB
 //                + ",free/checkSession_noDB" //SED
                 + "," ;
-    /*
-public void init(ServletConfig config) throws ServletException
-{ super.init(config);
-  initServlet();
-}
-public void initServlet() throws ServletException
-{
-     */
+
     /**
      *
      * @param config
@@ -243,7 +236,7 @@ public void initServlet() throws ServletException
         if (rm_Global.getString("logPath", false, "").length() < 4) {
             setPaths();
         }
-        if (rm_Global.getString("lf_name").isEmpty()) {
+        if (rm_Global.getString("lf_name", false, "").isEmpty()) {
             String lf_name = IOUtil.getLogFileName(rm_Global); 
             if(lf_name != null)
                 rm_Global.setParam("lf_name", lf_name, false);

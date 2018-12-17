@@ -34,28 +34,31 @@ public class DBQueryThread extends SimpleQueryThread {
         }
         ConnectionPool cp = (ConnectionPool) rm.getObject("ConnectionPool", false);
         String connectTime="?";
+        String connectString=  rm.getString("connString", true)
+                    + rm.getString("database", false)
+                    + rm.getString("connParam", false);
+                    
         try {
-            IOUtil.writeLog(3, "<br><small><i>DBQueryThread.makeDBUtil("  + queryLabel + ") DB: " 
+            IOUtil.writeLog(3, "<br><small><i>DBQueryThread.makeDBUtil("  + queryLabel 
+                    + ") DB: " 
                     + rm.getString("DB", true, "")
-                    + " / " + rm.getString("connString", true)
-                    + " / " + rm.getString("database", false)
-                    + " / " + rm.getString("connParam", false)
+                    + " / " + connectString
                     + " / " + rm.getString("usr", true)
                     + "</i></small>...", rm);
 //            System.out.print(" *** DBQueryThread.makeDBUtil() " + queryLabel + ": " + rm.getString("connString") + "; user=" + rm.getString("usr", false));
            
             /* Establish connection to the database and make DBUtil */
             if(cp == null) {
-                System.out.print("   qt: " + rm.getString("queryLabel") + "  connect:" + cfgTuner.getParameter("connString")
-                        + cfgTuner.getParameter("database") + cfgTuner.getParameter("connParam")
-                        + " //|| " + cfgTuner.getParameter("usr") + "/*** "
+                System.out.print("   qt: " + rm.getString("queryLabel") + "  connect:" 
+                    + ") DB: " 
+                    + rm.getString("DB", true, "")
+                    + " / " + connectString
+                    + " / " + rm.getString("usr", true)
                 //	+ cfgTuner.getParameter("pw")
                 );
                 dbUtil = new DBUtil(
                     rm.getString("DB", true, "")
-                    , rm.getString("connString", true)
-                    + rm.getString("database", false)
-                    + rm.getString("connParam", false)
+                    , connectString
                     , rm.getString("usr", true)
                     , rm.getString("pw", true)
                     , queryLabel

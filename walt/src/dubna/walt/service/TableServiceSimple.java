@@ -580,7 +580,6 @@ public class TableServiceSimple extends dubna.walt.service.Service {
             }
             currentRow++;
         }
-        resultSet.close();
 //  System.out.println("numRows="+numRows+"; Time spent: " + Long.toString(System.currentTimeMillis() - tm));
 
         outColTotals();

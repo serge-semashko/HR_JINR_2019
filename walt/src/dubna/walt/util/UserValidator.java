@@ -135,7 +135,7 @@ public class UserValidator {
      */
     public String checkLogin(String q, ResourceManager rm) // throws Exception
     { // if (q.length() < 32) return "*****";
-//System.out.println("checkLogin...");
+//System.out.println("checkLogin... q = " + q);
         Tuner cfgTuner = (Tuner) rm.getObject("cfgTuner");
 
         String sqlFunc = "{?=call "
@@ -155,6 +155,7 @@ public class UserValidator {
                 cs = conn.prepareCall(sqlFunc);
             }
             catch(Exception ex) {
+                ex.printStackTrace();
                 dbUtilLogin.close();
                 dbUtilLogin = null;
                 makeLoginDBUtil(rm);
@@ -173,7 +174,7 @@ public class UserValidator {
 //            dbUtilLogin.closeAllStatements();
                     
 //    System.out.println("******** loginURL=" + loginURL);
-//    IOUtil.writeLogLn("******** UserValidator: loginURL=" + loginURL, rm);
+    IOUtil.writeLogLn("******** UserValidator: loginURL=" + loginURL, rm);
         } catch (Exception e) {
             cfgTuner.addParameter("PLSQL_ERROR", e.toString());
             IOUtil.writeLogLn("<b>Executing procedure : </b>" + sqlFunc + "; q=" + q, rm);

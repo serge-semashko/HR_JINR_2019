@@ -19,7 +19,7 @@ public class Query {
 //    private HttpServletResponse res = null;
     public String queryLabel = null;
     private long timer;
-    private long timer_q;
+//    private long timer_q;
     private BasicServlet servlet;
     
     /**
@@ -59,7 +59,7 @@ public class Query {
 ////            }
 //        }
 
-        timer_q = System.currentTimeMillis();
+//        timer_q = System.currentTimeMillis();
         try {
 //            servlet.numRunning++;
             String className = rm.getString("QueryThreadClass");
@@ -98,8 +98,8 @@ public class Query {
 //  System.gc();
 //            servlet.numRunning--;
             timer = System.currentTimeMillis() - timer;
-            timer_q = System.currentTimeMillis() - timer_q;
-            System.out.println("*************** " + queryLabel + " FINISHED in " + timer + "ms. (pure time=" + timer_q + "ms)\n\r");
+//            timer_q = System.currentTimeMillis() - timer_q;
+            System.out.println("*************** " + queryLabel + " FINISHED in " + timer + "ms.\n\r");
             
         }
     }

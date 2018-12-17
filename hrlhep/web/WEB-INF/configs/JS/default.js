@@ -58,19 +58,17 @@ function setPrm(name, val) {
     return BT.addParameter(name, val);
 }
 // исполняется аналогично $INCLUDE 
-function $INCLUDE(sectionName) {
+function _$INCLUDE(sectionName) {
     BT._$INCLUDE("$INCLUDE " + sectionName, sectionLines, out);
 }
-function $GETDATA(sectionName) {
-    BT._$GETDATA("$GETDATA " + sectionName, sectionLines, out);
+function _$GET_DATA(sectionName) {
+    BT._$GET_DATA("$GET_DATA " + sectionName, sectionLines, out);
 }
-function addLine(line) {
-    BT._$INCLUDE("$INCLUDE " + sectionName, sectionLines, out);
 
+function _$LOG(lvl, msg) {
+    BT.WriteLog(+lvl, msg);
 }
-function $LOG(lvl, msg) {
-    BT.WriteLog(lvl, msg);
-}
+
 
 
 

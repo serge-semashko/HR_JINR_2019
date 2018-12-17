@@ -14,6 +14,8 @@ testURL=free/js_CallModule.dat
  * query - запрос в URL-формате (param1=val1&param2=val2)
  * Запрос выполняется если force=TRUE. 
  * Если force не задано или не boolean, то запрос выполняется, если элемент target_div не скрыт.
+
+
  */
 var AjaxCall=function(target_div, query, force, containerId) {
 
@@ -30,16 +32,20 @@ var AjaxCall=function(target_div, query, force, containerId) {
       && target_div !== "doctype_form_panel" ??
       && target_div !== "toolbar_panel" ??
     ) ??
+
     showLoading(target_div);  ??вывод индикатора "загрузка" - часто мешается
 
-    if(containerId) data = $("##"+containerId+" input, ##" +containerId+" textarea, ##"+containerId + " select" ).serializeArray();
+    if(containerId) {
+        data = $("##"+containerId+" input, ##" +containerId+" textarea, ##"+containerId + " select" ).serializeArray();
+    }    
+    console.log("AjaxCall data from form:" + JSON.stringify(data))
     var params = query.split("&");
     for(i=0; i<params.length; i++){
         var p = params[i].split("=");
         data.push({name:p[0], value:p[1]});
     }
     data.push({name:"ajax", value:"Y"});
-    console.log("AjaxCall data:" + data); data2log(data);
+    console.log("AjaxCall data:" + JSON.stringify(data)); data2log(data);
 
     var request = $.ajax({ url: "#ServletPath#", type: "POST", data:data, dataType: "html" });
         request.done(function( msg ) { if(target_div) $( "##" + target_div ).html( msg ); setStandardEvents(); });

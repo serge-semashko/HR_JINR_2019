@@ -294,10 +294,10 @@ public class Service {
             dbu = (DBUtil) rm.getObject("DBUtil" + db_,false);
         if(dbu != null) {
             System.out.println("  srv " + dbu.myName + " closeDb(" + db + "): " );
-            if((dbu.curr_stmt != null) & (!dbu.curr_stmt.isClosed())) {
-                System.out.println("********* ERROR: closeDb(" + db + "): STATEMENT NOT CLOSED!");
-                return;
-            }
+//            if((dbu.curr_stmt != null) & (!dbu.curr_stmt.isClosed())) {
+//                System.out.println("********* ERROR: closeDb(" + db + "): STATEMENT NOT CLOSED!");
+//                return;
+//            }
             dbu.close();
             rm.removeKey("DBUtil" + db_);
             IOUtil.writeLogLn(3,"+++ CLOSE DB " + db + " - OK", rm);  

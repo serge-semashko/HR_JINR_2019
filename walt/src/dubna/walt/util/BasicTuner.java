@@ -214,6 +214,11 @@ public class BasicTuner {
             if (line.toUpperCase().indexOf("[END]") == 0 && sectionName != null) {
                 break;
             }
+            //Прекращение обработки секции 
+            if (line.toUpperCase().indexOf("$BREAK") == 0 ) {
+                break;
+            }
+            
             // process the $SET_PARAMETERS directive
             if (line.indexOf("$SET_PARAMETERS") == 0 & parseData) {
                 _$SET_PARAMETERS(line, sectionLines, out);
@@ -367,7 +372,7 @@ public class BasicTuner {
             }
 
             // От директивы $JS_BEGIN/$JS_{ до $JS_END/$JS_} иди до конца секции блок будет будет исполняться как javascript код
-            if (((line.indexOf("$JS_BEGIN") == 0) || (line.indexOf("$JS_{") == 0)) & parseData) {
+            if (((line.indexOf("$JS_BEGIN") == 0) || (line.indexOf("$JS_{") == 0) || (line.indexOf("$JS{") == 0)) & parseData) {
                 i = _$JS_BLOCK(source, i, line, sectionLines, out);
                 continue;
             }
@@ -2178,7 +2183,7 @@ public class BasicTuner {
         String js = "";
         for (i++; i < source.length; i++) {
             line = (source[i].trim());
-            if ((line.indexOf("$JS_END") == 0) || (line.indexOf("$JS_}") == 0)) {
+            if ((line.indexOf("$JS_END") == 0) || (line.indexOf("$JS_}") == 0)|| (line.indexOf("$JS}") == 0)) {
                 break;
             };
             if (line.indexOf("[END]") == 0) {

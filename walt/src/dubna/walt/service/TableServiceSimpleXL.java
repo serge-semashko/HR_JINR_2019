@@ -164,7 +164,7 @@ public void start() throws Exception
         setCellValue(cell, resultSet.getDouble(colNr), numDigitsForCols[colNr - 1]);
     }
   }
-
+  dbUtil.closeResultSet(resultSet);
   currRow++;
   cfgTuner.addParameter("NumTableRows", Integer.toString(numTableRows));
 }

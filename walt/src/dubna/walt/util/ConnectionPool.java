@@ -7,6 +7,7 @@ package dubna.walt.util;
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Locale;
 import java.util.Vector;
@@ -37,18 +38,18 @@ public class ConnectionPool {
 
     private Connection createConnection() {
         Connection conn = null;
+        String connString =  rm.getString("connString")
+                    + rm.getString("database", false, "")
+                    + rm.getString("connParam", false, "");
+        
         System.out.print("   cp: connect:" 
-                    + rm.getString("connString")
-                    + rm.getString("database")
-                    + rm.getString("connParam")
+                    + connString
                     + " //|| " + rm.getString("usr", false) + "/*** ");
         long tm = System.currentTimeMillis();
 
         try {
             conn = DriverManager.getConnection(
-                rm.getString("connString")
-                    + rm.getString("database")
-                    + rm.getString("connParam")
+                connString
                 , rm.getString("usr", false)
                 , rm.getString("pw", false)
             );
@@ -61,7 +62,8 @@ public class ConnectionPool {
     }
 
     public synchronized Connection getConnection(String queryLabel) throws Exception {
-        System.out.print("   cp: " + queryLabel + " getConnection(); " + getAvailableConnsCnt() + " conns free " + usedConns.size() + " used. ");
+        if(getAvailableConnsCnt() < 2)
+            System.out.print("   cp: " + queryLabel + " getConnection(); " + getAvailableConnsCnt() + " conns free " + usedConns.size() + " used. ");
         Connection newConn = null;
         if (availableConns.isEmpty()) {
             if(usedConns.size() >= maxConnCnt) {
@@ -79,17 +81,21 @@ public class ConnectionPool {
         }
 
         usedConns.addElement(newConn);
-        System.out.println("  => " + newConn + "");
+        if(getAvailableConnsCnt() < 1)
+            System.out.println("  => " + newConn + "");
         return newConn;
     }
 
     private boolean checkConnection(Connection c) {
         try {   
             Statement s = c.createStatement();
-            if(db.equals("MySQL"))
-                s.execute("select 1");
-            else if(db.equals("ORA"))
-                s.execute("select 1 from dual");
+            ResultSet r = null;
+            if(db.equals("ORA"))
+                r = s.executeQuery("select 1 from dual");
+            else // if(db.equals("MySQL"))
+                r = s.executeQuery("select 1");
+            r.close();
+            s.close();
             return true;
         }
         catch(Exception e){
@@ -102,7 +108,8 @@ public class ConnectionPool {
     }
     
     public synchronized void putback(Connection c, String queryLabel) throws NullPointerException {
-        System.out.print("   cp: " + queryLabel + " putback(); " + c );
+        if(getAvailableConnsCnt() < 1)
+            System.out.print("   cp: " + queryLabel + " putback(); " + c );
         if (c != null) {
             if (usedConns.removeElement(c)) {
                 availableConns.addElement(c);
@@ -110,7 +117,8 @@ public class ConnectionPool {
                 throw new NullPointerException("Connection not in the usedConns array");
             }
         }
-        System.out.println("  OK: " + getAvailableConnsCnt() + " connections left.");
+        if(getAvailableConnsCnt() < 2)
+            System.out.println("  OK: " + getAvailableConnsCnt() + " connections left.");
     }
 
     public synchronized void closeConnection(Connection c) throws NullPointerException {

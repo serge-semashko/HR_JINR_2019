@@ -670,12 +670,12 @@ public class SimpleQueryThread implements QueryThread {
                     + id + " (" + c + ") DONE! (" + startTm + "ms)</span> ", rm);
         }
 
-        if (!BasicServlet.ignoreModules.contains("," + c + ",")) {
-            System.out.println("***qt: " + rm.getString("queryLabel")
-                    + " FINISHED : " + cfgTuner.getParameter("c")
-                    + " (" + startTm + "ms)"
-            );
-        }
+//        if (!BasicServlet.ignoreModules.contains("," + c + ",")) {
+//            System.out.println("***qt: " + rm.getString("queryLabel")
+//                    + " FINISHED : " + cfgTuner.getParameter("c")
+//                    + " (" + startTm + "ms)"
+//            );
+//        }
     }
 
     /**
@@ -720,14 +720,14 @@ public class SimpleQueryThread implements QueryThread {
      */
     public void logQuery() {
         if (!cfgTuner.enabledOption("c=empty")) {
-            rm.println("\n"
+            rm.println( "  sqt: "
                     + rm.getString("queryLabel")
                     + ": " + cfgTuner.getParameter("c")
-                    + ": " + cfgTuner.getParameter("uname")
-                    + " (" + cfgTuner.getParameter("USER_GROUP")
-                    + ") " + cfgTuner.getParameter("ClientIP")
+                    + ": " + cfgTuner.getParameter("USER_ID")
+//                    + " (" + cfgTuner.getParameter("USER_GROUP") + ") " 
+//                    + ": " + cfgTuner.getParameter("ClientIP")
                     //                + "; [" + Fmt.lsDateStr( new java.util.Date() ) + "] "
-                    + "; [" + Fmt.shortDateStr(new java.util.Date()) + "] "
+//                    + "; [" + Fmt.shortDateStr(new java.util.Date()) + "] "
             );
         }
     }
@@ -1108,8 +1108,8 @@ public class SimpleQueryThread implements QueryThread {
                 try {
                     Object o = rm.getObject(sa1, false, false);
                     if (o instanceof dubna.walt.util.DBUtil) {
-                        System.out.print(" SimpleQueryThread.finish(): close " + sa1);
                         dbu = (DBUtil) o;
+                        System.out.print("  sqt: " +  ".finish() close " + dbu.myName);
                         try {
                             dbu.commit();
                         } catch (Exception e) {
