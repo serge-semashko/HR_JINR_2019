@@ -22,10 +22,10 @@ function getFio(fullFIO)
     return shortFIO
 }
 function loopSQL(sqlSection, execSection) {
-    $LOG(2, "loopSQL sqlSection = " + sqlSection + " execSection" + execSection + "\n", sectionLines, out);
+    _$LOG(2, "loopSQL sqlSection = " + sqlSection + " execSection" + execSection + "\n", sectionLines, out);
     var sql = BT.getCustomSectionAsString(sqlSection);
     if (sql.length === 0) {
-        BT.WriteLog(2, "<font color=red> loopSQL:" + sqlSection + ": SECTION NOT FOUND OR EMPTY</font>");
+//        BT.WriteLog(2, "<font color=red> loopSQL:" + sqlSection + ": SECTION NOT FOUND OR EMPTY</font>");
         return;
     }
     var r = dbUtil.getResults(sql);
@@ -43,7 +43,7 @@ function loopSQL(sqlSection, execSection) {
             BT.addParameter(headers[i], val);
             sumstr += headers[i] + " = [" + val + "] ";
         }
-        $LOG(2, "<br>Current row= " + sumstr + "\n", sectionLines, out);
+//        _$LOG(2, "<br>Current row= " + sumstr + "\n", sectionLines, out);
         BT.getCustomSection("", execSection, out);
     }
     dbUtil.closeResultSet(r);
