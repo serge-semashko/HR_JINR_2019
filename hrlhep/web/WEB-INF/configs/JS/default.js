@@ -16,9 +16,16 @@ function getColNames(resultSet) {
 function getFio(fullFIO)
 {
     var t = fullFIO.split(' ');
-    
-    var shortFIO = t[0] + ' ' + t[1].charAt(0) + '. ' + t[2].charAt(0) + '.';
-//    return JSON.stringify(t);
+    var o = "";
+    var shortFIO = t[0];
+    if (typeof t[1] != "string") {
+    } else {
+        shortFIO += " " + t[1].charAt(0) + ".";
+        if (typeof t[2] != "string") {
+        } else {
+            shortFIO += t[2].charAt(0) + ".";
+        }
+    }
     return shortFIO
 }
 function loopSQL(sqlSection, execSection) {
