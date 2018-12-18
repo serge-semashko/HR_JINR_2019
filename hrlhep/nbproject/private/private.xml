@@ -11,6 +11,18 @@
             <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/grade/scale_header.cfg</file>
         </group>
         <group/>
-        <group name="HRLHEP"/>
+        <group name="HRLHEP">
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_premii_table.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_reports_chart.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/utils.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_iss.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_iss_table.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_salary.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/edit/premiya.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_reports.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/tab_salary_table.cfg</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/JS/default.js</file>
+            <file>file:/G:/home/JINR/hr/hrlhep/web/WEB-INF/configs/main.cfg</file>
+        </group>
     </open-files>
 </project-private>
